@@ -1,0 +1,55 @@
+doctype html
+html
+    head
+        title= `${title} | ${h.siteName}`
+        link(rel='stylesheet', href='/dist/style.css')
+        link(rel="shortcut icon" type="image/png" href="/images/icons/doughnut.png")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+    body
+        aside.nav
+            block nav
+                aside.nav
+                    .nav__top
+                        .nav__top__logo
+                            h1 Frontend Masters Review
+                        ul.nav__top__links
+                            if user
+                                li
+                                    a(href="/likes" class=currentPath.startsWith('/likes')? 'nav__top__active':'') Likes
+                                li
+                                    a(href="/logout" class=currentPath.startsWith('/logout')? 'nav__top__active':'') Logout
+                                li
+                                    a(href="/profile" class=currentPath.startsWith('/profile')? 'nav__top__active':'')
+                                        img.avatar(src="#")
+                            else
+                                li
+                                    a(href="/signup" class=currentPath.startsWith('/signup')? 'nav__top__active':'') Signup
+                                li
+                                    a(href="/login" class=currentPath.startsWith('/login')? 'nav__top__active':'') Login
+                    .nav__main
+                        ul.nav__main__links
+                            li
+                                a(href="/reviews" class=currentPath.startsWith('/reviews')? 'nav__top__active':'') Reviews
+                            li
+                                a(href="/tags" class=currentPath.startsWith('/tags')? 'nav__top__active':'') Tags
+                            li
+                                a(href="/popular" class=currentPath.startsWith('/popular')? 'nav__top__active':'') Popular
+                            li
+                                a(href="/add" class=currentPath.startsWith('/add')? 'nav__top__active':'') Add Review
+                            li
+                                a(href="/search") Search
+        //- block messages
+        //-     if locals.flashes
+        //-         .inner
+        //-         .flash-messages
+        //-             - const categories = Object.keys(locals.flashes)
+        //-             each category in categories
+        //-                 each message in flashes[category]
+        //-                     .flash(class=`flash--${category}`)
+        //-                     p.flash__text!= message
+        //-                     button.flash__remove(onClick="this.parentElement.remove()") &times;
+        .content
+            block content
+
+        block scripts
+            script(src="/dist/App.bundle.js")

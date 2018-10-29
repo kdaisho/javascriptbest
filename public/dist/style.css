@@ -1,0 +1,77 @@
+/* ========== Reset Styles =========== */
+/* http://meyerweb.com/eric/tools/css/reset/
+	 v2.0 | 20110126
+	 License: none (public domain)
+*/
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, em, img, ol, ul, li, form, label,
+table, tbody, tfoot, thead, tr, th, td,
+article, aside, details, embed,
+figure, footer, header, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, figure,
+footer, header, section {
+  display: block; }
+
+div {
+  box-sizing: border-box; }
+
+body {
+  line-height: 1;
+  background: #f9f9f9; }
+
+ol, ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+body {
+  background: #111; }
+  body * {
+    color: #efefef;
+    font-family: 'Avenir', sans-serif;
+    font-size: 100%; }
+
+body {
+  background: #111; }
+
+.content {
+  margin-left: 200px; }
+
+.nav {
+  background: #0e99e7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 200px;
+  height: 100vw; }
+  .nav li a {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: .75rem;
+    text-transform: uppercase; }
+    .nav li a:hover {
+      background: #0b79b7; }
+  .nav__top {
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
+    padding: 2rem 0 1.5rem; }
+    .nav__top__logo {
+      font-size: 1.75rem;
+      font-weight: bold;
+      margin-bottom: 2rem; }
+  .nav__main {
+    padding: 2rem 0; }
+
+/*# sourceMappingURL=style.css.map*/
