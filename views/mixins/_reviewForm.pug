@@ -1,0 +1,21 @@
+mixin reviewForm(review = {})
+    form(action=`/add/${review._id || ''}` method="POST" class="card" enctype="multipart/form-data")
+        label(for="course") Course
+        input(type="text" name="course" value=review.course)
+        label(for="instructor") Instructor
+        input(type="text" name="instructor" value=review.instructor)
+        label(for="description") Description
+        textarea(name="description")= review.description
+        //- Image upload
+        label(for="image") Image
+            input(type="file" name="image" accept="image/gif, image/png, image/jpeg")
+            if review.image
+                img(src=`/uploads/${review.image}` alt=review.course width=200)
+        - const choices = ['JavaScript', 'Node', 'React', 'Vue', 'Angular', 'Webpack', 'Database', 'CSS', 'Design', 'Typographie', 'Bash']
+        - const tags = review.tags || []
+        ul.tags
+            each choice in choices
+                .tag.tag__choice
+                    input(type="checkbox" id=choice value=choice name="tags" checked=(tags.includes(choice)))
+                    label(for=choice) #{choice}
+        input(type="submit" value="Send" class="button")

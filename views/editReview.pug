@@ -1,0 +1,7 @@
+extends layout
+
+include mixins/_reviewForm
+block content
+    .container.isEdit
+        h2.title= title
+        +reviewForm(review)

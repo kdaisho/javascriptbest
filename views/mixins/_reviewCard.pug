@@ -1,0 +1,16 @@
+mixin reviewCard(review = {})
+    .review
+        .review__hero
+            img(src=`/uploads/${review.image || 'review.jpg'}`)
+        .review__details
+            h2.title
+                a(href=`/review/${review.slug}`) #{review.course}
+            p= review.description.split(' ').slice(0, 20).join(' ')
+            .review__status
+                if user
+                    .review__action.review__action--like
+                        form.like(method="POST" action=`/api/review/${review._id}/like`)
+                            - const likeStrings = user.likes.map(obj => obj.toString())
+                            - const likeClass = likeStrings.includes(review._id.toString()) ? 'isLiked' : ''
+                            button.like__button(type="submit" name="like" class=likeClass)
+                                != h.icon('like')

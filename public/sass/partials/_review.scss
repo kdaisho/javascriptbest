@@ -1,0 +1,35 @@
+.container.isEdit {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+
+    .title {
+        font-size: $titleSize;
+    }
+
+    form {
+        padding: 1rem 0;
+
+        label {
+            display: block;
+            font-size: 1.25rem;
+            margin-bottom: .5rem;
+        }
+
+        input[type="text"] {
+            color: $darkFont;
+            display: block;
+            border: none;
+            border-radius: .25rem;
+            box-shadow: inset 3px 3px 9px rgba(0, 0, 0, .5);
+            height: 2rem;
+            margin-bottom: 3rem;
+            padding: .25rem 1rem 0;
+            width: 100%;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

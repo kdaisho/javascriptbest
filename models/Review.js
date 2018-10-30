@@ -14,7 +14,7 @@ const reviewSchema = new mongoose.Schema({
         required: 'Please enter an instructor name!'
     },
     slug: String,
-    review: {
+    description: {
         type: String,
         trim: true
     },
@@ -23,6 +23,16 @@ const reviewSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
+});
+
+reviewSchema.pre('save', function(next) {
+    if (!this.isModified('course')) {
+        next();
+        return;
+    }
+    this.slug = slug(this.course);
+    next();
+    // TODO make more resiliant so slugs are unique
 });
 
 module.exports = mongoose.model('Review', reviewSchema);
