@@ -1,9 +1,7 @@
-body {
-    background: #111;
-}
-
-
 .content {
-    margin-left: 200px;
-    padding: 3rem;
+    padding: 5rem 0 3rem;
+
+    @media (min-width: $maxTablet) {
+        margin-left: 200px;
+    }
 }

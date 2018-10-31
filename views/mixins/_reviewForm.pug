@@ -4,13 +4,11 @@ mixin reviewForm(review = {})
         input(type="text" name="course" value=review.course)
         label(for="instructor") Instructor
         input(type="text" name="instructor" value=review.instructor)
-        label(for="description") Description
-        textarea(name="description")= review.description
+        label(for="url") URL
+        input(type="text" name="url" value=review.url)
         //- Image upload
         label(for="image") Image
-            input(type="file" name="image" accept="image/gif, image/png, image/jpeg")
-            if review.image
-                img(src=`/uploads/${review.image}` alt=review.course width=200)
+        input(type="file" name="image" accept="image/gif, image/png, image/jpeg")
         - const choices = ['JavaScript', 'Node', 'React', 'Vue', 'Angular', 'Webpack', 'Database', 'CSS', 'Design', 'Typographie', 'Bash']
         - const tags = review.tags || []
         ul.tags
@@ -18,4 +16,6 @@ mixin reviewForm(review = {})
                 .tag.tag__choice
                     input(type="checkbox" id=choice value=choice name="tags" checked=(tags.includes(choice)))
                     label(for=choice) #{choice}
+        label(for="description") Description
+        textarea(name="description")= review.description
         input(type="submit" value="Send" class="button")

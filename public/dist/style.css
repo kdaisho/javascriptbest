@@ -42,21 +42,23 @@ body {
     font-family: 'Avenir', sans-serif;
     font-size: 100%; }
 
-body {
-  background: #111; }
-
 .content {
-  margin-left: 200px;
-  padding: 3rem; }
+  padding: 5rem 0 3rem; }
+  @media (min-width: 1024px) {
+    .content {
+      margin-left: 200px; } }
 
 .nav {
   background: #0e99e7;
+  height: 100%;
   position: fixed;
-  top: 0;
-  left: 0;
+  left: -200px;
   text-align: center;
-  width: 200px;
-  height: 100vw; }
+  top: 0;
+  width: 200px; }
+  @media (min-width: 1024px) {
+    .nav {
+      left: 0; } }
   .nav li a {
     display: block;
     font-size: 1.25rem;
@@ -72,35 +74,85 @@ body {
       font-size: 1.75rem;
       font-weight: bold;
       margin-bottom: 2rem; }
+    .nav__top__button {
+      background: #0e99e7;
+      border: none;
+      font-size: 2rem;
+      font-weight: bold;
+      position: absolute;
+      right: -35px;
+      bottom: 3rem; }
+      .nav__top__button:hover {
+        cursor: pointer; }
+      @media (min-width: 1024px) {
+        .nav__top__button {
+          display: none; } }
   .nav__main {
     padding: 2rem 0; }
 
 h2.title {
-  font-size: 3rem; }
+  font-size: 1.75rem; }
 
 .container.isEdit {
   width: 100%;
-  max-width: 1080px;
+  max-width: 780px;
   margin: 0 auto; }
   .container.isEdit .title {
-    font-size: 3rem; }
+    font-size: 1.75rem; }
+    @media (min-width: 767px) {
+      .container.isEdit .title {
+        font-size: 2.5rem; } }
   .container.isEdit form {
-    padding: 1rem 0; }
+    padding: 3rem 0; }
     .container.isEdit form label {
       display: block;
       font-size: 1.25rem;
       margin-bottom: .5rem; }
-    .container.isEdit form input[type="text"] {
-      color: #444;
-      display: block;
+    .container.isEdit form input[type="text"],
+    .container.isEdit form textarea {
       border: none;
       border-radius: .25rem;
       box-shadow: inset 3px 3px 9px rgba(0, 0, 0, 0.5);
-      height: 2rem;
+      box-sizing: border-box;
+      color: #444;
+      padding: .25rem .75rem 0;
       margin-bottom: 3rem;
-      padding: .25rem 1rem 0;
       width: 100%; }
-      .container.isEdit form input[type="text"]:focus {
+      .container.isEdit form input[type="text"]:focus,
+      .container.isEdit form textarea:focus {
         outline: none; }
+    .container.isEdit form input[type="text"] {
+      height: 2rem; }
+    .container.isEdit form textarea {
+      height: 10rem;
+      padding: .5rem .75rem 0; }
+    .container.isEdit form input[type="file"] {
+      font-size: .75rem;
+      height: 2rem; }
+      .container.isEdit form input[type="file"]:hover {
+        cursor: poiner; }
+    .container.isEdit form .tags {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+      margin: 2rem 0; }
+      .container.isEdit form .tags .tag__choice {
+        display: -ms-flexbox;
+        display: flex; }
+        .container.isEdit form .tags .tag__choice input[type="checkbox"] {
+          position: relative;
+          right: -1.5rem;
+          top: 7px;
+          z-index: 10; }
+        .container.isEdit form .tags .tag__choice label {
+          background: orange;
+          border-radius: .25rem;
+          display: inline-block;
+          padding: .5rem .75rem .5rem 1.75rem;
+          -webkit-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+                  user-select: none; }
 
 /*# sourceMappingURL=style.css.map*/
