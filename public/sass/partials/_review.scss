@@ -16,7 +16,7 @@
 
         label {
             display: block;
-            font-size: 1.25rem;
+            font-size: $btnFontSize;
             margin-bottom: .5rem;
         }
 
@@ -26,7 +26,7 @@
             border-radius: .25rem;
             box-shadow: inset 3px 3px 9px rgba(0, 0, 0, .5);
             box-sizing: border-box;
-            color: $darkFont;
+            color: $black;
             padding: .25rem .75rem 0;
             margin-bottom: 3rem;
             width: 100%;
@@ -54,6 +54,19 @@
             }
         }
 
+        input[type="submit"] {
+            background: $lightBlue;
+            border: none;
+            border-radius: .25rem;
+            font-size: $btnFontSize;
+            color: #fff;
+            height: 2.25rem;
+            width: 100%;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
         .tags {
             display: flex;
             flex-flow: row wrap;
@@ -71,11 +84,15 @@
                     }
 
                     label {
-                        background: orange;
+                        background: $yellow;
+                        color: $black;
                         border-radius: .25rem;
                         display: inline-block;
                         padding: .5rem .75rem .5rem 1.75rem;
                         user-select: none;
+                        &:hover {
+                            cursor: pointer;
+                        }
                     }
                 }
             }
