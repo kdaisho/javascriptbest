@@ -1,35 +1,37 @@
 .flash-messages {
     border-radius: .25rem;
-    // width: 100%;
-    // max-width: 500px;
     position: absolute;
     left: 50%;
+    max-width: 500px;
     top: 3%;
     transform: translate(-50%, 0);
+    width: 90%;
 
     .flash {
         align-items: center;
         border-radius: .25rem;
         display: flex;
-        padding: 0 1.5rem 0 1rem;
+        margin: 1rem 0;
+        padding: .25rem .5rem;
 
         &.flash--success {
             background: $lightBlue;
         }
 
-        &.flash--warning {
+        &.flash--error {
             background: $red;
-        }
-
-        &__text {
-            font-size: $btnFontSize;
         }
 
         &__remove {
             background: none;
             border: none;
             font-size: 2rem;
-            padding: 0 1rem 0 0;
+            padding-right: .75rem;
+
+            &:active,
+            &:focus {
+                outline: none;
+            }
 
             &:hover {
                 cursor: pointer;
