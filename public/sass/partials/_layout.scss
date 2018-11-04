@@ -1,7 +1,42 @@
 .content {
-    padding: 5rem 0 3rem;
+    padding: 3rem 1rem;
 
     @media (min-width: $maxTablet) {
         margin-left: 200px;
+    }
+
+    @media (min-width: 1921px) {
+        max-width: 1720px;
+        margin: 0 auto;
+        transform: translateX(5.75%);
+    }
+}
+
+.pageTitle {
+    font-size: $pageTitleSize;
+
+    @media (min-width: $maxTablet) {
+        font-size: $pageTitleSizeTablet;
+        margin-bottom: .5rem;
+    }
+
+    @media (min-width: $maxLaptop) {
+        font-size: $pageTitleSizeDesk;
+        margin-bottom: 1rem;
+    }
+}
+
+.backdrop {
+    display: none;
+    &.active {
+        display: block;
+        background: #000;
+        height: 100%;
+        opacity: .5;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 20;
     }
 }

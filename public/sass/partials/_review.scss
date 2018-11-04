@@ -2,18 +2,17 @@
     width: 100%;
     max-width: 780px;
     margin: 0 auto;
-    padding: 0 1rem;
 
     .title {
-        font-size: $titleSize;
+        // font-size: $titleSize;
 
         @media (min-width: $maxMobile) {
-            font-size: $titleSizeDesk;
+            // font-size: $titleSizeDesk;
         }
     }
 
     form {
-        padding: 3rem 0;
+        padding: 2.5rem 0 1.5rem;
 
         label {
             display: block;
@@ -68,15 +67,14 @@
             background: $lightBlue;
             border: none;
             border-radius: .25rem;
-            font-size: $btnFontSize;
             color: #fff;
+            font-size: $btnFontSize;
             height: 2.25rem;
+            outline: none;
             width: 100%;
+
             &:hover {
                 cursor: pointer;
-            }
-            &:active {
-                outline: none;
             }
         }
 
@@ -103,6 +101,7 @@
                         display: inline-block;
                         padding: .5rem .75rem .5rem 1.75rem;
                         user-select: none;
+
                         &:hover {
                             cursor: pointer;
                         }

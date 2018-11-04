@@ -43,19 +43,54 @@ body {
     font-size: 100%; }
 
 .content {
-  padding: 5rem 0 3rem; }
+  padding: 3rem 1rem; }
   @media (min-width: 1024px) {
     .content {
       margin-left: 200px; } }
+  @media (min-width: 1921px) {
+    .content {
+      max-width: 1720px;
+      margin: 0 auto;
+      -ms-transform: translateX(5.75%);
+          transform: translateX(5.75%); } }
+
+.pageTitle {
+  font-size: 1.75rem; }
+  @media (min-width: 1024px) {
+    .pageTitle {
+      font-size: 2.25rem;
+      margin-bottom: .5rem; } }
+  @media (min-width: 1680px) {
+    .pageTitle {
+      font-size: 2.75rem;
+      margin-bottom: 1rem; } }
+
+.backdrop {
+  display: none; }
+  .backdrop.active {
+    display: block;
+    background: #000;
+    height: 100%;
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20; }
 
 .nav {
   background: #0e99e7;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
   height: 100%;
   position: fixed;
   left: -200px;
   text-align: center;
   top: 0;
-  width: 200px; }
+  width: 200px;
+  transition: left .2s ease-out;
+  z-index: 30; }
+  .nav.active {
+    left: 0; }
   @media (min-width: 1024px) {
     .nav {
       left: 0; } }
@@ -67,6 +102,8 @@ body {
     text-transform: uppercase; }
     .nav li a:hover {
       background: #0b79b7; }
+  .nav__active {
+    background: #0b79b7; }
   .nav__top {
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
     padding: 2rem 0 1.5rem; }
@@ -77,11 +114,18 @@ body {
     .nav__top__button {
       background: #0e99e7;
       border: none;
-      font-size: 2rem;
-      font-weight: bold;
+      bottom: 3rem;
+      box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.5);
+      display: -ms-flexbox;
+      display: flex;
       position: absolute;
-      right: -35px;
-      bottom: 3rem; }
+      right: -42px;
+      height: 42px;
+      width: 42px; }
+      .nav__top__button svg {
+        fill: #fff; }
+      .nav__top__button:active, .nav__top__button:focus {
+        outline: none; }
       .nav__top__button:hover {
         cursor: pointer; }
       @media (min-width: 1024px) {
@@ -90,21 +134,55 @@ body {
   .nav__main {
     padding: 2rem 0; }
 
-h2.title {
-  font-size: 1.75rem; }
+.reviews {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex-pack: center;
+      justify-content: center; }
+  @media (min-width: 767px) {
+    .reviews {
+      -ms-flex-pack: justify;
+          justify-content: space-between; } }
+  .reviews .review {
+    border-radius: .25rem;
+    -ms-flex: 0 0 98%;
+        flex: 0 0 98%;
+    overflow: hidden;
+    margin: 1rem .5rem 2rem; }
+    @media (min-width: 767px) {
+      .reviews .review {
+        -ms-flex: 0 0 47%;
+            flex: 0 0 47%; } }
+    @media (min-width: 1024px) {
+      .reviews .review {
+        -ms-flex: 0 0 30%;
+            flex: 0 0 30%; } }
+    @media (min-width: 1680px) {
+      .reviews .review {
+        -ms-flex: 0 0 23%;
+            flex: 0 0 23%; } }
+    .reviews .review__hero img {
+      display: block;
+      width: 100%; }
+    .reviews .review__details {
+      background: #efefef;
+      padding: 1rem .5rem; }
+      .reviews .review__details .title a {
+        display: block;
+        color: #0e99e7;
+        font-size: 1.5rem;
+        margin-bottom: .5rem; }
+      .reviews .review__details .desc {
+        color: #444; }
 
 .container.isEdit {
   width: 100%;
   max-width: 780px;
-  margin: 0 auto;
-  padding: 0 1rem; }
-  .container.isEdit .title {
-    font-size: 1.75rem; }
-    @media (min-width: 767px) {
-      .container.isEdit .title {
-        font-size: 2.5rem; } }
+  margin: 0 auto; }
   .container.isEdit form {
-    padding: 3rem 0; }
+    padding: 2.5rem 0 1.5rem; }
     .container.isEdit form label {
       display: block;
       font-size: 1.25rem;
@@ -143,14 +221,13 @@ h2.title {
       background: #0e99e7;
       border: none;
       border-radius: .25rem;
-      font-size: 1.25rem;
       color: #fff;
+      font-size: 1.25rem;
       height: 2.25rem;
+      outline: none;
       width: 100%; }
       .container.isEdit form input[type="submit"]:hover {
         cursor: pointer; }
-      .container.isEdit form input[type="submit"]:active {
-        outline: none; }
     .container.isEdit form .tags {
       display: -ms-flexbox;
       display: flex;

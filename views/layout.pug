@@ -7,39 +7,40 @@ html
         meta(name="viewport" content="width=device-width, initial-scale=1")
     body
         block nav
-            aside.nav
+            aside.nav#nav
                 .nav__top
-                    button.nav__top__button X
+                    button.nav__top__button.toggleNav
+                        != h.icon('menu')
                     .nav__top__logo
                         h1 Frontend Masters Review
                     ul.nav__top__links
                         if user
                             li
-                                a(href="/likes" class=currentPath.startsWith('/likes')? 'nav__top__active':'') Likes
+                                a(href="/likes" class=currentPath.startsWith('/likes')? 'nav__active':'') Likes
                             li
-                                a(href="/logout" class=currentPath.startsWith('/logout')? 'nav__top__active':'') Logout
+                                a(href="/logout" class=currentPath.startsWith('/logout')? 'nav__active':'') Logout
                             li
-                                a(href="/profile" class=currentPath.startsWith('/profile')? 'nav__top__active':'')
+                                a(href="/profile" class=currentPath.startsWith('/profile')? 'nav__active':'')
                                     img.avatar(src="#")
                         else
                             li
-                                a(href="/signup" class=currentPath.startsWith('/signup')? 'nav__top__active':'') Signup
+                                a(href="/signup" class=currentPath.startsWith('/signup')? 'nav__active':'') Signup
                             li
-                                a(href="/login" class=currentPath.startsWith('/login')? 'nav__top__active':'') Login
+                                a(href="/login" class=currentPath.startsWith('/login')? 'nav__active':'') Login
                 .nav__main
                     ul.nav__main__links
                         li
-                            a(href="/reviews" class=currentPath.startsWith('/reviews')? 'nav__top__active':'') Reviews
+                            a(href="/reviews" class=currentPath.startsWith('/reviews')? 'nav__active':'') Reviews
                         li
-                            a(href="/tags" class=currentPath.startsWith('/tags')? 'nav__top__active':'') Tags
+                            a(href="/tags" class=currentPath.startsWith('/tags')? 'nav__active':'') Tags
                         li
-                            a(href="/popular" class=currentPath.startsWith('/popular')? 'nav__top__active':'') Popular
+                            a(href="/popular" class=currentPath.startsWith('/popular')? 'nav__active':'') Popular
                         li
-                            a(href="/add" class=currentPath.startsWith('/add')? 'nav__top__active':'') Add Review
+                            a(href="/add" class=currentPath.startsWith('/add')? 'nav__active':'') Add Review
                         li
                             a(href="/search") Search
         block messages
-                //- if locals.flashes
+            if locals.flashes
                 .container
                     .flash-messages
                         - const categories = Object.keys(locals.flashes)
@@ -50,6 +51,8 @@ html
                                     p.flash__text!= message
         .content
             block content
+
+        .backdrop.toggleNav#backdrop
 
         block scripts
             script(src="/dist/App.bundle.js")

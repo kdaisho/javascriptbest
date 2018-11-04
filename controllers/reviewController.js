@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const Review = mongoose.model('Review');
 
-exports.homePage = async (req, res) => {
-    res.render('reviews', { title: 'Reviews' });
-};
+// exports.homePage = async (req, res) => {
+//     res.render('reviews', { title: 'Reviews' });
+// };
 
 exports.addReview = (req, res) => {
     res.render('editReview', { title: 'Add Review' });
@@ -14,4 +14,10 @@ exports.createReview = async (req, res) => {
     await review.save();
     req.flash('success', `Successfully created ${review.course}!`);
     res.redirect('/');
+};
+
+exports.getReviews = async (req, res) => {
+    const reviews = await Review.find();
+    console.log(reviews);
+    res.render('reviews', { title: 'Reviews', reviews });
 };

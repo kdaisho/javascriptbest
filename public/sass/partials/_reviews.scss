@@ -1,3 +1,54 @@
-h2.title {
-    font-size: $titleSize;
+.reviews {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    @media (min-width: $maxMobile) {
+        justify-content: space-between;
+    }
+
+    .review {
+        border-radius: .25rem;
+        flex: 0 0 98%;
+        overflow: hidden;
+        margin: 1rem .5rem 2rem;
+
+        @media (min-width: $maxMobile) {
+            flex: 0 0 47%;
+        }
+
+        @media (min-width: $maxTablet) {
+            flex: 0 0 30%;
+        }
+
+        @media (min-width: 1680px) {
+            flex: 0 0 23%;
+        }
+
+        &__hero {
+            img {
+                display: block;
+                // max-width: 300px;
+                width: 100%;
+            }
+        }
+
+        &__details {
+            background: #efefef;
+            padding: 1rem .5rem;
+
+            .title {
+                a {
+                    display: block;
+                    color: $lightBlue;
+                    font-size: $cardTitleSize;
+                    margin-bottom: .5rem;
+                }
+            }
+
+            .desc {
+                color: $black;
+            }
+        }
+    }
 }

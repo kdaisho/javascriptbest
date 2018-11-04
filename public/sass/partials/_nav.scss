@@ -1,12 +1,18 @@
 .nav {
     background: $lightBlue;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .5);
     height: 100%;
     position: fixed;
     left: -200px;
-    // left: 0;
     text-align: center;
     top: 0;
     width: 200px;
+    transition: left .2s ease-out;
+    z-index: 30;
+
+    &.active {
+        left: 0;
+    }
 
     @media (min-width: $maxTablet) {
         left: 0;
@@ -18,11 +24,15 @@
         font-weight: bold;
         padding: .75rem;
         text-transform: uppercase;
+
         &:hover {
             background: darken($lightBlue, 10%);
         }
     }
 
+    &__active {
+        background: darken($lightBlue, 10%);
+    }
 
     &__top {
         box-shadow: 0px 3px 4px rgba(0, 0, 0, .5);
@@ -37,14 +47,27 @@
         &__button {
             background: $lightBlue;
             border: none;
-            font-size: 2rem;
-            font-weight: bold;
-            position: absolute;
-            right: -35px;
             bottom: 3rem;
+            box-shadow: 3px 2px 4px rgba(0, 0, 0, .5);
+            display: flex;
+            position: absolute;
+            right: -42px;
+            height: 42px;
+            width: 42px;
+
+            svg {
+                fill: #fff;
+            }
+
+            &:active,
+            &:focus {
+                outline: none;
+            }
+
             &:hover {
                 cursor: pointer;
             }
+
             @media (min-width: $maxTablet) {
                 display: none;
             }
