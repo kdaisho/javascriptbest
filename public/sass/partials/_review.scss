@@ -3,14 +3,6 @@
     max-width: 780px;
     margin: 0 auto;
 
-    .title {
-        // font-size: $titleSize;
-
-        @media (min-width: $maxMobile) {
-            // font-size: $titleSizeDesk;
-        }
-    }
-
     form {
         padding: 2.5rem 0 1.5rem;
 
@@ -78,6 +70,14 @@
             }
         }
 
+        img.preview {
+            margin: 0 0 1.5rem;
+            vertical-align: top;
+            @media (min-width: 497px) {
+                margin: 0 0 .25rem 2rem;
+            }
+        }
+
         .tags {
             display: flex;
             flex-flow: row wrap;
@@ -92,10 +92,15 @@
                         right: -1.5rem;
                         top: 7px;
                         z-index: 10;
+
+                        &:checked + label {
+                            background: $lightBlue;
+                            color: #fff;
+                        }
                     }
 
                     label {
-                        background: $yellow;
+                        background: $lightGrey;
                         color: $black;
                         border-radius: .25rem;
                         display: inline-block;

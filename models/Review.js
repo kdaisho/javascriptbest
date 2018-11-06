@@ -13,6 +13,11 @@ const reviewSchema = new mongoose.Schema({
         trim: true,
         required: 'Please enter an instructor name!'
     },
+    url: {
+        type: String,
+        trim: true,
+        required: 'Please enter URL!'
+    },
     slug: String,
     description: {
         type: String,
@@ -22,7 +27,8 @@ const reviewSchema = new mongoose.Schema({
     created: {
         type: Date,
         default: Date.now
-    }
+    },
+    image: String
 });
 
 reviewSchema.pre('save', function(next) {

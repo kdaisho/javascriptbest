@@ -28,7 +28,6 @@
         &__hero {
             img {
                 display: block;
-                // max-width: 300px;
                 width: 100%;
             }
         }
@@ -49,6 +48,26 @@
             .desc {
                 color: $black;
             }
+
         }
+
+        &__action {
+            display: flex;
+            flex-flow: row wrap;
+            margin-top: .5rem;
+            justify-content: space-between;
+
+            &--edit {
+                svg {
+                    stroke: $lightBlue;
+                }
+            }
+
+            &--like {
+                width: 50px;
+                background: pink;
+            }
+        }
+
     }
 }
