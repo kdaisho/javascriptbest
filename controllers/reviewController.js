@@ -66,3 +66,9 @@ exports.updateReview = async (req, res) => {
     req.flash('success', `Successfully updated <strong>${review.course}</strong>. <a href="/reviews/${review.slug}">View Review</a>`);
     res.redirect(`/reviews/${review._id}/edit`);
 };
+
+exports.getReviewBySlug = async (req, res, next) => {
+    const review = await Review.findOne({ slug: req.params.slug });
+    if (!review) return next();
+    res.render('single', { title: review.course, review });
+};

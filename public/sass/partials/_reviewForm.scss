@@ -1,0 +1,118 @@
+.container.isEdit {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+
+    form {
+        padding: 2.5rem 0 1.5rem;
+
+        label {
+            display: block;
+            font-size: $btnFontSize;
+            margin-bottom: .5rem;
+
+            &[for="image"] {
+                background: $lightBlue;
+                border-radius: .25rem;
+                display: inline-block;
+                margin-bottom: 2rem;
+                padding: .5rem 1rem;
+            }
+        }
+
+        input[type="text"],
+        textarea {
+            border: none;
+            border-radius: .25rem;
+            box-shadow: inset 3px 3px 9px rgba(0, 0, 0, .5);
+            box-sizing: border-box;
+            color: $black;
+            padding: .25rem .75rem 0;
+            margin-bottom: 2rem;
+            width: 100%;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        input[type="text"] {
+            height: 2rem;
+        }
+
+        textarea {
+            height: 10rem;
+            padding: .5rem .75rem 0;
+        }
+
+        input[type="file"] {
+            display: none;
+            font-size: .75rem;
+            height: 2rem;
+
+            &:hover {
+                cursor: poiner;
+            }
+        }
+
+        input[type="submit"] {
+            background: $lightBlue;
+            border: none;
+            border-radius: .25rem;
+            color: #fff;
+            font-size: $btnFontSize;
+            height: 2.25rem;
+            outline: none;
+            width: 100%;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        img.preview {
+            margin: 0 0 1.5rem;
+            vertical-align: top;
+            @media (min-width: 497px) {
+                margin: 0 0 .25rem 2rem;
+            }
+        }
+
+        .tags {
+            display: flex;
+            flex-flow: row wrap;
+            margin: 1rem 0 2rem;
+
+            .tag {
+                &__choice {
+                    display: flex;
+
+                    input[type="checkbox"] {
+                        position: relative;
+                        right: -1.5rem;
+                        top: 7px;
+                        z-index: 10;
+
+                        &:checked + label {
+                            background: $lightBlue;
+                            color: #fff;
+                        }
+                    }
+
+                    label {
+                        background: $lightGrey;
+                        color: $black;
+                        border-radius: .25rem;
+                        display: inline-block;
+                        padding: .5rem .75rem .5rem 1.75rem;
+                        user-select: none;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -17,6 +17,9 @@ router.post('/add/:id',
     catchErrors(reviewController.resize),
     catchErrors(reviewController.updateReview)
 );
+
 router.get('/reviews/:id/edit', catchErrors(reviewController.editReview));
+
+router.get('/review/:slug', catchErrors(reviewController.getReviewBySlug));
 
 module.exports = router;
