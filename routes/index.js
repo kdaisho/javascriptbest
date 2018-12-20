@@ -22,4 +22,7 @@ router.get('/reviews/:id/edit', catchErrors(reviewController.editReview));
 
 router.get('/review/:slug', catchErrors(reviewController.getReviewBySlug));
 
+router.get('/tags', catchErrors(reviewController.getReviewByTag));
+router.get('/tags/:tag', catchErrors(reviewController.getReviewByTag));
+
 module.exports = router;
