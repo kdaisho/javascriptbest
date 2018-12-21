@@ -317,6 +317,9 @@ body {
   .single__url {
     text-decoration: underline; }
 
+.tag__link {
+  background: #0e99e7; }
+
 .flash-messages {
   border-radius: .25rem;
   position: absolute;

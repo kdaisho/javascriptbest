@@ -2,10 +2,10 @@ extends layout
 
 block content
     .container
-        h2.pageTitle= title
+        h2.pageTitle #{tag}
         ul.tags
-            each tag in tags
+            each t in tags
                 li.tag
-                    a.tag__link(href=`/tags/${tag._id}`)
-                        span= tag._id
-                        span= tag.count
+                    a.tag__link(href=`/tags/${t._id}` class=(t._id === tag ? 'tag__link--active' : ''))
+                        span= t._id
+                        span= t.count

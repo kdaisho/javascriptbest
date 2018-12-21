@@ -75,5 +75,6 @@ exports.getReviewBySlug = async (req, res, next) => {
 
 exports.getReviewByTag = async (req, res) => {
     const tags = await Review.getTagsList();
-    res.render('tag', { tags, title: 'Tags' });
+    const tag = req.params.tag;
+    res.render('tag', { tags, title: 'Tags', tag });
 };
