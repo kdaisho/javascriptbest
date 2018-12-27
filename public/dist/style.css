@@ -317,8 +317,28 @@ body {
   .single__url {
     text-decoration: underline; }
 
-.tag__link {
-  background: #0e99e7; }
+.tags {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  margin: 2rem 0; }
+
+.tag {
+  margin: 1rem .5rem;
+  border-radius: .25rem; }
+  .tag__link span {
+    font-weight: bold;
+    color: #444;
+    padding: .5rem 1rem; }
+    .tag__link span.name {
+      background: #fff; }
+    .tag__link span.count {
+      background: #0e99e7;
+      color: #fff; }
+  .tag__link--active span.name {
+    background: #0e99e7;
+    color: #fff; }
 
 .flash-messages {
   border-radius: .25rem;

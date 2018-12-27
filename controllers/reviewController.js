@@ -74,7 +74,10 @@ exports.getReviewBySlug = async (req, res, next) => {
 };
 
 exports.getReviewByTag = async (req, res) => {
-    const tags = await Review.getTagsList();
     const tag = req.params.tag;
-    res.render('tag', { tags, title: 'Tags', tag });
+    const tagQuery = tag || { $exists: true };
+    const tagsPromise = Review.getTagsList();
+    const reviewsPromise = Review.find({ tags: tagQuery });
+    const [tags, reviews] = await Promise.all([tagsPromise, reviewsPromise]);
+    res.render('tag', { tags, title: 'Tags', tag, reviews });
 };

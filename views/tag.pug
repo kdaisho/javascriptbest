@@ -1,11 +1,16 @@
 extends layout
 
+include mixins/_reviewCard
+
 block content
     .container
-        h2.pageTitle #{tag}
+        h2.pageTitle #{tag || 'Tags'}
         ul.tags
             each t in tags
                 li.tag
                     a.tag__link(href=`/tags/${t._id}` class=(t._id === tag ? 'tag__link--active' : ''))
-                        span= t._id
-                        span= t.count
+                        span.name= t._id
+                        span.count= t.count
+        .reviews
+            each review in reviews
+                +reviewCard(review)
