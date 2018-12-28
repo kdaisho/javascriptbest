@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const reviewController = require('../controllers/reviewController');
+const userController = require('../controllers/userController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 // Do work here
@@ -24,5 +25,7 @@ router.get('/review/:slug', catchErrors(reviewController.getReviewBySlug));
 
 router.get('/tags', catchErrors(reviewController.getReviewByTag));
 router.get('/tags/:tag', catchErrors(reviewController.getReviewByTag));
+
+router.get('/login', userController.loginForm);
 
 module.exports = router;

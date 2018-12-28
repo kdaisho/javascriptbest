@@ -207,6 +207,8 @@ body {
         margin-bottom: 2rem;
         padding: .5rem 1rem; }
     .container.isEdit form input[type="text"],
+    .container.isEdit form input[type="email"],
+    .container.isEdit form input[type="password"],
     .container.isEdit form textarea {
       border: none;
       border-radius: .25rem;
@@ -217,9 +219,13 @@ body {
       margin-bottom: 2rem;
       width: 100%; }
       .container.isEdit form input[type="text"]:focus,
+      .container.isEdit form input[type="email"]:focus,
+      .container.isEdit form input[type="password"]:focus,
       .container.isEdit form textarea:focus {
         outline: none; }
-    .container.isEdit form input[type="text"] {
+    .container.isEdit form input[type="text"],
+    .container.isEdit form input[type="email"],
+    .container.isEdit form input[type="password"] {
       height: 2rem; }
     .container.isEdit form textarea {
       height: 10rem;
