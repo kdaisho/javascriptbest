@@ -27,5 +27,6 @@ router.get('/tags', catchErrors(reviewController.getReviewByTag));
 router.get('/tags/:tag', catchErrors(reviewController.getReviewByTag));
 
 router.get('/login', userController.loginForm);
+router.get('/signup', userController.signupForm);
 
 module.exports = router;
