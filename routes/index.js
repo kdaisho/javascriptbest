@@ -29,4 +29,11 @@ router.get('/tags/:tag', catchErrors(reviewController.getReviewByTag));
 router.get('/login', userController.loginForm);
 router.get('/signup', userController.signupForm);
 
+// 1. Validate the registration data
+// 2. Register the user
+// 3. Log them in
+router.post('/signup',
+    userController.validateRegister
+);
+
 module.exports = router;
