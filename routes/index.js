@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const reviewController = require('../controllers/reviewController');
 const userController = require('../controllers/userController');
+const authController = require('../controllers/authController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 // Do work here
@@ -33,7 +34,9 @@ router.get('/signup', userController.signupForm);
 // 2. Register the user
 // 3. Log them in
 router.post('/signup',
-    userController.validateRegister
+    userController.validateRegister,
+    userController.register,
+    authController.login
 );
 
 module.exports = router;
