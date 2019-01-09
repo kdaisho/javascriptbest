@@ -21,7 +21,7 @@ html
                                 a(href="/logout" class=currentPath.startsWith('/logout')? 'nav__active':'') Logout
                             li
                                 a(href="/profile" class=currentPath.startsWith('/profile')? 'nav__active':'')
-                                    img.avatar(src="#")
+                                    img.avatar(src=user.gravatar)
                         else
                             li
                                 a(href="/signup" class=currentPath.startsWith('/signup')? 'nav__active':'') Signup

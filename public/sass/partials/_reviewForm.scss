@@ -17,6 +17,9 @@
                 display: inline-block;
                 margin-bottom: 2rem;
                 padding: .5rem 1rem;
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
 

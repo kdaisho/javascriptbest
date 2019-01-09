@@ -206,6 +206,8 @@ body {
         display: inline-block;
         margin-bottom: 2rem;
         padding: .5rem 1rem; }
+        .container.isEdit form label[for="image"]:hover {
+          cursor: pointer; }
     .container.isEdit form input[type="text"],
     .container.isEdit form input[type="email"],
     .container.isEdit form input[type="password"],
