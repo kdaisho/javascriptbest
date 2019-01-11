@@ -26,6 +26,10 @@
     }
 }
 
+.pageSubtitle {
+    font-size: $pageSubtitleSize;
+}
+
 .backdrop {
     display: none;
     &.active {

@@ -1,8 +1,10 @@
 extends layout
 
 include mixins/_loginForm
+include mixins/_forgot
 
 block content
     .container.isEdit
         h2.pageTitle= title
-        +loginForm
+        +loginForm()
+        +forgotForm()
