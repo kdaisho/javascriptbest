@@ -29,6 +29,17 @@ const reviewSchema = new mongoose.Schema({
         default: Date.now
     },
     image: String
+    // author: {
+    //     type: mongoose.Schema.ObjectId,
+    //     ref: 'User',
+    //     required: 'You must supply an author'
+    // }
+});
+
+// Define our indexes
+reviewSchema.index({
+    course: 'text',
+    description: 'text'
 });
 
 reviewSchema.pre('save', async function(next) {

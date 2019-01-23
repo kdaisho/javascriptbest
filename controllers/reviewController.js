@@ -81,3 +81,19 @@ exports.getReviewByTag = async (req, res) => {
     const [tags, reviews] = await Promise.all([tagsPromise, reviewsPromise]);
     res.render('tag', { tags, title: 'Tags', tag, reviews });
 };
+
+exports.searchReviews = async (req, res) => {
+    const reviews = await Review
+    .find({
+        $text: {
+            $search: req.query.q
+        }
+    }, {
+        score: { $meta: 'textScore' }
+    })
+    .sort({
+        score: { $meta: 'textScore' }
+    })
+    .limit(5);
+    res.json(reviews);
+};
