@@ -141,7 +141,8 @@ body {
   position: absolute;
   top: 1%;
   right: 1.25rem;
-  width: 88%; }
+  width: 88%;
+  max-width: 420px; }
   .search-container .search .search-input {
     background: #666;
     border: none;
@@ -157,6 +158,17 @@ body {
       color: #ccc; }
     .search-container .search .search-input::-ms-input-placeholder {
       color: #ccc; }
+  .search-container .search .search-results a {
+    background: #fff;
+    border-bottom: 2px solid #444;
+    display: block;
+    padding: .25rem .5rem; }
+    .search-container .search .search-results a:hover {
+      background: #444; }
+      .search-container .search .search-results a:hover strong {
+        color: #dcdcdc; }
+    .search-container .search .search-results a strong {
+      color: #444; }
 
 .reviews {
   display: -ms-flexbox;

@@ -84,6 +84,7 @@
     top: 1%;
     right: 1.25rem;
     width: 88%;
+    max-width: 420px;
     .search {
         .search-input {
             background: #666;
@@ -99,6 +100,24 @@
             }
             &::-ms-input-placeholder {
                 color: #ccc;
+            }
+        }
+        .search-results {
+            a {
+                background: #fff;
+                border-bottom: 2px solid $black;
+                display: block;
+                padding: .25rem .5rem;
+                &:hover {
+                    background: $black;
+                    strong {
+                        color: $lightGrey;
+                    }
+                }
+
+                strong {
+                    color: $black;
+                }
             }
         }
     }
