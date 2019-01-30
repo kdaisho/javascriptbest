@@ -158,16 +158,18 @@ body {
       color: #ccc; }
     .search-container .search .search-input::-ms-input-placeholder {
       color: #ccc; }
-  .search-container .search .search-results a {
+  .search-container .search .search-results .search-result {
     background: #fff;
     border-bottom: 2px solid #444;
     display: block;
     padding: .25rem .5rem; }
-    .search-container .search .search-results a:hover {
+    .search-container .search .search-results .search-result:hover {
       background: #444; }
-      .search-container .search .search-results a:hover strong {
+      .search-container .search .search-results .search-result:hover strong {
         color: #dcdcdc; }
-    .search-container .search .search-results a strong {
+    .search-container .search .search-results .search-result.isActive {
+      background: #dcdcdc; }
+    .search-container .search .search-results .search-result strong {
       color: #444; }
 
 .reviews {
