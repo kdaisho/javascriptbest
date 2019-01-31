@@ -1,4 +1,5 @@
 import axios from 'axios';
+import dompurify from 'dompurify';
 
 function searchResultsHTML(reviews) {
     return reviews.map(review => {
@@ -29,52 +30,43 @@ function typeAhead(search) {
             .get(`/api/search?q=${this.value}`)
             .then(res => {
                 if (res.data.length) {
-                    searchResults.innerHTML = searchResultsHTML(res.data);
+                    searchResults.innerHTML = dompurify.sanitize(searchResultsHTML(res.data));
                     return false;
                 }
-                // Tell user nothing came back
-
+                searchResults.innerHTML = dompurify.sanitize(`<div class="search-result">No results for ${this.value}</div>`);
             })
             .catch(err => {
                 console.log(error(err));
             });
-
-        searchInput.on('keyup', (event) => {
-            console.log(event.keyCode);
-            if (![38, 40, 13].includes(event.keyCode)) {
-                return false;
-            };
-            const activeClass = 'isActive';
-            const current = search.querySelector(`.${activeClass}`);
-            const items = search.querySelectorAll('.search-result');
-            console.log(items);
-            let next;
-            if (event.keyCode === 40 && current) {
-                console.log('curr-nextElementSibling', current.nextElementSibling);
-                next = current.nextElementSibling || items[0];
-                console.log('NEXT', next);
-            }
-            else if (event.keyCode === 40) {
-                next = items[3];
-            }
-            else if (event.keyCode === 38 && current) {
-                console.log('current-previous', current.previousElementSibling);
-
-                next = current.previousElementSibling || items[items.length - 1];
-            }
-            else if (event.keyCode === 38) {
-                next = items[items.length - 1];
-            }
-            else if (event.keyCode === 13 && current.href) {
-                window.location = current.href;
-                return false;
-            }
-
-            if (current) {
-                current.classList.remove(activeClass);
-            }
-            next.classList.add(activeClass);
-        });
+    });
+    searchInput.on('keyup', (event) => {
+        if (![38, 40, 13].includes(event.keyCode)) {
+            return;
+        }
+        const activeClass = 'isActive';
+        const current = search.querySelector(`.${activeClass}`);
+        const items = search.querySelectorAll('.search-result');
+        let next;
+        if (event.keyCode === 40 && current) {
+            next = current.nextElementSibling || items[0];
+        }
+        else if (event.keyCode === 40) {
+            next = items[0];
+        }
+        else if (event.keyCode === 38 && current) {
+            next = current.previousElementSibling || items[items.length - 1];
+        }
+        else if (event.keyCode === 38) {
+            next = items[items.length - 1];
+        }
+        else if (event.keyCode === 13 && current.href) {
+            window.location = current.href;
+            return;
+        }
+        if (current) {
+            current.classList.remove(activeClass);
+        }
+        next.classList.add(activeClass);
     });
 }
 
