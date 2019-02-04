@@ -97,13 +97,16 @@ body {
   @media (min-width: 1024px) {
     .nav {
       left: 0; } }
-  .nav li a {
+  .nav li a,
+  .nav li button {
     display: block;
     font-size: 1.25rem;
     font-weight: bold;
+    margin: 0 auto;
     padding: .75rem;
     text-transform: uppercase; }
-    .nav li a:hover {
+    .nav li a:hover,
+    .nav li button:hover {
       background: #0b79b7; }
   .nav__active {
     background: #0b79b7; }
@@ -138,11 +141,15 @@ body {
     padding: 2rem 0; }
 
 .search-container {
+  display: none;
   position: absolute;
-  top: 1%;
+  top: 5%;
   right: 1.25rem;
   width: 88%;
-  max-width: 420px; }
+  max-width: 420px;
+  z-index: 100; }
+  .search-container.active {
+    display: block; }
   .search-container .search .search-input {
     background: #666;
     border: none;

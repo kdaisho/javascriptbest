@@ -18,10 +18,12 @@
         left: 0;
     }
 
-    li a {
+    li a,
+    li button {
         display: block;
         font-size: 1.25rem;
         font-weight: bold;
+        margin: 0 auto;
         padding: .75rem;
         text-transform: uppercase;
 
@@ -80,11 +82,16 @@
 }
 
 .search-container {
+    display: none;
     position: absolute;
-    top: 1%;
+    top: 5%;
     right: 1.25rem;
     width: 88%;
     max-width: 420px;
+    z-index: 100;
+    &.active {
+        display: block;
+    }
     .search {
         .search-input {
             background: #666;

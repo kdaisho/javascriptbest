@@ -38,7 +38,7 @@ html
                         li
                             a(href="/add" class=currentPath.startsWith('/add')? 'nav__active':'') Add Review
                         li
-                            a(href="/search") Search
+                            button(id="searchButton") Search
         block messages
             if locals.flashes
                 .container
@@ -52,7 +52,7 @@ html
         .content
             .search-container
                 .search
-                    input.search-input(type="text" placeholder="Search reviews.." name="search")
+                    input.search-input(type="text" id="searchInput" placeholder="Search reviews.." name="search")
                     .search-results
             block content
 
