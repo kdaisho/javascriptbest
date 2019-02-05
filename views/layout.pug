@@ -10,7 +10,10 @@ html
             aside.nav#nav
                 .nav__top
                     button.nav__top__button.toggleNav
-                        != h.icon('menu')
+                        span.hamburger
+                            != h.icon('menu')
+                        span.close
+                            != h.icon('close')
                     .nav__top__logo
                         h1 Frontend Masters Review
                     ul.nav__top__links
@@ -20,8 +23,8 @@ html
                             li
                                 a(href="/logout" class=currentPath.startsWith('/logout')? 'nav__active':'') Logout
                             li
-                                a(href="/account" class=currentPath.startsWith('/account')? 'nav__active':'')
-                                    img.avatar(src=user.gravatar)
+                                a(href="/account" class=currentPath.startsWith('/account')? 'nav__active':'' class="avatar")
+                                    img(src=user.gravatar)
                         else
                             li
                                 a(href="/signup" class=currentPath.startsWith('/signup')? 'nav__active':'') Signup
@@ -38,7 +41,7 @@ html
                         li
                             a(href="/add" class=currentPath.startsWith('/add')? 'nav__active':'') Add Review
                         li
-                            button(id="searchButton") Search
+                            button(id="searchButton") Search Review
         block messages
             if locals.flashes
                 .container

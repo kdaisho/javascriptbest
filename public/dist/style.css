@@ -94,6 +94,12 @@ body {
   z-index: 30; }
   .nav.active {
     left: 0; }
+    .nav.active .nav__top__button span.hamburger {
+      display: none; }
+    .nav.active .nav__top__button span.close {
+      display: block; }
+  .nav .nav__top__button .close {
+    display: none; }
   @media (min-width: 1024px) {
     .nav {
       left: 0; } }
@@ -103,8 +109,18 @@ body {
     font-size: 1.25rem;
     font-weight: bold;
     margin: 0 auto;
-    padding: .75rem;
+    padding: .5rem .75rem;
     text-transform: uppercase; }
+    .nav li a.avatar,
+    .nav li button.avatar {
+      padding: .5rem .75rem 0;
+      text-align: center; }
+      .nav li a.avatar img,
+      .nav li button.avatar img {
+        border-radius: .25rem;
+        display: block;
+        margin: 0 auto;
+        width: 75px; }
     .nav li a:hover,
     .nav li button:hover {
       background: #0b79b7; }
@@ -112,11 +128,13 @@ body {
     background: #0b79b7; }
   .nav__top {
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
-    padding: 2rem 0 1.5rem; }
+    padding: 1.5rem 0 1rem; }
     .nav__top__logo {
       font-size: 1.75rem;
       font-weight: bold;
-      margin-bottom: 2rem; }
+      margin-bottom: 1rem; }
+      .nav__top__logo h1 {
+        line-height: 1; }
     .nav__top__button {
       background: #0e99e7;
       border: none;
@@ -124,12 +142,17 @@ body {
       box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.5);
       display: -ms-flexbox;
       display: flex;
+      -ms-flex-pack: center;
+          justify-content: center;
       position: absolute;
       right: -42px;
       height: 42px;
       width: 42px; }
-      .nav__top__button svg {
-        fill: #fff; }
+      .nav__top__button span {
+        height: 31px;
+        display: block; }
+        .nav__top__button span svg {
+          fill: #fff; }
       .nav__top__button:active, .nav__top__button:focus {
         outline: none; }
       .nav__top__button:hover {
@@ -138,7 +161,7 @@ body {
         .nav__top__button {
           display: none; } }
   .nav__main {
-    padding: 2rem 0; }
+    padding: 1.25rem 0; }
 
 .search-container {
   display: none;
