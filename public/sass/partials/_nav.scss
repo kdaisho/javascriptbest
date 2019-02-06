@@ -18,6 +18,7 @@
                 &.hamburger {
                     display: none;
                 }
+
                 &.close {
                     display: block;
                 }
@@ -47,6 +48,7 @@
         &.avatar {
             padding: .5rem .75rem 0;
             text-align: center;
+
             img {
                 border-radius: .25rem;
                 display: block;
@@ -93,6 +95,7 @@
             span {
                 height: 31px;
                 display: block;
+
                 svg {
                     fill: #fff;
                 }
@@ -122,48 +125,57 @@
     display: none;
     position: absolute;
     top: 5%;
-    right: 1.25rem;
-    width: 88%;
-    max-width: 420px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
     z-index: 100;
+
     &.active {
         display: block;
     }
+
     .search {
         .search-input {
-            background: #666;
+            background: transparent;
             border: none;
-            box-shadow: inset 0 0 6px #000;
             box-sizing: border-box;
             color: #fff;
             outline: none;
             padding: .5rem .5rem .35rem;
             width: 100%;
+
             &::placeholder {
                 color: #ccc;
             }
+
             &::-ms-input-placeholder {
                 color: #ccc;
             }
         }
+
         .search-results {
             .search-result {
-                background: #fff;
                 border-bottom: 2px solid $black;
                 display: block;
                 padding: .25rem .5rem;
+
                 &:hover {
                     background: $black;
+
                     strong {
-                        color: $lightGrey;
+                        color: $black;
                     }
                 }
+
                 &.isActive {
-                    background: $lightGrey;
+                    background: #fff;
+                    strong {
+                        color: #000;
+                    }
                 }
 
                 strong {
-                    color: $black;
+                    color: #fff;
                 }
             }
         }
