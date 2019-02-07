@@ -953,8 +953,8 @@ exports.$$ = $$;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-function toggleNav(nav, trigger) {
-    trigger.on('click', function () {
+function toggleNav(nav, menuButton, backdrop) {
+    menuButton.on('click', function () {
         nav.classList.toggle('active');
         backdrop.classList.toggle('active');
     });
@@ -972,22 +972,30 @@ exports.default = toggleNav;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-function toggleSearch(button, nav, toggleElements, input, searchContainer) {
+function toggleSearch(searchButton, nav, menuButton, backdrop, input, searchContainer, searchResults) {
     var showSearch = false;
-    button.on('click', function () {
+    searchButton.on('click', function () {
         nav.classList.toggle('active');
-        console.log(toggleElements);
-        toggleElements[0].classList.toggle('active');
+        if (showSearch) {
+            backdrop.classList.remove('active');
+        }
+        backdrop.classList.add('active');
+        backdrop.style.zIndex = '70';
+        menuButton.classList.toggle('active');
         searchContainer.classList.toggle('active');
         input.focus();
         showSearch = true;
     });
-
-    toggleElements[1].on('click', function () {
+    console.log(searchResults);
+    backdrop.on('click', function () {
         if (showSearch) {
-            nav.classList.remove('active');
+            backdrop.classList.remove('active');
+            input.value = '';
+            searchResults.innerHTML = '';
+            searchContainer.classList.remove('active');
+            backdrop.style.zIndex = '30';
+            showSearch = false;
         }
-        searchContainer.classList.remove('active');
     });
 }
 
@@ -1033,7 +1041,6 @@ function typeAhead(search) {
             searchResults.style.display = 'none';
             return;
         }
-
         searchResults.style.display = 'block';
         searchResults.innerHTML = '';
 
@@ -2717,10 +2724,8 @@ var _typeAhead2 = _interopRequireDefault(_typeAhead);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// toggleNav($('#nav'), $('#toggleButton'), $('#backdrop'));
-(0, _nav2.default)((0, _bling.$)('#nav'), (0, _bling.$$)('.toggleNav'));
-(0, _search2.default)((0, _bling.$)('#searchButton'), (0, _bling.$)('#nav'), (0, _bling.$$)('.toggleNav'), (0, _bling.$)('#searchInput'), (0, _bling.$)('.search-container'));
-
+(0, _nav2.default)((0, _bling.$)('#nav'), (0, _bling.$)('#hamburger'), (0, _bling.$)('#backdrop'));
+(0, _search2.default)((0, _bling.$)('#searchButton'), (0, _bling.$)('#nav'), (0, _bling.$)('#hamburger'), (0, _bling.$)('#backdrop'), (0, _bling.$)('#searchInput'), (0, _bling.$)('.search-container'), (0, _bling.$)('.search-results'));
 (0, _typeAhead2.default)((0, _bling.$)('.search'));
 
 /***/ })

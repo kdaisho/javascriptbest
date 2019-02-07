@@ -9,7 +9,7 @@ html
         block nav
             aside.nav#nav
                 .nav__top
-                    button.nav__top__button.toggleNav
+                    button.nav__top__button#hamburger
                         span.hamburger
                             != h.icon('menu')
                         span.close
@@ -53,13 +53,13 @@ html
                                     button.flash__remove(onClick="this.parentElement.remove()") &times;
                                     p.flash__text!= message
         .content
+            .backdrop#backdrop
             .search-container
                 .search
                     input.search-input(type="text" id="searchInput" placeholder="Search reviews.." name="search")
                     .search-results
             block content
 
-        .backdrop.toggleNav#backdrop
 
         block scripts
             script(src="/dist/App.bundle.js")

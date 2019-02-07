@@ -22,7 +22,6 @@ function typeAhead(search) {
             searchResults.style.display = 'none';
             return;
         }
-
         searchResults.style.display = 'block';
         searchResults.innerHTML = '';
 

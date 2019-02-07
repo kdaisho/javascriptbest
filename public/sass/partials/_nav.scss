@@ -8,7 +8,7 @@
     top: 0;
     width: 200px;
     transition: left .2s ease-out;
-    z-index: 30;
+    z-index: 60;
 
     &.active {
         left: 0;
@@ -38,12 +38,17 @@
 
     li a,
     li button {
+        background: transparent;
+        border: none;
+        box-sizing: border-box;
         display: block;
         font-size: 1.25rem;
         font-weight: bold;
         margin: 0 auto;
-        padding: .5rem .75rem;
+        outline: none;
+        padding: .6rem .75rem .4rem;
         text-transform: uppercase;
+        width: 100%;
 
         &.avatar {
             padding: .5rem .75rem 0;
@@ -57,8 +62,9 @@
             }
         }
 
-        &:hover {
+        &:hover:not(.avatar) {
             background: darken($lightBlue, 10%);
+            cursor: pointer;
         }
     }
 
@@ -128,6 +134,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
+    max-width: 480px;
     z-index: 100;
 
     &.active {

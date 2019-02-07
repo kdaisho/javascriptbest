@@ -1,19 +1,27 @@
-function toggleSearch (button, nav, toggleElements, input, searchContainer) {
+function toggleSearch (searchButton, nav, menuButton, backdrop, input, searchContainer, searchResults) {
     let showSearch = false;
-    button.on('click', () => {
+    searchButton.on('click', () => {
         nav.classList.toggle('active');
-        console.log(toggleElements);
-        toggleElements[0].classList.toggle('active');
+        if (showSearch) {
+            backdrop.classList.remove('active');
+        }
+        backdrop.classList.add('active');
+        backdrop.style.zIndex = '70';
+        menuButton.classList.toggle('active');
         searchContainer.classList.toggle('active');
         input.focus();
         showSearch = true;
     });
-
-    toggleElements[1].on('click', () => {
+    console.log(searchResults);
+    backdrop.on('click', () => {
         if (showSearch) {
-            nav.classList.remove('active');
+            backdrop.classList.remove('active');
+            input.value = '';
+            searchResults.innerHTML = '';
+            searchContainer.classList.remove('active');
+            backdrop.style.zIndex = '30';
+            showSearch = false;
         }
-        searchContainer.classList.remove('active');
     });
 }
 
