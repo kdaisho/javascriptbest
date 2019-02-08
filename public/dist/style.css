@@ -47,12 +47,6 @@ body {
   @media (min-width: 1024px) {
     .content {
       margin-left: 200px; } }
-  @media (min-width: 1921px) {
-    .content {
-      max-width: 1720px;
-      margin: 0 auto;
-      -ms-transform: translateX(5.75%);
-          transform: translateX(5.75%); } }
 
 .pageTitle {
   font-size: 1.75rem; }
@@ -186,6 +180,7 @@ body {
     border: none;
     box-sizing: border-box;
     color: #fff;
+    font-size: 1.75rem;
     outline: none;
     padding: .5rem .5rem .35rem;
     width: 100%; }
@@ -208,6 +203,7 @@ body {
       .search-container .search .search-results .search-result.isActive strong {
         color: #000; }
     .search-container .search .search-results .search-result strong {
+      font-size: 1.25rem;
       color: #fff; }
 
 .reviews {
