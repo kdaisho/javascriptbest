@@ -8,40 +8,41 @@ html
     body
         block nav
             aside.nav#nav
-                .nav__top
-                    button.nav__top__button#hamburger
-                        span.hamburger
-                            != h.icon('menu')
-                        span.close
-                            != h.icon('close')
-                    .nav__top__logo
-                        h1 Frontend Masters Review
-                    ul.nav__top__links
-                        if user
+                button.nav__hamburger#hamburger
+                    span.hamburger
+                        != h.icon('menu')
+                    span.close
+                        != h.icon('close')
+                .nav__wrapper
+                    .nav__wrapper__top
+                        .logo
+                            h1 Frontend Masters Review
+                        ul
+                            if user
+                                li(class=currentPath.startsWith('/likes')? 'nav__active':'')
+                                    a(href="/likes" ) Likes
+                                li
+                                    a(href="/logout" class=currentPath.startsWith('/logout')? 'nav__active':'') Logout
+                                li
+                                    a(href="/account" class=currentPath.startsWith('/account')? 'nav__active':'' class="avatar")
+                                        img(src=user.gravatar)
+                            else
+                                li
+                                    a(href="/signup" class=currentPath.startsWith('/signup')? 'nav__active':'') Signup
+                                li
+                                    a(href="/login" class=currentPath.startsWith('/login')? 'nav__active':'') Login
+                    .nav__wrapper__main
+                        ul
                             li
-                                a(href="/likes" class=currentPath.startsWith('/likes')? 'nav__active':'') Likes
+                                a(href="/reviews" class=currentPath.startsWith('/reviews')? 'nav__active':'') Reviews
                             li
-                                a(href="/logout" class=currentPath.startsWith('/logout')? 'nav__active':'') Logout
+                                a(href="/tags" class=currentPath.startsWith('/tags')? 'nav__active':'') Tags
                             li
-                                a(href="/account" class=currentPath.startsWith('/account')? 'nav__active':'' class="avatar")
-                                    img(src=user.gravatar)
-                        else
+                                a(href="/popular" class=currentPath.startsWith('/popular')? 'nav__active':'') Popular
                             li
-                                a(href="/signup" class=currentPath.startsWith('/signup')? 'nav__active':'') Signup
+                                a(href="/add" class=currentPath.startsWith('/add')? 'nav__active':'') Add Review
                             li
-                                a(href="/login" class=currentPath.startsWith('/login')? 'nav__active':'') Login
-                .nav__main
-                    ul.nav__main__links
-                        li
-                            a(href="/reviews" class=currentPath.startsWith('/reviews')? 'nav__active':'') Reviews
-                        li
-                            a(href="/tags" class=currentPath.startsWith('/tags')? 'nav__active':'') Tags
-                        li
-                            a(href="/popular" class=currentPath.startsWith('/popular')? 'nav__active':'') Popular
-                        li
-                            a(href="/add" class=currentPath.startsWith('/add')? 'nav__active':'') Add Review
-                        li
-                            button(id="searchButton") Search Review
+                                button(id="searchButton") Search Review
         block messages
             if locals.flashes
                 .container

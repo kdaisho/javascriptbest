@@ -1,4 +1,5 @@
 **/.DS_Store
 **/node_modules/**
 variables.env
-public/dist/**.map
+public/dist/App.bundle.js.map
+public/dist/style.css.map
