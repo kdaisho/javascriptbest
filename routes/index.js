@@ -51,5 +51,6 @@ router.post('/account/reset/:token',
 );
 
 router.get('/api/search', catchErrors(reviewController.searchReviews));
+router.post('/api/reviews/:id/like', catchErrors(reviewController.likeReview));
 
 module.exports = router;

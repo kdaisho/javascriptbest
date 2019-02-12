@@ -21,7 +21,13 @@ const userSchema = new Schema({
         trim: true
     },
     resetPasswordToken: String,
-    resetPasswordExpires: Date
+    resetPasswordExpires: Date,
+    likes: [
+        {
+            type: mongoose.Schema.ObjectId,
+            ref: 'Review'
+        }
+    ]
 });
 
 userSchema.virtual('gravatar').get(function() {

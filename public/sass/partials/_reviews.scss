@@ -52,20 +52,36 @@
         }
 
         &__action {
+            align-items: center;
             display: flex;
             flex-flow: row wrap;
             margin-top: .5rem;
-            justify-content: space-between;
+            justify-content: flex-end;
 
             &--edit {
+                flex: 0 0 10%;
                 svg {
                     stroke: $lightBlue;
+                    stroke-width: 2.5;
                 }
             }
 
             &--like {
-                width: 50px;
-                background: pink;
+                flex: 0 0 10%;
+                button {
+                    background: none;
+                    border: 0;
+                    outline: none;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                svg {
+                    stroke: $lightBlue;
+                    stroke-width: 2;
+                    // fill: $lightBlue;
+                    fill: none;
+                }
             }
         }
 

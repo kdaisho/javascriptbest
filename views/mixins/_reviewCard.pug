@@ -8,12 +8,12 @@ mixin reviewCard(review = {})
             p.desc= review.description.split(' ').slice(0, 20).join(' ')
             .review__action
                 .review__action--edit
-                    a(href=`/reviews/${review._id}/edit`)
+                    a(href=`/reviews/${review._id}/edit` title="Edit")
                         != h.icon('edit')
                 .review__action--like
-            //- if user
-                //- form.like(method="POST" action=`/api/review/${review._id}/like`)
-                //-     - const likeStrings = user.likes.map(obj => obj.toString())
-                //-     - const likeClass = likeStrings.includes(review._id.toString()) ? 'isLiked' : ''
-                //-     button.like__button(type="submit" name="like" class=likeClass)
-                //-         != h.icon('like')
+                    if user
+                    form.like(method="POST" action=`/api/reviews/${review._id}/like`)
+                        - const likeStrings = user.likes.map(obj => obj.toString())
+                        - const likeClass = likeStrings.includes(review._id.toString()) ? 'isLiked' : ''
+                        button.like__button(type="submit" name="like" class=likeClass title="Like")
+                            != h.icon('like')

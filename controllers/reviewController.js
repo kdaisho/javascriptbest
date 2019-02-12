@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Review = mongoose.model('Review');
+const User = mongoose.model('User');
 const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
@@ -97,3 +98,13 @@ exports.searchReviews = async (req, res) => {
     .limit(5);
     res.json(reviews);
 };
+
+exports.likeReview = async (req, res) => {
+    const likes = req.user.likes.map(obj => obj.toString());
+    const operator = likes.includes(req.param.id) ? '$pull' : '$addToSet';
+    const user = await User.findByIdAndUpdate(req.user._id,
+        { [operator]: { likes: req.params.id }},
+        { new: true }
+    );
+    res.json(user);
+}
