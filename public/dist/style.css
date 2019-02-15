@@ -134,6 +134,7 @@ body {
     .nav__wrapper__main {
       padding: 1.25rem 0; }
     .nav__wrapper li a,
+    .nav__wrapper li span,
     .nav__wrapper li button {
       background: transparent;
       border: none;
@@ -147,24 +148,29 @@ body {
       text-transform: uppercase;
       width: 100%; }
       .nav__wrapper li a.avatar,
+      .nav__wrapper li span.avatar,
       .nav__wrapper li button.avatar {
         padding: .5rem .75rem 0;
         text-align: center; }
         .nav__wrapper li a.avatar img,
+        .nav__wrapper li span.avatar img,
         .nav__wrapper li button.avatar img {
           border-radius: .25rem;
           display: block;
           margin: 0 auto;
           width: 75px; }
       .nav__wrapper li a:hover:not(.avatar),
+      .nav__wrapper li span:hover:not(.avatar),
       .nav__wrapper li button:hover:not(.avatar) {
         background: #0b79b7;
         cursor: pointer; }
       @media (min-width: 1024px) {
         .nav__wrapper li a.nav__active,
+        .nav__wrapper li span.nav__active,
         .nav__wrapper li button.nav__active {
           position: relative; }
           .nav__wrapper li a.nav__active:after,
+          .nav__wrapper li span.nav__active:after,
           .nav__wrapper li button.nav__active:after {
             content: "";
             height: 0;
@@ -176,6 +182,7 @@ body {
             right: -12px;
             top: calc(50% - 12px); }
           .nav__wrapper li a.nav__active:hover:after,
+          .nav__wrapper li span.nav__active:hover:after,
           .nav__wrapper li button.nav__active:hover:after {
             border-left: 12px solid #0b79b7; } }
   .nav.active {
@@ -295,10 +302,12 @@ body {
           outline: none; }
           .reviews .review__action--like button:hover {
             cursor: pointer; }
-        .reviews .review__action--like svg {
-          stroke: #0e99e7;
-          stroke-width: 2;
-          fill: none; }
+          .reviews .review__action--like button svg {
+            stroke: #0e99e7;
+            stroke-width: 2;
+            fill: none; }
+          .reviews .review__action--like button.isLiked svg {
+            fill: #0e99e7; }
 
 .container.isEdit {
   width: 100%;

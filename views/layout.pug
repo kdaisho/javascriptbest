@@ -20,7 +20,7 @@ html
                         ul
                             if user
                                 li(class=currentPath.startsWith('/likes')? 'nav__active':'')
-                                    a(href="/likes" ) Likes
+                                    span Likes #{user.likes && user.likes.length}
                                 li
                                     a(href="/logout" class=currentPath.startsWith('/logout')? 'nav__active':'') Logout
                                 li
@@ -42,7 +42,7 @@ html
                             li
                                 a(href="/add" class=currentPath.startsWith('/add')? 'nav__active':'') Add Review
                             li
-                                button(id="searchButton") Search Review
+                                button(id="searchButton") Search
         block messages
             if locals.flashes
                 .container

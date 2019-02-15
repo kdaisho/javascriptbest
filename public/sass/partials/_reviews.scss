@@ -75,15 +75,18 @@
                     &:hover {
                         cursor: pointer;
                     }
-                }
-                svg {
-                    stroke: $lightBlue;
-                    stroke-width: 2;
-                    // fill: $lightBlue;
-                    fill: none;
+                    svg {
+                        stroke: $lightBlue;
+                        stroke-width: 2;
+                        fill: none;
+                    }
+                    &.isLiked {
+                        svg {
+                            fill: $lightBlue;
+                        }
+                    }
                 }
             }
         }
-
     }
 }
