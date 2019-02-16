@@ -49,6 +49,7 @@ router.post('/account/reset/:token',
     authController.confirmedPasswords,
     catchErrors(authController.update)
 );
+router.get('/likes', authController.isLoggedIn, catchErrors(reviewController.getLikes));
 
 router.get('/api/search', catchErrors(reviewController.searchReviews));
 router.post('/api/reviews/:id/like', catchErrors(reviewController.likeReview));

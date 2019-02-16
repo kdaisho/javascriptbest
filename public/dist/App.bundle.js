@@ -2722,11 +2722,51 @@ var _typeAhead = __webpack_require__(11);
 
 var _typeAhead2 = _interopRequireDefault(_typeAhead);
 
+var _like = __webpack_require__(34);
+
+var _like2 = _interopRequireDefault(_like);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _nav2.default)((0, _bling.$)('#nav'), (0, _bling.$)('#hamburger'), (0, _bling.$)('#backdrop'));
 (0, _search2.default)((0, _bling.$)('#searchButton'), (0, _bling.$)('#nav'), (0, _bling.$)('#hamburger'), (0, _bling.$)('#backdrop'), (0, _bling.$)('#searchInput'), (0, _bling.$)('.search-container'), (0, _bling.$)('.search-results'));
 (0, _typeAhead2.default)((0, _bling.$)('.search'));
+
+var likeForms = (0, _bling.$$)('form.like');
+likeForms.on('submit', _like2.default);
+
+/***/ }),
+/* 33 */,
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _axios = __webpack_require__(13);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _bling = __webpack_require__(8);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ajaxLike(event) {
+    var _this = this;
+
+    event.preventDefault();
+    console.log('like it');
+    _axios2.default.post(this.action).then(function (res) {
+        var isLiked = _this.like.classList.toggle('isLiked');
+        (0, _bling.$)('.likes-count').textContent = res.data.likes.length;
+    }).catch(console.error);
+}
+
+exports.default = ajaxLike;
 
 /***/ })
 /******/ ]);

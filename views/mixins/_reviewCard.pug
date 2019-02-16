@@ -12,8 +12,8 @@ mixin reviewCard(review = {})
                         != h.icon('edit')
                 .review__action--like
                     if user
-                    form.like(method="POST" action=`/api/reviews/${review._id}/like`)
-                        - const likeStrings = user.likes.map(obj => obj.toString())
-                        - const likeClass = likeStrings.includes(review._id.toString()) ? 'isLiked' : ''
-                        button.like__button(type="submit" name="like" class=likeClass title="Like")
-                            != h.icon('like')
+                        form.like(method="POST" action=`/api/reviews/${review._id}/like`)
+                            - const likeStrings = user.likes.map(obj => obj.toString())
+                            - const likeClass = likeStrings.includes(review._id.toString()) ? 'isLiked' : ''
+                            button.like__button(type="submit" name="like" class=likeClass title="Like")
+                                != h.icon('like')

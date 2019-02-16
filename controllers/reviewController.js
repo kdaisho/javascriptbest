@@ -107,4 +107,11 @@ exports.likeReview = async (req, res) => {
         { new: true }
     );
     res.json(user);
-}
+};
+
+exports.getLikes = async (req, res) => {
+    const reviews = await Review.find({
+        _id: { $in: req.user.likes }
+    });
+    res.render('reviews', { title: 'Liked Reviews', reviews });
+};

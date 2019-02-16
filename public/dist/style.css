@@ -147,6 +147,10 @@ body {
       padding: .6rem .75rem .4rem;
       text-transform: uppercase;
       width: 100%; }
+      .nav__wrapper li a.likes-count,
+      .nav__wrapper li span.likes-count,
+      .nav__wrapper li button.likes-count {
+        display: inline; }
       .nav__wrapper li a.avatar,
       .nav__wrapper li span.avatar,
       .nav__wrapper li button.avatar {
@@ -159,9 +163,9 @@ body {
           display: block;
           margin: 0 auto;
           width: 75px; }
-      .nav__wrapper li a:hover:not(.avatar),
-      .nav__wrapper li span:hover:not(.avatar),
-      .nav__wrapper li button:hover:not(.avatar) {
+      .nav__wrapper li a:hover:not(.avatar):not(.likes-count),
+      .nav__wrapper li span:hover:not(.avatar):not(.likes-count),
+      .nav__wrapper li button:hover:not(.avatar):not(.likes-count) {
         background: #0b79b7;
         cursor: pointer; }
       @media (min-width: 1024px) {
@@ -269,7 +273,7 @@ body {
       width: 100%; }
     .reviews .review__details {
       background: #efefef;
-      padding: 1rem .5rem; }
+      padding: 1rem .5rem .5rem; }
       .reviews .review__details .title a {
         display: block;
         color: #0e99e7;
@@ -285,17 +289,18 @@ body {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
       margin-top: .5rem;
-      -ms-flex-pack: end;
-          justify-content: flex-end; }
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
       .reviews .review__action--edit {
-        -ms-flex: 0 0 10%;
-            flex: 0 0 10%; }
+        -ms-flex: 0 0 12%;
+            flex: 0 0 12%;
+        padding: 2px 8px 0; }
         .reviews .review__action--edit svg {
           stroke: #0e99e7;
           stroke-width: 2.5; }
       .reviews .review__action--like {
-        -ms-flex: 0 0 10%;
-            flex: 0 0 10%; }
+        -ms-flex: 0 0 12%;
+            flex: 0 0 12%; }
         .reviews .review__action--like button {
           background: none;
           border: 0;

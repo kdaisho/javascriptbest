@@ -19,8 +19,9 @@ html
                             h1 Frontend Masters Review
                         ul
                             if user
-                                li(class=currentPath.startsWith('/likes')? 'nav__active':'')
-                                    span Likes #{user.likes && user.likes.length}
+                                li
+                                    a(href="/likes" class=currentPath.startsWith('/likes')? 'nav__active':'') Like
+                                       span.likes-count #{user.likes && user.likes.length}
                                 li
                                     a(href="/logout" class=currentPath.startsWith('/logout')? 'nav__active':'') Logout
                                 li
