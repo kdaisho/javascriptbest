@@ -1,0 +1,72 @@
+.reviewer {
+    margin: 1.25rem 0;
+
+    &__text {
+        border-radius: .25rem;
+        box-sizing: border-box;
+        color: $black;
+        height: 10rem;
+        margin: 0 0 1.25rem;
+        padding: .5rem;
+        width: 100%;
+    }
+
+    &__meta {
+
+    }
+
+    &__stars {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        input[type="radio"] {
+            display: none;
+            &:checked {
+                & ~ label {
+                    color: yellow;
+                }
+            }
+
+            & + label {
+                font-size: 0;
+                flex: 0 0 3rem;
+                &:before {
+                    content: '★';
+                    font-size: 2rem;
+                }
+                &[for="star5"] {
+                    order: 5;
+                }
+                &[for="star4"] {
+                    order: 4;
+                }
+                &[for="star3"] {
+                    order: 3;
+                }
+                &[for="star2"] {
+                    order: 2;
+                }
+                &[for="star1"] {
+                    order: 1;
+                }
+                &:hover,
+                &:hover ~ label {
+                    color: lighten(yellow, 0);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .button {
+        background: $lightBlue;
+        border: none;
+        border-radius: .25rem;
+        color: #fff;
+        font-size: $btnFontSize;
+        height: 2.25rem;
+        line-height: 2.5rem;
+        outline: none;
+        width: 100%;
+    }
+}

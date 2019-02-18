@@ -16,7 +16,8 @@
                 border-radius: .25rem;
                 display: inline-block;
                 margin-bottom: 2rem;
-                padding: .5rem 1rem;
+                line-height: 2.5rem;
+                padding: 0 1rem;
                 &:hover {
                     cursor: pointer;
                 }
@@ -69,6 +70,7 @@
             color: #fff;
             font-size: $btnFontSize;
             height: 2.25rem;
+            line-height: 2.5rem;
             outline: none;
             width: 100%;
 

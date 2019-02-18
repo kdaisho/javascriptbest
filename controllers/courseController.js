@@ -71,7 +71,7 @@ exports.updateCourse = async (req, res) => {
 exports.getCourseBySlug = async (req, res, next) => {
     const course = await Course.findOne({ slug: req.params.slug });
     if (!course) return next();
-    res.render('single', { title: course.course, course });
+    res.render('course', { title: course.course, course });
 };
 
 exports.getCourseByTag = async (req, res) => {

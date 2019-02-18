@@ -1,14 +1,16 @@
 extends layout
 
+include mixins/_reviewForm
+
 block content
-    .single
-        .single__hero
+    .course
+        .course__hero
             img.hero(src=`/uploads/${course.image || 'course.jpg'}`)
-            .single__heading
+            .course__heading
                 h2.title
                     a(href=`/course/${course.slug}`) #{course.course}
                 h3.instructor By #{course.instructor}
-        .single__description
+        .course__description
             p.description= course.description
 
             if course.tags
@@ -17,4 +19,7 @@ block content
                         li.tag
                             a.tag__link(href=`/tags/${tag}`) ##{tag}
 
-            a.single__url(href=`${course.url}` target="_blank" title=`Visit ${course.course}`) Visit this course
+            a.course__url(href=`${course.url}` target="_blank" title=`Visit ${course.course}`) Visit this course
+
+            if user
+                +reviewForm(course)
