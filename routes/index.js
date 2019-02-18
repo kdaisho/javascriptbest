@@ -1,31 +1,31 @@
 const express = require('express');
 const router = express.Router();
-const reviewController = require('../controllers/reviewController');
+const courseController = require('../controllers/courseController');
 const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 // Do work here
-router.get('/', catchErrors(reviewController.getReviews));
-router.get('/reviews', catchErrors(reviewController.getReviews));
-router.get('/add', authController.isLoggedIn, reviewController.addReview);
+router.get('/', catchErrors(courseController.getCourses));
+router.get('/courses', catchErrors(courseController.getCourses));
+router.get('/add', authController.isLoggedIn, courseController.addCourse);
 router.post('/add',
-    reviewController.upload,
-    catchErrors(reviewController.resize),
-    catchErrors(reviewController.createReview)
+    courseController.upload,
+    catchErrors(courseController.resize),
+    catchErrors(courseController.createCourse)
 );
 router.post('/add/:id',
-    reviewController.upload,
-    catchErrors(reviewController.resize),
-    catchErrors(reviewController.updateReview)
+    courseController.upload,
+    catchErrors(courseController.resize),
+    catchErrors(courseController.updateCourse)
 );
 
-router.get('/reviews/:id/edit', catchErrors(reviewController.editReview));
+router.get('/courses/:id/edit', catchErrors(courseController.editCourse));
 
-router.get('/review/:slug', catchErrors(reviewController.getReviewBySlug));
+router.get('/course/:slug', catchErrors(courseController.getCourseBySlug));
 
-router.get('/tags', catchErrors(reviewController.getReviewByTag));
-router.get('/tags/:tag', catchErrors(reviewController.getReviewByTag));
+router.get('/tags', catchErrors(courseController.getCourseByTag));
+router.get('/tags/:tag', catchErrors(courseController.getCourseByTag));
 
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);
@@ -49,9 +49,9 @@ router.post('/account/reset/:token',
     authController.confirmedPasswords,
     catchErrors(authController.update)
 );
-router.get('/likes', authController.isLoggedIn, catchErrors(reviewController.getLikes));
+router.get('/likes', authController.isLoggedIn, catchErrors(courseController.getLikes));
 
-router.get('/api/search', catchErrors(reviewController.searchReviews));
-router.post('/api/reviews/:id/like', catchErrors(reviewController.likeReview));
+router.get('/api/search', catchErrors(courseController.searchCourses));
+router.post('/api/courses/:id/like', catchErrors(courseController.likeCourse));
 
 module.exports = router;

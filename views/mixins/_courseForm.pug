@@ -1,21 +1,21 @@
-mixin reviewForm(review = {})
-    form(action=`/add/${review._id || ''}` method="POST" class="card" enctype="multipart/form-data")
+mixin courseForm(course = {})
+    form(action=`/add/${course._id || ''}` method="POST" class="card" enctype="multipart/form-data")
         label(for="course") Course
-        input(type="text" name="course" value=review.course)
+        input(type="text" name="course" value=course.course)
         label(for="instructor") Instructor
-        input(type="text" name="instructor" value=review.instructor)
+        input(type="text" name="instructor" value=course.instructor)
         label(for="url") URL
-        input(type="text" name="url" value=review.url)
+        input(type="text" name="url" value=course.url)
         //- Image upload
         label Image
         label(for="image") Choose Upload Image
         input(type="file" id="image" name="image" accept="image/gif, image/png, image/jpeg")
-        if review.image
-            img.preview(src=`/uploads/${review.image}` alt=review.course width=200)
+        if course.image
+            img.preview(src=`/uploads/${course.image}` alt=course.course width=200)
         - const choices = ['JavaScript', 'Node', 'React', 'Vue', 'Angular', 'Webpack', 'Database', 'CSS', 'Design', 'Typographie', 'Bash']
-        - const tags = review.tags || []
+        - const tags = course.tags || []
         label(for="description") Description
-        textarea(name="description")= review.description
+        textarea(name="description")= course.description
         ul.tags
             each choice in choices
                 .tag.tag__choice

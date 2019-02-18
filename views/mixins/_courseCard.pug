@@ -1,0 +1,19 @@
+mixin courseCard(course = {})
+    .course
+        .course__hero
+            img(src=`/uploads/${course.image || 'course.jpg'}`)
+        .course__details
+            h2.title
+                a(href=`/course/${course.slug}`) #{course.course}
+            p.desc= course.description.split(' ').slice(0, 20).join(' ')
+            .course__action
+                .course__action--edit
+                    a(href=`/courses/${course._id}/edit` title="Edit")
+                        != h.icon('edit')
+                .course__action--like
+                    if user
+                        form.like(method="POST" action=`/api/courses/${course._id}/like`)
+                            - const likeStrings = user.likes.map(obj => obj.toString())
+                            - const likeClass = likeStrings.includes(course._id.toString()) ? 'isLiked' : ''
+                            button.like__button(type="submit" name="like" class=likeClass title="Like")
+                                != h.icon('like')

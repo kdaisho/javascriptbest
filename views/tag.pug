@@ -1,6 +1,6 @@
 extends layout
 
-include mixins/_reviewCard
+include mixins/_courseCard
 
 block content
     .container
@@ -11,6 +11,6 @@ block content
                     a.tag__link(href=`/tags/${t._id}` class=(t._id === tag ? 'tag__link--active' : ''))
                         span.name= t._id
                         span.count= t.count
-        .reviews
-            each review in reviews
-                +reviewCard(review)
+        .courses
+            each course in courses
+                +courseCard(course)

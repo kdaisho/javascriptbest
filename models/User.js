@@ -25,7 +25,7 @@ const userSchema = new Schema({
     likes: [
         {
             type: mongoose.Schema.ObjectId,
-            ref: 'Review'
+            ref: 'Course'
         }
     ]
 });

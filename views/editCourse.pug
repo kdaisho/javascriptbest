@@ -1,7 +1,7 @@
 extends layout
 
-include mixins/_reviewForm
+include mixins/_courseForm
 block content
     .container.isEdit
         h2.pageTitle= title
-        +reviewForm(review)
+        +courseForm(course)

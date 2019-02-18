@@ -3,18 +3,18 @@ extends layout
 block content
     .single
         .single__hero
-            img.hero(src=`/uploads/${review.image || 'review.jpg'}`)
+            img.hero(src=`/uploads/${course.image || 'course.jpg'}`)
             .single__heading
                 h2.title
-                    a(href=`/review/${review.slug}`) #{review.course}
-                h3.instructor By #{review.instructor}
+                    a(href=`/course/${course.slug}`) #{course.course}
+                h3.instructor By #{course.instructor}
         .single__description
-            p.description= review.description
+            p.description= course.description
 
-            if review.tags
+            if course.tags
                 ul.tags
-                    each tag in review.tags
+                    each tag in course.tags
                         li.tag
                             a.tag__link(href=`/tags/${tag}`) ##{tag}
 
-            a.single__url(href=`${review.url}` target="_blank" title=`Visit ${review.course}`) Visit this course
+            a.single__url(href=`${course.url}` target="_blank" title=`Visit ${course.course}`) Visit this course

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const slug = require('slugs');
 
-const reviewSchema = new mongoose.Schema({
+const courseSchema = new mongoose.Schema({
     course: {
         type: String,
         trim: true,
@@ -37,32 +37,32 @@ const reviewSchema = new mongoose.Schema({
 });
 
 // Define our indexes
-reviewSchema.index({
+courseSchema.index({
     course: 'text',
     description: 'text'
 });
 
-reviewSchema.pre('save', async function(next) {
+courseSchema.pre('save', async function(next) {
     if (!this.isModified('course')) {
         next();
         return;
     }
     this.slug = slug(this.course);
-    // Find other reviews that have a slug of example, example-1, example-2
+    // Find other courses that have a slug of example, example-1, example-2
     const slugRegExp = new RegExp(`^(${this.slug})((-[0-9]*$)?)$`, 'i');
-    const reviewsWithSlug = await this.constructor.find({ slug: slugRegExp });
-    if (reviewsWithSlug.length) {
-        this.slug = `${this.slug}-${reviewsWithSlug.length + 1}`;
+    const coursesWithSlug = await this.constructor.find({ slug: slugRegExp });
+    if (coursesWithSlug.length) {
+        this.slug = `${this.slug}-${coursesWithSlug.length + 1}`;
     }
     next();
     // TODO make more resiliant so slugs are unique
 });
 
-reviewSchema.statics.getTagsList = function() {
+courseSchema.statics.getTagsList = function() {
     return this.aggregate([
         { $unwind: '$tags' },
         { $group: { _id: '$tags', count: { $sum: 1 } }},
         { $sort: { count: -1 }}
     ]);
 }
-module.exports = mongoose.model('Review', reviewSchema);
+module.exports = mongoose.model('Course', courseSchema);

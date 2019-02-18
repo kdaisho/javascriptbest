@@ -1,4 +1,4 @@
-.reviews {
+.courses {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -7,7 +7,7 @@
         justify-content: space-between;
     }
 
-    .review {
+    .course {
         border-radius: .25rem;
         flex: 0 0 98%;
         overflow: hidden;

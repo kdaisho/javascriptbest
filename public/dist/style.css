@@ -239,7 +239,7 @@ body {
       font-size: 1.25rem;
       color: #fff; }
 
-.reviews {
+.courses {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: row wrap;
@@ -247,41 +247,41 @@ body {
   -ms-flex-pack: center;
       justify-content: center; }
   @media (min-width: 767px) {
-    .reviews {
+    .courses {
       -ms-flex-pack: justify;
           justify-content: space-between; } }
-  .reviews .review {
+  .courses .course {
     border-radius: .25rem;
     -ms-flex: 0 0 98%;
         flex: 0 0 98%;
     overflow: hidden;
     margin: 1rem .5rem 2rem; }
     @media (min-width: 767px) {
-      .reviews .review {
+      .courses .course {
         -ms-flex: 0 0 47%;
             flex: 0 0 47%; } }
     @media (min-width: 1024px) {
-      .reviews .review {
+      .courses .course {
         -ms-flex: 0 0 30%;
             flex: 0 0 30%; } }
     @media (min-width: 1680px) {
-      .reviews .review {
+      .courses .course {
         -ms-flex: 0 0 23%;
             flex: 0 0 23%; } }
-    .reviews .review__hero img {
+    .courses .course__hero img {
       display: block;
       width: 100%; }
-    .reviews .review__details {
+    .courses .course__details {
       background: #efefef;
       padding: 1rem .5rem .5rem; }
-      .reviews .review__details .title a {
+      .courses .course__details .title a {
         display: block;
         color: #0e99e7;
         font-size: 1.5rem;
         margin-bottom: .5rem; }
-      .reviews .review__details .desc {
+      .courses .course__details .desc {
         color: #444; }
-    .reviews .review__action {
+    .courses .course__action {
       -ms-flex-align: center;
           align-items: center;
       display: -ms-flexbox;
@@ -291,27 +291,27 @@ body {
       margin-top: .5rem;
       -ms-flex-pack: justify;
           justify-content: space-between; }
-      .reviews .review__action--edit {
+      .courses .course__action--edit {
         -ms-flex: 0 0 12%;
             flex: 0 0 12%;
         padding: 2px 8px 0; }
-        .reviews .review__action--edit svg {
+        .courses .course__action--edit svg {
           stroke: #0e99e7;
           stroke-width: 2.5; }
-      .reviews .review__action--like {
+      .courses .course__action--like {
         -ms-flex: 0 0 12%;
             flex: 0 0 12%; }
-        .reviews .review__action--like button {
+        .courses .course__action--like button {
           background: none;
           border: 0;
           outline: none; }
-          .reviews .review__action--like button:hover {
+          .courses .course__action--like button:hover {
             cursor: pointer; }
-          .reviews .review__action--like button svg {
+          .courses .course__action--like button svg {
             stroke: #0e99e7;
             stroke-width: 2;
             fill: none; }
-          .reviews .review__action--like button.isLiked svg {
+          .courses .course__action--like button.isLiked svg {
             fill: #0e99e7; }
 
 .container.isEdit {
