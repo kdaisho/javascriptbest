@@ -36,7 +36,7 @@ a {
   color: inherit; }
 
 body {
-  background: #111; }
+  background: #222; }
   body * {
     color: #efefef;
     font-family: 'Avenir', sans-serif;
@@ -536,11 +536,12 @@ body {
 .flash-messages {
   border-radius: .25rem;
   position: absolute;
-  right: 0;
   max-width: 500px;
   top: 3%;
   -ms-transform: translate(-50%, 0);
-      transform: translate(-50%, 0); }
+      transform: translate(-50%, 0);
+  z-index: 50;
+  animation: slideIn 5s; }
   .flash-messages .flash {
     -ms-flex-align: center;
         align-items: center;
@@ -562,5 +563,15 @@ body {
         outline: none; }
       .flash-messages .flash__remove:hover {
         cursor: pointer; }
+
+@keyframes slideIn {
+  0% {
+    right: -100%; }
+  10% {
+    right: 0; }
+  90% {
+    right: 0; }
+  100% {
+    right: 150%; } }
 
 /*# sourceMappingURL=style.css.map*/

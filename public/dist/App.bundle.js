@@ -1027,7 +1027,6 @@ function toggleSearch(searchButton, nav, menuButton, backdrop, input, searchCont
         input.focus();
         showSearch = true;
     });
-    console.log(searchResults);
     backdrop.on('click', function () {
         if (showSearch) {
             backdrop.classList.remove('active');
@@ -2758,14 +2757,40 @@ var _like = __webpack_require__(10);
 
 var _like2 = _interopRequireDefault(_like);
 
+var _handleFlash = __webpack_require__(36);
+
+var _handleFlash2 = _interopRequireDefault(_handleFlash);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _nav2.default)((0, _bling.$)('#nav'), (0, _bling.$)('#hamburger'), (0, _bling.$)('#backdrop'));
 (0, _search2.default)((0, _bling.$)('#searchButton'), (0, _bling.$)('#nav'), (0, _bling.$)('#hamburger'), (0, _bling.$)('#backdrop'), (0, _bling.$)('#searchInput'), (0, _bling.$)('.search-container'), (0, _bling.$)('.search-results'));
 (0, _typeAhead2.default)((0, _bling.$)('.search'));
+(0, _handleFlash2.default)((0, _bling.$)('#flashMsg'));
 
 var likeForms = (0, _bling.$$)('form.like');
 likeForms.on('submit', _like2.default);
+
+/***/ }),
+/* 34 */,
+/* 35 */,
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function handleFlash(flashMessage) {
+    if (!flashMessage) return false;
+    setTimeout(function () {
+        flashMessage.remove();
+    }, 6000);
+}
+
+exports.default = handleFlash;
 
 /***/ })
 /******/ ]);

@@ -12,7 +12,6 @@ function toggleSearch (searchButton, nav, menuButton, backdrop, input, searchCon
         input.focus();
         showSearch = true;
     });
-    console.log(searchResults);
     backdrop.on('click', () => {
         if (showSearch) {
             backdrop.classList.remove('active');
