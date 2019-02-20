@@ -28,12 +28,16 @@ const courseSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    image: String
+    image: String,
     // author: {
     //     type: mongoose.Schema.ObjectId,
     //     ref: 'User',
     //     required: 'You must supply an author'
     // }
+
+}, {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true}
 });
 
 // Define our indexes
@@ -65,4 +69,11 @@ courseSchema.statics.getTagsList = function() {
         { $sort: { count: -1 }}
     ]);
 }
+
+courseSchema.virtual('reviews', {
+    ref: 'Review',
+    localField: '_id',
+    foreignField: 'course'
+});
+
 module.exports = mongoose.model('Course', courseSchema);

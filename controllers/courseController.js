@@ -69,7 +69,7 @@ exports.updateCourse = async (req, res) => {
 };
 
 exports.getCourseBySlug = async (req, res, next) => {
-    const course = await Course.findOne({ slug: req.params.slug });
+    const course = await Course.findOne({ slug: req.params.slug }).populate('author reviews');
     if (!course) return next();
     res.render('course', { title: course.course, course });
 };

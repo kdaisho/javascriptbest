@@ -3,6 +3,7 @@ extends layout
 include mixins/_reviewForm
 
 block content
+    pre=h.dump(course)
     .course
         .course__hero
             img.hero(src=`/uploads/${course.image || 'course.jpg'}`)
@@ -23,3 +24,9 @@ block content
 
             if user
                 +reviewForm(course)
+
+            if course.reviews
+                .reviews
+                    each review in course.reviews
+                        .review
+                            p= review.text
