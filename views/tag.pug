@@ -3,7 +3,7 @@ extends layout
 include mixins/_courseCard
 
 block content
-    .container
+    .container.tagsPage
         h2.pageTitle #{tag || 'Tags'}
         ul.tags
             each t in tags

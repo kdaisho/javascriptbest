@@ -1,33 +1,33 @@
-.tags {
-    display: flex;
-    flex-flow: row wrap;
-    margin: 2rem 0;
-}
-.tag {
-    margin: 1rem .5rem;
-    border-radius: .25rem;
-    &__link {
-        span {
-            font-weight: bold;
-            color: $black;
-            padding: .5rem 1rem;
-            &.name {
-                background: #fff;
-            }
-            &.count {
-                background: $lightBlue;
-                color: #fff;
-            }
-        }
-        &--active {
+.tagsPage {
+    .tags {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 2rem 0;
+    }
+    .tag {
+        margin: 1rem .5rem;
+        border-radius: .25rem;
+        &__link {
             span {
+                font-weight: bold;
+                color: $black;
+                padding: .5rem 1rem;
                 &.name {
+                    background: #fff;
+                }
+                &.count {
                     background: $lightBlue;
                     color: #fff;
                 }
             }
+            &--active {
+                span {
+                    &.name {
+                        background: $lightBlue;
+                        color: #fff;
+                    }
+                }
+            }
         }
     }
-
-
 }
