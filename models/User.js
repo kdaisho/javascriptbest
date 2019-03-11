@@ -32,7 +32,7 @@ const userSchema = new Schema({
 
 userSchema.virtual('gravatar').get(function() {
     const hash = md5(this.email);
-    return `https://gravatar.com/avatar/${hash}?s=200`;
+    return `https://gravatar.com/avatar/${hash}?s=200&d=monsterid`;
 });
 userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
 userSchema.plugin(mongodbErrorHandler);

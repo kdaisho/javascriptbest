@@ -14,7 +14,7 @@ const reviewSchema = new mongoose.Schema({
     course: {
         type: mongoose.Schema.ObjectId,
         ref: 'Course',
-        required: 'Please supply a course'
+        required: 'Please supply a course name'
     },
     text: {
         type: String,
@@ -26,5 +26,13 @@ const reviewSchema = new mongoose.Schema({
         max: 5
     }
 });
+
+function autoPopulate (next) {
+    this.populate('author');
+    next();
+}
+
+reviewSchema.pre('find', autoPopulate);
+reviewSchema.pre('findOne', autoPopulate);
 
 module.exports = mongoose.model('Review', reviewSchema);

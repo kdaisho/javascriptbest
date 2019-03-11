@@ -1,6 +1,7 @@
 extends layout
 
 include mixins/_reviewForm
+include mixins/_review
 
 block content
     pre=h.dump(course)
@@ -27,6 +28,6 @@ block content
 
             if course.reviews
                 .reviews
-                    each review in course.reviews
+                    each re in course.reviews
                         .review
-                            p= review.text
+                            +review(re)
