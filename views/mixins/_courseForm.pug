@@ -21,4 +21,4 @@ mixin courseForm(course = {})
                 .tag.tag__choice
                     input(type="checkbox" id=choice value=choice name="tags" checked=(tags.includes(choice)))
                     label(for=choice) #{choice}
-        input(type="submit" value="Send" class="button")
+        input.button(type="submit" value="send")

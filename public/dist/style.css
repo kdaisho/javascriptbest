@@ -43,6 +43,19 @@ body {
     font-size: 100%;
     line-height: 1.2; }
 
+.button {
+  background: #0e99e7;
+  border: none;
+  border-radius: .25rem;
+  color: #fff;
+  font-size: 1.25rem;
+  height: 2.5rem;
+  outline: none;
+  text-transform: uppercase;
+  width: 100%; }
+  .button:hover {
+    cursor: pointer; }
+
 .content {
   padding: 3rem 1rem; }
   @media (min-width: 1024px) {
@@ -340,10 +353,9 @@ body {
     .container.isEdit form textarea {
       border: none;
       border-radius: .25rem;
-      box-shadow: inset 3px 3px 9px rgba(0, 0, 0, 0.5);
       box-sizing: border-box;
       color: #444;
-      padding: .25rem .75rem 0;
+      padding: .75rem;
       margin-bottom: 2rem;
       width: 100%; }
       .container.isEdit form input[type="text"]:focus,
@@ -354,28 +366,15 @@ body {
     .container.isEdit form input[type="text"],
     .container.isEdit form input[type="email"],
     .container.isEdit form input[type="password"] {
-      height: 2rem; }
+      height: 2.5rem; }
     .container.isEdit form textarea {
-      height: 10rem;
-      padding: .5rem .75rem 0; }
+      height: 10rem; }
     .container.isEdit form input[type="file"] {
       display: none;
       font-size: .75rem;
       height: 2rem; }
       .container.isEdit form input[type="file"]:hover {
         cursor: poiner; }
-    .container.isEdit form input[type="submit"] {
-      background: #0e99e7;
-      border: none;
-      border-radius: .25rem;
-      color: #fff;
-      font-size: 1.25rem;
-      height: 2.25rem;
-      line-height: 2.5rem;
-      outline: none;
-      width: 100%; }
-      .container.isEdit form input[type="submit"]:hover {
-        cursor: pointer; }
     .container.isEdit form img.preview {
       margin: 0 0 1.5rem;
       vertical-align: top; }
@@ -499,16 +498,6 @@ body {
         .reviewer__stars input[type="radio"] + label:hover ~ label {
           color: yellow;
           cursor: pointer; }
-  .reviewer .button {
-    background: #0e99e7;
-    border: none;
-    border-radius: .25rem;
-    color: #fff;
-    font-size: 1.25rem;
-    height: 2.25rem;
-    line-height: 2.5rem;
-    outline: none;
-    width: 100%; }
 
 .tagsPage .tags {
   display: -ms-flexbox;
