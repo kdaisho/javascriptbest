@@ -1,11 +1,11 @@
 mixin courseForm(course = {})
     form(action=`/add/${course._id || ''}` method="POST" class="card" enctype="multipart/form-data")
         label(for="course") Course
-        input(type="text" name="course" value=course.course)
+        input.required(type="text" name="course" value=course.course required)
         label(for="instructor") Instructor
-        input(type="text" name="instructor" value=course.instructor)
+        input.required(type="text" name="instructor" value=course.instructor required)
         label(for="url") URL
-        input(type="text" name="url" value=course.url)
+        input.required(type="url" name="url" value=course.url required)
         //- Image upload
         label Image
         label(for="image") Choose Upload Image
@@ -15,10 +15,10 @@ mixin courseForm(course = {})
         - const choices = ['JavaScript', 'Node', 'React', 'Vue', 'Angular', 'Webpack', 'Database', 'CSS', 'Design', 'Typographie', 'Bash']
         - const tags = course.tags || []
         label(for="description") Description
-        textarea(name="description")= course.description
+        textarea.required(name="description" required)= course.description
         ul.tags
             each choice in choices
                 .tag.tag__choice
                     input(type="checkbox" id=choice value=choice name="tags" checked=(tags.includes(choice)))
-                    label(for=choice) #{choice}
-        input.button(type="submit" value="send")
+                    label.no-letter-spacing(for=choice) #{choice}
+        input.button.m-t30(type="submit" value="send")

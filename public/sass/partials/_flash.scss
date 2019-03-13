@@ -1,7 +1,6 @@
 .flash-messages {
     border-radius: .25rem;
     position: absolute;
-    // right: 0;
     max-width: 500px;
     top: 3%;
     transform: translate(-50%, 0);
@@ -28,11 +27,6 @@
             border: none;
             font-size: 2rem;
             padding-right: .75rem;
-
-            &:active,
-            &:focus {
-                outline: none;
-            }
 
             &:hover {
                 cursor: pointer;

@@ -20,7 +20,7 @@
             display: none;
             &:checked {
                 & ~ label {
-                    color: yellow;
+                    color: $yellow;
                 }
             }
 
@@ -48,10 +48,22 @@
                 }
                 &:hover,
                 &:hover ~ label {
-                    color: lighten(yellow, 0);
+                    color: lighten($yellow, 0);
                     cursor: pointer;
                 }
             }
+        }
+    }
+
+    &__error {
+        visibility: hidden;
+        p {
+            color: $yellow;
+            font-size: $btnFontSize;
+            text-align: center;
+        }
+        &.active {
+            visibility: visible;
         }
     }
 }

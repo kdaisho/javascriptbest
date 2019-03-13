@@ -4,7 +4,7 @@ include mixins/_reviewForm
 include mixins/_review
 
 block content
-    pre=h.dump(course)
+    //- pre=h.dump(course)
     .course
         .course__hero
             img.hero(src=`/uploads/${course.image || 'course.jpg'}`)
@@ -29,5 +29,5 @@ block content
             if course.reviews
                 .reviews
                     each re in course.reviews
-                        .review
+                        .eachReview
                             +review(re)

@@ -35,7 +35,8 @@ html
                     .nav__wrapper__main
                         ul
                             li
-                                a(href="/courses" class=currentPath.startsWith('/courses')? 'nav__active':'') Courses
+                                //- a(href="/courses" class=currentPath.startsWith('/courses')? 'nav__active':'') Courses
+                                a(href="/courses" class=/\/(courses)?/.test(currentPath)? 'nav__active':'') Courses
                             li
                                 a(href="/tags" class=currentPath.startsWith('/tags')? 'nav__active':'') Tags
                             li

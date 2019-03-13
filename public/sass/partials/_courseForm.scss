@@ -27,24 +27,27 @@
         input[type="text"],
         input[type="email"],
         input[type="password"],
+        input[type="url"],
         textarea {
             border: none;
             border-radius: .25rem;
             box-sizing: border-box;
             color: $black;
             padding: .75rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             width: 100%;
-
-            &:focus {
-                outline: none;
-            }
         }
 
         input[type="text"],
         input[type="email"],
-        input[type="password"] {
+        input[type="password"],
+        input[type="url"] {
             height: 2.5rem;
+        }
+
+        input.dirty:required:invalid,
+        textarea.dirty:required:invalid {
+            background: #ffdbdb;
         }
 
         textarea {
@@ -72,21 +75,21 @@
         .tags {
             display: flex;
             flex-flow: row wrap;
-            margin: 1rem 0 2rem;
 
             .tag {
                 &__choice {
+                    align-items: center;
                     display: flex;
+                    margin-bottom: .25rem;
 
                     input[type="checkbox"] {
                         position: relative;
                         right: -1.5rem;
-                        top: 7px;
+                        top: -5px;
                         z-index: 10;
 
                         &:checked + label {
-                            background: $lightBlue;
-                            color: #fff;
+                            background: $yellow;
                         }
                     }
 
@@ -95,7 +98,9 @@
                         color: $black;
                         border-radius: .25rem;
                         display: inline-block;
-                        padding: .5rem .75rem .5rem 1.75rem;
+                        font-size: 1rem;
+                        font-weight: bold;
+                        padding: .35rem .75rem .35rem 2rem;
                         user-select: none;
 
                         &:hover {

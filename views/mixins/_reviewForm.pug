@@ -1,9 +1,11 @@
 mixin reviewForm(course)
     form.reviewer(action=`/reviews/${course._id}` method="POST")
-        textarea.reviewer__text(name="text" placeholder="Leave a review...")
+        textarea.reviewer__text.required(name="text" placeholder="Leave a review..." required)
         .reviewer__meta
             .reviewer__stars
                 each number in [5, 4, 3, 2, 1]
-                    input(type="radio" id=`star${number}` name="rating" value=number required)
+                    input.rating(type="radio" id=`star${number}` name="rating" value=number)
                     label(for=`star${number}`) #{number} Stars
-            input.button(type="submit" value="submit review")
+            .reviewer__error
+                p &#8593; Please rate the course ☹ &#8593;
+            input.button.m-t05(id="submitReview" type="button" value="submit review")

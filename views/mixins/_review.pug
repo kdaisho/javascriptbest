@@ -1,10 +1,12 @@
 mixin review(re)
-    .review__author
-        img.avatar(src=re.author.gravatar)
-        p= re.author.name
-    .review__rating(title=`Rated ${re.rating} out of five stars`)
+    .eachReview__header
+        .eachReview__author
+            img.avatar(src=re.author.gravatar)
+            span
+                p= re.author.name
+                time.eachReview__time(datetime=re.created)
+                    = h.moment(re.created).fromNow()
+    .eachReview__rating.m-t05(title=`Rated ${re.rating} out of five stars`)
         = `★`.repeat(re.rating)
         = `☆`.repeat(5 - re.rating)
-    time.review_time(datetime=re.created)
-        = h.moment(re.created).fromNow()
-    p= re.text
+    p.eachReview__text.m-t05= re.text
