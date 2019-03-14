@@ -47,6 +47,11 @@ input:focus,
 textarea:focus {
   outline: none; }
 
+.contents-center {
+  max-width: 780px;
+  margin: 0 auto;
+  width: 100%; }
+
 .button {
   background: #0e99e7;
   border: none;
@@ -134,6 +139,7 @@ textarea:focus {
     display: flex;
     -ms-flex-pack: center;
         justify-content: center;
+    outline: none;
     position: absolute;
     right: -42px;
     height: 42px;
@@ -340,92 +346,90 @@ textarea:focus {
           fill: none; }
         .courses .course__action--like button.isLiked svg {
           fill: #0e99e7; }
+    .courses .course__reviews span {
+      color: #444; }
 
-.container.isEdit {
-  width: 100%;
-  max-width: 780px;
-  margin: 0 auto; }
-  .container.isEdit form {
-    padding: 2.5rem 0 3.5rem; }
-    .container.isEdit form label {
-      display: block;
-      font-size: 1.25rem;
-      margin-bottom: .5rem; }
-      .container.isEdit form label[for="image"] {
-        background: #0e99e7;
-        border-radius: .25rem;
-        display: inline-block;
-        margin-bottom: 2rem;
-        line-height: 2.5rem;
-        padding: 0 1rem; }
-        .container.isEdit form label[for="image"]:hover {
-          cursor: pointer; }
-    .container.isEdit form input[type="text"],
-    .container.isEdit form input[type="email"],
-    .container.isEdit form input[type="password"],
-    .container.isEdit form input[type="url"],
-    .container.isEdit form textarea {
-      border: none;
+.container.edit form {
+  padding: 2.5rem 0 3.5rem; }
+  .container.edit form label {
+    display: block;
+    font-size: 1.25rem;
+    margin-bottom: .5rem; }
+    .container.edit form label[for="image"] {
+      background: #0e99e7;
       border-radius: .25rem;
-      box-sizing: border-box;
-      color: #444;
-      padding: .75rem;
-      margin-bottom: 1.5rem;
-      width: 100%; }
-    .container.isEdit form input[type="text"],
-    .container.isEdit form input[type="email"],
-    .container.isEdit form input[type="password"],
-    .container.isEdit form input[type="url"] {
-      height: 2.5rem; }
-    .container.isEdit form input.dirty:required:invalid,
-    .container.isEdit form textarea.dirty:required:invalid {
-      background: #ffdbdb; }
-    .container.isEdit form textarea {
-      height: 10rem; }
-    .container.isEdit form input[type="file"] {
-      display: none;
-      font-size: .75rem;
-      height: 2rem; }
-      .container.isEdit form input[type="file"]:hover {
-        cursor: poiner; }
-    .container.isEdit form img.preview {
-      margin: 0 0 1.5rem;
-      vertical-align: top; }
-      @media (min-width: 497px) {
-        .container.isEdit form img.preview {
-          margin: 0 0 .25rem 2rem; } }
-    .container.isEdit form .tags {
+      display: inline-block;
+      margin-bottom: 2rem;
+      line-height: 2.5rem;
+      padding: 0 1rem; }
+      .container.edit form label[for="image"]:hover {
+        cursor: pointer; }
+  .container.edit form input[type="text"],
+  .container.edit form input[type="email"],
+  .container.edit form input[type="password"],
+  .container.edit form input[type="url"],
+  .container.edit form textarea {
+    border: none;
+    border-radius: .25rem;
+    box-sizing: border-box;
+    color: #444;
+    padding: .75rem;
+    margin-bottom: 1.5rem;
+    width: 100%; }
+  .container.edit form input[type="text"],
+  .container.edit form input[type="email"],
+  .container.edit form input[type="password"],
+  .container.edit form input[type="url"] {
+    height: 2.5rem; }
+  .container.edit form input.dirty:required:invalid,
+  .container.edit form textarea.dirty:required:invalid {
+    background: #ffdbdb; }
+  .container.edit form textarea {
+    height: 10rem; }
+  .container.edit form input[type="file"] {
+    display: none;
+    font-size: .75rem;
+    height: 2rem; }
+    .container.edit form input[type="file"]:hover {
+      cursor: poiner; }
+  .container.edit form img.preview {
+    margin: 0 0 1.5rem;
+    vertical-align: top; }
+    @media (min-width: 497px) {
+      .container.edit form img.preview {
+        margin: 0 0 .25rem 2rem; } }
+  .container.edit form .tags {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap; }
+    .container.edit form .tags .tag__choice {
+      -ms-flex-align: center;
+          align-items: center;
       display: -ms-flexbox;
       display: flex;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap; }
-      .container.isEdit form .tags .tag__choice {
-        -ms-flex-align: center;
-            align-items: center;
-        display: -ms-flexbox;
-        display: flex;
-        margin-bottom: .25rem; }
-        .container.isEdit form .tags .tag__choice input[type="checkbox"] {
-          position: relative;
-          right: -1.5rem;
-          top: -5px;
-          z-index: 10; }
-          .container.isEdit form .tags .tag__choice input[type="checkbox"]:checked + label {
-            background: #ffeb3b; }
-        .container.isEdit form .tags .tag__choice label {
-          background: #dcdcdc;
-          color: #444;
-          border-radius: .25rem;
-          display: inline-block;
-          font-size: 1rem;
-          font-weight: bold;
-          padding: .35rem .75rem .35rem 2rem;
-          -webkit-user-select: none;
-             -moz-user-select: none;
-              -ms-user-select: none;
-                  user-select: none; }
-          .container.isEdit form .tags .tag__choice label:hover {
-            cursor: pointer; }
+      margin-bottom: .25rem; }
+      .container.edit form .tags .tag__choice input[type="checkbox"] {
+        position: relative;
+        right: -1.5rem;
+        top: -5px;
+        z-index: 10; }
+        .container.edit form .tags .tag__choice input[type="checkbox"]:checked + label {
+          background: #ffeb3b; }
+      .container.edit form .tags .tag__choice label {
+        background: #dcdcdc;
+        color: #444;
+        border-radius: .25rem;
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: .35rem .75rem .35rem 2rem;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none; }
+        .container.edit form .tags .tag__choice label:hover {
+          cursor: pointer; }
 
 .course {
   max-width: 960px;
@@ -484,7 +488,6 @@ textarea:focus {
     display: flex;
     -ms-flex-pack: center;
         justify-content: center;
-    margin-bottom: 1.5rem;
     text-align: center; }
     .reviewer__stars input[type="radio"] {
       display: none; }
@@ -525,35 +528,74 @@ textarea:focus {
     .reviewer__error.active {
       visibility: visible; }
 
-.eachReview {
-  border-left: 3px solid #0e99e7;
-  padding: .5rem .5rem .5rem 1rem;
-  margin-bottom: 1.5rem; }
-  .eachReview__header {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-flow: row nowrap;
-        flex-flow: row nowrap;
-    -ms-flex-pack: justify;
-        justify-content: space-between; }
-  .eachReview__author {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-flow: row nowrap;
-        flex-flow: row nowrap;
-    -ms-flex-pack: start;
-        justify-content: flex-start;
-    -ms-flex-align: center;
-        align-items: center; }
-    .eachReview__author img {
-      width: 50px;
-      margin-right: 1rem; }
-  .eachReview__rating {
-    color: #ffeb3b; }
-  .eachReview__time {
-    font-size: 75%;
-    opacity: .75;
-    text-align: right; }
+.reviews {
+  margin-top: 3rem; }
+  .reviews .eachReview {
+    border-left: 3px solid #0e99e7;
+    padding: .5rem .5rem .5rem 1rem;
+    margin-bottom: 1.5rem; }
+    .reviews .eachReview__header {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+    .reviews .eachReview__author {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+      -ms-flex-align: center;
+          align-items: center; }
+      .reviews .eachReview__author img {
+        width: 50px;
+        margin-right: 1rem; }
+    .reviews .eachReview__rating {
+      color: #ffeb3b; }
+    .reviews .eachReview__time {
+      font-size: 75%;
+      opacity: .75;
+      text-align: right; }
+
+.popular .table {
+  margin: 3rem auto 0;
+  width: 100%; }
+  .popular .table .photo {
+    display: none; }
+    .popular .table .photo a {
+      display: block;
+      height: 75px; }
+    @media (min-width: 767px) {
+      .popular .table .photo {
+        display: block; } }
+  .popular .table th {
+    background: #0e99e7;
+    color: #fff;
+    vertical-align: middle; }
+  .popular .table th,
+  .popular .table td {
+    font-size: .75rem;
+    padding: .25rem .5rem;
+    text-align: center; }
+    @media (min-width: 767px) {
+      .popular .table th,
+      .popular .table td {
+        font-size: 1rem; } }
+  .popular .table td {
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+    vertical-align: middle; }
+    .popular .table td a {
+      color: #0e99e7;
+      font-weight: bold; }
+      .popular .table td a:hover {
+        text-decoration: underline; }
+  .popular .table img {
+    width: 50px; }
 
 .tagsPage .tags {
   display: -ms-flexbox;

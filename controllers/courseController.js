@@ -18,10 +18,6 @@ const multerOptions = {
     }
 };
 
-// exports.homePage = async (req, res) => {
-//     res.render('courses', { title: 'Courses' });
-// };
-
 exports.addCourse = (req, res) => {
     res.render('editCourse', { title: 'Add Course' });
 };
@@ -50,7 +46,7 @@ exports.createCourse = async (req, res) => {
 };
 
 exports.getCourses = async (req, res) => {
-    const courses = await Course.find();
+    const courses = await Course.find().populate('reviews');
     res.render('courses', { title: 'Courses', courses });
 };
 
@@ -114,4 +110,10 @@ exports.getLikes = async (req, res) => {
         _id: { $in: req.user.likes }
     });
     res.render('courses', { title: 'Liked Courses', courses });
+};
+
+exports.getPopularCourses = async (req, res) => {
+    const courses = await Course.getPopularCourses();
+    // res.json(courses);
+    res.render('popularCourses', { courses, title: 'Popular Courses Yey!' });
 };

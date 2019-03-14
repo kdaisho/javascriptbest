@@ -20,29 +20,28 @@ html
                         ul
                             if user
                                 li
-                                    a(href="/likes" class=currentPath.startsWith('/likes')? 'nav__active':'') Like
+                                    a(href="/likes" class=currentPath.startsWith('/likes') ? 'nav__active' : '') Like
                                        span.likes-count #{user.likes && user.likes.length}
                                 li
-                                    a(href="/logout" class=currentPath.startsWith('/logout')? 'nav__active':'') Logout
+                                    a(href="/logout" class=currentPath.startsWith('/logout') ? 'nav__active' : '') Logout
                                 li
-                                    a(href="/account" class=currentPath.startsWith('/account')? 'nav__active':'' class="avatar")
+                                    a.avatar(href="/account" class=currentPath.startsWith('/account') ? 'nav__active' : '')
                                         img(src=user.gravatar)
                             else
                                 li
-                                    a(href="/signup" class=currentPath.startsWith('/signup')? 'nav__active':'') Signup
+                                    a(href="/signup" class=currentPath.startsWith('/signup') ? 'nav__active' : '') Signup
                                 li
-                                    a(href="/login" class=currentPath.startsWith('/login')? 'nav__active':'') Login
+                                    a(href="/login" class=currentPath.startsWith('/login') ? 'nav__active' : '') Login
                     .nav__wrapper__main
                         ul
                             li
-                                //- a(href="/courses" class=currentPath.startsWith('/courses')? 'nav__active':'') Courses
-                                a(href="/courses" class=/\/(courses)?/.test(currentPath)? 'nav__active':'') Courses
+                                a(href="/courses" class=currentPath.startsWith('/courses') ? 'nav__active' : '') Courses
                             li
-                                a(href="/tags" class=currentPath.startsWith('/tags')? 'nav__active':'') Tags
+                                a(href="/tags" class=currentPath.startsWith('/tags') ? 'nav__active' : '') Tags
                             li
-                                a(href="/popular" class=currentPath.startsWith('/popular')? 'nav__active':'') Popular
+                                a(href="/popular" class=currentPath.startsWith('/popular') ? 'nav__active' : '') Popular
                             li
-                                a(href="/add" class=currentPath.startsWith('/add')? 'nav__active':'') Add Course
+                                a(href="/add" class=currentPath.startsWith('/add') ? 'nav__active' : '') Add Course
                             li
                                 button(id="searchButton") Search
         block messages

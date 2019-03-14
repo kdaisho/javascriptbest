@@ -45,7 +45,7 @@ courseSchema.index({
     description: 'text'
 });
 
-courseSchema.pre('save', async function(next) {
+courseSchema.pre('save', async function (next) {
     if (!this.isModified('course')) {
         next();
         return;
@@ -61,13 +61,42 @@ courseSchema.pre('save', async function(next) {
     // TODO make more resiliant so slugs are unique
 });
 
-courseSchema.statics.getTagsList = function() {
+courseSchema.statics.getTagsList = function () {
     return this.aggregate([
         { $unwind: '$tags' },
         { $group: { _id: '$tags', count: { $sum: 1 } }},
         { $sort: { count: -1 }}
     ]);
 }
+
+courseSchema.statics.getPopularCourses = function () {
+    return this.aggregate([
+        { $lookup: {
+            from: 'reviews',
+            localField: '_id',
+            foreignField: 'course',
+            as: 'reviewsForPopularPage'
+        }},
+        {
+            $match: { 'reviewsForPopularPage.1': { $exists: true }}
+        },
+        {
+            $addFields: {
+                averageRating: {
+                    $avg: '$reviewsForPopularPage.rating'
+                }
+            }
+        },
+        {
+            $sort: {
+                averageRating: -1
+            }
+        },
+        {
+            $limit: 10
+        }
+    ]);
+};
 
 courseSchema.virtual('reviews', {
     ref: 'Review',

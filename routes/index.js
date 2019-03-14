@@ -7,7 +7,7 @@ const reviewController = require('../controllers/reviewController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 // Do work here
-router.get('/', catchErrors(courseController.getCourses));
+router.get('/', (req, res) => { res.redirect('/courses') });
 router.get('/courses', catchErrors(courseController.getCourses));
 router.get('/add', authController.isLoggedIn, courseController.addCourse);
 router.post('/add',
@@ -52,6 +52,8 @@ router.post('/account/reset/:token',
 );
 router.get('/likes', authController.isLoggedIn, catchErrors(courseController.getLikes));
 router.post('/reviews/:id', authController.isLoggedIn, catchErrors(reviewController.addReview));
+
+router.get('/popular', catchErrors(courseController.getPopularCourses));
 
 router.get('/api/search', catchErrors(courseController.searchCourses));
 router.post('/api/courses/:id/like', catchErrors(courseController.likeCourse));
