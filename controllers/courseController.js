@@ -39,6 +39,7 @@ exports.resize = async (req, res, next) => {
 };
 
 exports.createCourse = async (req, res) => {
+    req.body.author = req.user._id;
     const course = new Course(req.body);
     await course.save();
     req.flash('success', `Successfully created ${course.course}!`);
@@ -50,8 +51,15 @@ exports.getCourses = async (req, res) => {
     res.render('courses', { title: 'Courses', courses });
 };
 
+exports.confirmOwner = (course, user) => {
+    if (!course.author.equals(user._id)) {
+        throw Error('You must be the one who created this review!');
+    }
+};
+
 exports.editCourse = async (req, res) => {
     const course = await Course.findOne({ _id: req.params.id });
+    confirmOwner(course, req.user);
     res.render('editCourse', { title: `Edit ${course.course}`, course });
 };
 

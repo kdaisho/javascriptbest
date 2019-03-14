@@ -28,12 +28,12 @@ const courseSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    image: String
-    // author: {
-    //     type: mongoose.Schema.ObjectId,
-    //     ref: 'User',
-    //     required: 'You must supply an author'
-    // }
+    image: String,
+    author: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: 'You must supply an author'
+    }
 }, {
     toJSON: { virtuals: true },
     toObject: { virtuals: true}

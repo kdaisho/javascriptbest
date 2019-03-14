@@ -3,21 +3,21 @@ extends layout
 block content
     .popular.contents-center
         h2.pageTitle #{courses.length} Popular Courses
-        table.table
-            tr
-                th #
-                th.photo Photo
-                th Course
-                th Reviews
-                th Average Rating
-            each course, i in courses
+        if courses.length
+            table.table
                 tr
-                    td #{ i + 1 }
-                    td.photo
-                        a(href=`/store/${course.slug}` style=`background: url(/uploads/${course.image}) center/cover no-repeat;`)
-                            //- img(src=`/uploads/${course.image}` alt=course.course)
-                    td
-                        a(href=`/store/${course.slug}`)
-                            = course.course
-                    td= course.reviewsForPopularPage.length
-                    td= Math.round((course.averageRating) * 10) / 10
+                    th #
+                    th.photo Photo
+                    th Course
+                    th Reviews
+                    th Average Rating
+                each course, i in courses
+                    tr
+                        td #{ i + 1 }
+                        td.photo
+                            a(href=`/store/${course.slug}` style=`background: url(/uploads/${course.image}) center/cover no-repeat;`)
+                        td
+                            a(href=`/store/${course.slug}`)
+                                = course.course
+                        td= course.reviewsForPopularPage.length
+                        td= Math.round((course.averageRating) * 10) / 10

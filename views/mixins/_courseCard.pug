@@ -8,8 +8,9 @@ mixin courseCard(course = {})
             p.desc= course.description.split(' ').slice(0, 20).join(' ')
             .course__action
                 .course__action--edit
-                    a(href=`/courses/${course._id}/edit` title="Edit")
-                        != h.icon('edit')
+                    if user && course.author.equals(user._id)
+                        a(href=`/courses/${course._id}/edit` title="Edit")
+                            != h.icon('edit')
                 .course__reviews
                     if course.reviews
                         span= course.reviews.length
