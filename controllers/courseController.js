@@ -83,7 +83,7 @@ exports.getCourseByTag = async (req, res) => {
     const tag = req.params.tag;
     const tagQuery = tag || { $exists: true };
     const tagsPromise = Course.getTagsList();
-    const coursesPromise = Course.find({ tags: tagQuery });
+    const coursesPromise = Course.find({ tags: tagQuery }).populate('reviews');
     const [tags, courses] = await Promise.all([tagsPromise, coursesPromise]);
     res.render('tag', { tags, title: 'Tags', tag, courses });
 };
@@ -117,7 +117,7 @@ exports.likeCourse = async (req, res) => {
 exports.getLikes = async (req, res) => {
     const courses = await Course.find({
         _id: { $in: req.user.likes }
-    });
+    }).populate('reviews');
     res.render('courses', { title: 'Liked Courses', courses });
 };
 

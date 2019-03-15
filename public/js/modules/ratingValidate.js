@@ -5,6 +5,7 @@ function validateRating (ratingElements, trigger, form, errorMsg) {
             if (ratingElements[i].checked) {
                 errorMsg.classList.remove('active');
                 form.submit();
+                break;
             }
             else {
                 errorMsg.classList.add('active');

@@ -10,8 +10,8 @@ mixin courseCard(course = {})
                     if user && course.author.equals(user._id)
                         a(href=`/courses/${course._id}/edit` title="Edit")
                             != h.icon('edit')
-                .courseCard__reviews(title=`${course.reviews.length} comments`)
-                    if course.reviews
+                if course.reviews
+                    .courseCard__reviews(title=`${course.reviews.length} comments`)
                         != h.icon('comments')
                         span.count= course.reviews.length
                 .courseCard__action--like
