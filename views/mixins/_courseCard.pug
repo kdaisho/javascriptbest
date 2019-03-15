@@ -1,20 +1,21 @@
 mixin courseCard(course = {})
-    .course
-        .course__hero
-            img(src=`/uploads/${course.image || 'course.jpg'}`)
-        .course__details
+    .courseCard
+        .courseCard__hero(style=`background: url('/uploads/${course.image || "review.jpg"}') center/cover no-repeat;`)
+            //- img(src=`/uploads/${course.image || 'review.jpg'}`)
+        .courseCard__details
             h2.title
                 a(href=`/course/${course.slug}`) #{course.course}
             p.desc= course.description.split(' ').slice(0, 20).join(' ')
-            .course__action
-                .course__action--edit
+            .courseCard__action
+                .courseCard__action--edit
                     if user && course.author.equals(user._id)
                         a(href=`/courses/${course._id}/edit` title="Edit")
                             != h.icon('edit')
-                .course__reviews
+                .courseCard__reviews
                     if course.reviews
-                        span= course.reviews.length
-                .course__action--like
+                        != h.icon('comments')
+                        span.count= course.reviews.length
+                .courseCard__action--like
                     if user
                         form.like(method="POST" action=`/api/courses/${course._id}/like`)
                             - const likeStrings = user.likes.map(obj => obj.toString())

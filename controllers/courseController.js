@@ -19,7 +19,8 @@ const multerOptions = {
 };
 
 exports.addCourse = (req, res) => {
-    res.render('editCourse', { title: 'Add Course' });
+    const course = {};
+    res.render('editCourse', { title: 'Add Course', course });
 };
 
 exports.upload = multer(multerOptions).single('image');
@@ -51,7 +52,7 @@ exports.getCourses = async (req, res) => {
     res.render('courses', { title: 'Courses', courses });
 };
 
-exports.confirmOwner = (course, user) => {
+const confirmOwner = (course, user) => {
     if (!course.author.equals(user._id)) {
         throw Error('You must be the one who created this review!');
     }

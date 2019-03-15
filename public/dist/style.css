@@ -286,68 +286,8 @@ textarea:focus {
       justify-content: center; }
   @media (min-width: 767px) {
     .courses {
-      -ms-flex-pack: justify;
-          justify-content: space-between; } }
-  .courses .course {
-    border-radius: .25rem;
-    -ms-flex: 0 0 98%;
-        flex: 0 0 98%;
-    overflow: hidden;
-    margin: 1rem .5rem 2rem; }
-    @media (min-width: 767px) {
-      .courses .course {
-        -ms-flex: 0 0 47%;
-            flex: 0 0 47%; } }
-    @media (min-width: 1024px) {
-      .courses .course {
-        -ms-flex: 0 0 30%;
-            flex: 0 0 30%; } }
-    @media (min-width: 1680px) {
-      .courses .course {
-        -ms-flex: 0 0 23%;
-            flex: 0 0 23%; } }
-    .courses .course__hero img {
-      display: block;
-      width: 100%; }
-    .courses .course__details {
-      background: #efefef;
-      padding: 1rem .5rem .5rem; }
-      .courses .course__details .title a {
-        display: block;
-        color: #0e99e7;
-        font-size: 1.5rem;
-        margin-bottom: .5rem; }
-      .courses .course__details .desc {
-        color: #444; }
-    .courses .course__action {
-      -ms-flex-align: center;
-          align-items: center;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-      margin-top: .5rem;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
-      .courses .course__action--edit {
-        padding: 2px 8px 0; }
-        .courses .course__action--edit svg {
-          stroke: #0e99e7;
-          stroke-width: 2.5; }
-      .courses .course__action--like button {
-        background: none;
-        border: 0;
-        outline: none; }
-        .courses .course__action--like button:hover {
-          cursor: pointer; }
-        .courses .course__action--like button svg {
-          stroke: #0e99e7;
-          stroke-width: 2;
-          fill: none; }
-        .courses .course__action--like button.isLiked svg {
-          fill: #0e99e7; }
-    .courses .course__reviews span {
-      color: #444; }
+      -ms-flex-pack: start;
+          justify-content: flex-start; } }
 
 .container.edit form {
   padding: 2.5rem 0 3.5rem; }
@@ -472,6 +412,83 @@ textarea:focus {
           font-weight: bold; }
   .course__url {
     text-decoration: underline; }
+
+.courseCard {
+  -ms-flex: 0 0 98%;
+      flex: 0 0 98%;
+  overflow: hidden;
+  margin: 1rem .5rem 2rem; }
+  @media (min-width: 767px) {
+    .courseCard {
+      -ms-flex: 0 0 47%;
+          flex: 0 0 47%; } }
+  @media (min-width: 1024px) {
+    .courseCard {
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%; } }
+  @media (min-width: 1680px) {
+    .courseCard {
+      -ms-flex: 0 0 23%;
+          flex: 0 0 23%; } }
+  .courseCard__hero {
+    border-radius: .25rem .25rem 0 0;
+    height: 200px; }
+    .courseCard__hero img {
+      display: block;
+      width: 100%; }
+  .courseCard__details {
+    background: #efefef;
+    border-radius: 0 0 .25rem .25rem;
+    padding: 1rem .5rem .5rem; }
+    .courseCard__details .title a {
+      display: block;
+      color: #0e99e7;
+      font-size: 1.5rem;
+      margin-bottom: .5rem; }
+    .courseCard__details .desc {
+      color: #444; }
+  .courseCard__action {
+    -ms-flex-align: center;
+        align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    margin-top: 1rem;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+    .courseCard__action--edit {
+      padding: 0 8px; }
+      .courseCard__action--edit svg {
+        stroke: #0e99e7;
+        stroke-width: 2.5; }
+    .courseCard__action--like button {
+      background: none;
+      border: 0;
+      outline: none; }
+      .courseCard__action--like button:hover {
+        cursor: pointer; }
+      .courseCard__action--like button svg {
+        stroke: #0e99e7;
+        stroke-width: 2;
+        fill: none; }
+      .courseCard__action--like button.isLiked svg {
+        fill: #0e99e7; }
+  .courseCard__reviews .count {
+    background: #0e99e7;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 11px;
+    color: white;
+    height: 18px;
+    left: -16px;
+    margin-top: -14px;
+    padding: 2px 0 0 1px;
+    position: relative;
+    text-align: center;
+    top: -5px;
+    width: 18px; }
 
 .reviewer {
   margin: 1.25rem 0; }

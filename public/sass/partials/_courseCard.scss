@@ -1,0 +1,105 @@
+.courseCard {
+    flex: 0 0 98%;
+    overflow: hidden;
+    margin: 1rem .5rem 2rem;
+
+    @media (min-width: $maxMobile) {
+        flex: 0 0 47%;
+    }
+
+    @media (min-width: $maxTablet) {
+        flex: 0 0 30%;
+    }
+
+    @media (min-width: 1680px) {
+        flex: 0 0 23%;
+    }
+
+    &__hero {
+        border-radius: .25rem .25rem 0 0;
+        height: 200px;
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__details {
+        background: #efefef;
+        border-radius: 0 0 .25rem .25rem;
+        padding: 1rem .5rem .5rem;
+
+        .title {
+            a {
+                display: block;
+                color: $lightBlue;
+                font-size: $cardTitleSize;
+                margin-bottom: .5rem;
+            }
+        }
+
+        .desc {
+            color: $black;
+        }
+    }
+
+    &__action {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: 1rem;
+        justify-content: space-between;
+
+        &--edit {
+            padding: 0 8px;
+
+            svg {
+                stroke: $lightBlue;
+                stroke-width: 2.5;
+            }
+        }
+
+        &--like {
+            button {
+                background: none;
+                border: 0;
+                outline: none;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                svg {
+                    stroke: $lightBlue;
+                    stroke-width: 2;
+                    fill: none;
+                }
+
+                &.isLiked {
+                    svg {
+                        fill: $lightBlue;
+                    }
+                }
+            }
+        }
+    }
+
+    &__reviews {
+        .count {
+            background: $lightBlue;
+            border-radius: 50%;
+            box-sizing: border-box;
+            display: inline-block;
+            font-size: 11px;
+            color: white;
+            height: 18px;
+            left: -16px;
+            margin-top: -14px;
+            padding: 2px 0 0 1px;
+            position: relative;
+            text-align: center;
+            top: -5px;
+            width: 18px;
+        }
+    }
+}
