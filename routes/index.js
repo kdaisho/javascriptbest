@@ -58,4 +58,7 @@ router.get('/popular', catchErrors(courseController.getPopularCourses));
 router.get('/api/search', catchErrors(courseController.searchCourses));
 router.post('/api/courses/:id/like', catchErrors(courseController.likeCourse));
 
+router.get('/contact', userController.contact);
+router.post('/contact/send', catchErrors(userController.sendMessage));
+
 module.exports = router;

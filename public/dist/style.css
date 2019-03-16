@@ -370,6 +370,20 @@ textarea:focus {
                 user-select: none; }
         .container.edit form .tags .tag__choice label:hover {
           cursor: pointer; }
+  .container.edit form .receiveCopy {
+    margin-bottom: 2rem; }
+    .container.edit form .receiveCopy input:hover,
+    .container.edit form .receiveCopy label:hover {
+      cursor: pointer; }
+    .container.edit form .receiveCopy label {
+      display: inline;
+      font-size: 1rem;
+      margin-left: .5rem;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+      vertical-align: middle; }
 
 .course {
   max-width: 960px;

@@ -18,17 +18,28 @@ const generateHTML = (filename, options = {}) => {
     const inlined = juice(html);
     return inlined;
 };
+
 exports.send = async (options) => {
     const html = generateHTML(options.filename, options);
     const text = htmlToText.fromString(html);
+    let dest = '';
 
-    const mailOptions = {
-        from: `Daisho <noreply@daisho.com>`,
-        to: options.user.email,
+    if (options.fromContact && options.sender.copy) {
+        dest = options.sender.email;
+    }
+    else if (!options.fromContact) {
+        dest = options.user.email;
+    }
+
+    mailOptions = {
+        from: `Daisho <noreply@daishokomiyama@gmail.com>`,
+        to: dest,
+        bcc: 'daishokomiyama@gmail.com',
         subject: options.subject,
         html,
         text
     };
+
     const sendMail = promisify(transport.sendMail, transport);
     return sendMail(mailOptions)
 };

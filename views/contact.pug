@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    .container.contents-center.edit
+        h2.pageTitle= title
+        form.form(action="/contact/send" method="POST")
+            label(for="name") Name
+            input(type="text" name="name" value=user ? user.name : '')
+            label(for="email") Email
+            input(type="email" name="email" value=user ? user.email : '')
+            label(for="message") Message
+            textarea(name="message")
+            .receiveCopy
+                input(type="checkbox" id="receiveCopy" name="receiveCopy")
+                label.checkBox(for="receiveCopy") I want to receive a copy
+            input.button(type="submit" value="Send")

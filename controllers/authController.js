@@ -44,8 +44,10 @@ exports.forgot = async (req, res) => {
         user,
         filename: 'password-reset',
         subject: 'Passwod Reset',
-        resetURL
-    })
+        resetURL,
+        fromContact: false
+    });
+
     req.flash('success', `You have been emailed a password reset link.`);
     // 4. Redirect to login page
     res.redirect('/login');

@@ -111,7 +111,7 @@ exports.likeCourse = async (req, res) => {
         { [operator]: { likes: req.params.id }},
         { new: true }
     );
-    res.json(user);
+    // res.json(user);
 };
 
 exports.getLikes = async (req, res) => {

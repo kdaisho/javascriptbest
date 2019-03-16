@@ -43,6 +43,8 @@ html
                             li
                                 a(href="/add" class=currentPath.startsWith('/add') ? 'nav__active' : '') Add Course
                             li
+                                a(href="/contact" class=currentPath.startsWith('/contact') ? 'nav__active' : '') Contact
+                            li
                                 button(id="searchButton") Search
         block messages
             if locals.flashes
