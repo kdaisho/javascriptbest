@@ -51,6 +51,9 @@ exports.contact = (req, res) => {
 };
 
 exports.sendMessage = async (req, res) => {
+    // Honeypot
+    if (req.body.address) return false;
+
     const sender = {
         name: req.body.name,
         email: req.body.email,

@@ -986,7 +986,7 @@ function handleFlash(flashMessage) {
     if (!flashMessage) return false;
     setTimeout(function () {
         flashMessage.remove();
-    }, 6000);
+    }, 5000);
 }
 
 exports.default = handleFlash;
@@ -2835,6 +2835,10 @@ var _ratingValidate = __webpack_require__(14);
 
 var _ratingValidate2 = _interopRequireDefault(_ratingValidate);
 
+var _showForgotPassword = __webpack_require__(38);
+
+var _showForgotPassword2 = _interopRequireDefault(_showForgotPassword);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _nav2.default)((0, _bling.$)('#nav'), (0, _bling.$)('#hamburger'), (0, _bling.$)('#backdrop'));
@@ -2843,8 +2847,34 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _handleFlash2.default)((0, _bling.$)('#flashMsg'));
 (0, _formValidate2.default)((0, _bling.$$)('.required'));
 (0, _ratingValidate2.default)((0, _bling.$$)('.rating'), (0, _bling.$)('#submitReview'), (0, _bling.$)('.reviewer'), (0, _bling.$)('.reviewer__error'));
+(0, _showForgotPassword2.default)((0, _bling.$)('.forgotPassword'), (0, _bling.$$)('.loginForm'), (0, _bling.$)('.forgotPasswordForm'));
 var likeForms = (0, _bling.$$)('form.like');
 likeForms.on('submit', _like2.default);
+
+/***/ }),
+/* 37 */,
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function showForgotPassword(trigger, hideTarget, showTarget) {
+    trigger.addEventListener('click', function () {
+        showTarget.style.display = 'block';
+        trigger.style.display = 'none';
+        if (hideTarget.length) {
+            for (var i = 0; i < hideTarget.length; i++) {
+                hideTarget[i].style.display = 'none';
+            }
+        }
+    });
+}
+
+exports.default = showForgotPassword;
 
 /***/ })
 /******/ ]);

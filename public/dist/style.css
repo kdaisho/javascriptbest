@@ -370,6 +370,8 @@ textarea:focus {
                 user-select: none; }
         .container.edit form .tags .tag__choice label:hover {
           cursor: pointer; }
+  .container.edit form .honey {
+    display: none; }
   .container.edit form .receiveCopy {
     margin-bottom: 2rem; }
     .container.edit form .receiveCopy input:hover,
@@ -384,6 +386,17 @@ textarea:focus {
           -ms-user-select: none;
               user-select: none;
       vertical-align: middle; }
+
+.container.edit .forgotPassword {
+  background: none;
+  border: none;
+  outline: none;
+  text-decoration: underline; }
+  .container.edit .forgotPassword:hover {
+    cursor: pointer; }
+
+.container.edit .forgotPasswordForm {
+  display: none; }
 
 .course {
   max-width: 960px;
@@ -657,12 +670,14 @@ textarea:focus {
 .flash-messages {
   border-radius: .25rem;
   position: absolute;
-  max-width: 500px;
+  max-width: 310px;
   top: 3%;
-  -ms-transform: translate(-50%, 0);
-      transform: translate(-50%, 0);
   z-index: 50;
-  animation: slideIn 5s; }
+  right: -100%;
+  animation: slideInMobile 5s; }
+  @media (min-width: 767px) {
+    .flash-messages {
+      animation: slideIn 5s; } }
   .flash-messages .flash {
     -ms-flex-align: center;
         align-items: center;
@@ -683,13 +698,24 @@ textarea:focus {
       .flash-messages .flash__remove:hover {
         cursor: pointer; }
 
+@keyframes slideInMobile {
+  0% {
+    left: 50%;
+    transform: translate(-50%, 0); }
+  90% {
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, 0); }
+  100% {
+    opacity: 0; } }
+
 @keyframes slideIn {
   0% {
     right: -100%; }
   10% {
-    right: 0; }
+    right: 10%; }
   90% {
-    right: 0; }
+    right: 10%; }
   100% {
     right: 150%; } }
 

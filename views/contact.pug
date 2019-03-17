@@ -5,11 +5,13 @@ block content
         h2.pageTitle= title
         form.form(action="/contact/send" method="POST")
             label(for="name") Name
-            input(type="text" name="name" value=user ? user.name : '')
+            input(type="text" name="name" value=user ? user.name : '' required)
             label(for="email") Email
-            input(type="email" name="email" value=user ? user.email : '')
+            input(type="email" name="email" value=user ? user.email : '' required)
+            label.honey(for="address") Address
+            input.honey(type="text" name="address")
             label(for="message") Message
-            textarea(name="message")
+            textarea(name="message" required)
             .receiveCopy
                 input(type="checkbox" id="receiveCopy" name="receiveCopy")
                 label.checkBox(for="receiveCopy") I want to receive a copy

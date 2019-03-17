@@ -1,11 +1,14 @@
 .flash-messages {
     border-radius: .25rem;
     position: absolute;
-    max-width: 500px;
+    max-width: 310px;
     top: 3%;
-    transform: translate(-50%, 0);
     z-index: 50;
-    animation: slideIn 5s;
+    right: -100%;
+    animation: slideInMobile 5s;
+    @media (min-width: $maxMobile) {
+        animation: slideIn 5s;
+    }
 
     .flash {
         align-items: center;
@@ -35,15 +38,30 @@
     }
 }
 
+@keyframes slideInMobile {
+    0% {
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    90% {
+        left: 50%;
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 @keyframes slideIn {
     0% {
         right: -100%;
     }
     10% {
-        right: 0;
+        right: 10%;
     }
     90% {
-        right: 0;
+        right: 10%;
     }
     100% {
         right: 150%;
