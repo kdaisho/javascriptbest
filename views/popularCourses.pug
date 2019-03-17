@@ -15,9 +15,9 @@ block content
                     tr
                         td #{ i + 1 }
                         td.photo
-                            a(href=`/store/${course.slug}` style=`background: url(/uploads/${course.image}) center/cover no-repeat;`)
+                            a(href=`/course/${course.slug}` style=`background: url(/uploads/${course.image}) center/cover no-repeat;`)
                         td
-                            a(href=`/store/${course.slug}`)
+                            a(href=`/course/${course.slug}`)
                                 = course.course
                         td= course.reviewsForPopularPage.length
                         td= Math.round((course.averageRating) * 10) / 10

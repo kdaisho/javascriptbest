@@ -6,8 +6,8 @@ include mixins/_review
 block content
     //- pre=h.dump(course)
     .course
-        .course__hero
-            img.hero(src=`/uploads/${course.image || 'review.jpg'}`)
+        .course__hero(style=`background: url('/uploads/${course.image || 'review.jpg'}') center/cover no-repeat`)
+            //- img.hero(src=`/uploads/${course.image || 'review.jpg'}`)
             .course__heading
                 h2.title
                     a(href=`/course/${course.slug}`) #{course.course}

@@ -402,7 +402,19 @@ textarea:focus {
   max-width: 960px;
   margin: 0 auto; }
   .course__hero {
+    -ms-flex-align: center;
+        align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    height: 200px;
+    overflow: hidden;
     position: relative; }
+    @media (min-width: 376px) {
+      .course__hero {
+        max-height: 325px; } }
+    @media (min-width: 767px) {
+      .course__hero {
+        max-height: 500px; } }
     .course__hero img {
       width: 100%; }
   .course__heading {
@@ -421,7 +433,10 @@ textarea:focus {
   .course__description {
     padding: 1rem 0; }
     .course__description .description {
-      margin-bottom: 1rem; }
+      margin-bottom: 2rem; }
+      @media (min-width: 767px) {
+        .course__description .description {
+          font-size: 1.25rem; } }
     .course__description .tags {
       display: -ms-flexbox;
       display: flex;
@@ -433,10 +448,19 @@ textarea:focus {
         border-radius: .25rem;
         line-height: 1rem;
         margin: .25rem;
-        padding: .35rem .75rem; }
-        .course__description .tags .tag a {
+        padding: .2rem .5rem .25rem; }
+        @media (min-width: 767px) {
+          .course__description .tags .tag {
+            padding: .35rem .75rem; } }
+        .course__description .tags .tag__link {
           color: #444;
-          font-weight: bold; }
+          font-weight: bold;
+          font-size: .75rem;
+          letter-spacing: 0; }
+          @media (min-width: 767px) {
+            .course__description .tags .tag__link {
+              font-size: 1rem;
+              padding: .35rem .75rem; } }
   .course__url {
     text-decoration: underline; }
 
