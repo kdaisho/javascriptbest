@@ -61,7 +61,9 @@ exports.getCourses = async (req, res) => {
 
     const [courses, count] = await Promise.all([coursesPromise, countPromise]);
     const pages = Math.ceil(count / numberCoursePerPage);
-
+    if (!courses.length) {
+        res.redirect(`/courses/page${pages}`);
+    }
     res.render('courses', { title: 'Courses', courses, page, pages, count });
 };
 

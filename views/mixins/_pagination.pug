@@ -3,7 +3,7 @@ mixin pagination(page, pages, count)
         .pagination__prev(class=/page([2-9]$|[1-9][0-9])/.test(currentPath) ? 'active' : '')
             a(href=`/courses/page${Number(page) - 1}`) Prev
         .pagination__text
-            p Page #{page} / #{pages}
+            p Page #{page} of #{pages}
         .pagination__next(class=currentPath.endsWith(pages) ? '' : 'active')
             a(href=`/courses/page${Number(page) + 1}`) Next
     .pagination--footer.m-t10

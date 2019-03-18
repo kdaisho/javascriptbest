@@ -723,7 +723,7 @@ textarea:focus {
       display: inline-block;
       -ms-transform: scale(0.75, 1.25);
           transform: scale(0.75, 1.25);
-      padding-right: .5rem; }
+      padding-right: .25rem; }
   .pagination__text {
     border-top: 1px solid #0e99e7;
     border-bottom: 1px solid #0e99e7;
@@ -738,7 +738,7 @@ textarea:focus {
       display: inline-block;
       -ms-transform: scale(0.75, 1.25);
           transform: scale(0.75, 1.25);
-      padding-left: .5rem; }
+      padding-left: .25rem; }
   .pagination--footer p {
     text-align: center; }
 
