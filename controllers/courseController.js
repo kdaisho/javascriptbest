@@ -49,13 +49,14 @@ exports.createCourse = async (req, res) => {
 
 exports.getCourses = async (req, res) => {
     const page = req.params.page || 1;
-    const numberCoursePerPage = 2;
+    const numberCoursePerPage = 10;
     const numberSkipPerPage = (page * numberCoursePerPage) - numberCoursePerPage;
 
     const coursesPromise = Course
         .find()
         .skip(numberSkipPerPage)
         .limit(numberCoursePerPage)
+        .sort({ created: 'desc' })
         .populate('reviews');
     const countPromise = Course.count();
 
