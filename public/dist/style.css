@@ -701,7 +701,8 @@ textarea:focus {
   animation: slideInMobile 5s; }
   @media (min-width: 767px) {
     .flash-messages {
-      animation: slideIn 5s; } }
+      animation: slideIn 5s;
+      max-width: 550px; } }
   .flash-messages .flash {
     -ms-flex-align: center;
         align-items: center;

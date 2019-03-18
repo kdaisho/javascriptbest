@@ -52,7 +52,11 @@ exports.contact = (req, res) => {
 
 exports.sendMessage = async (req, res) => {
     // Honeypot
-    if (req.body.address) return false;
+    if (req.body.address) {
+        req.flash('error', 'You must be a robot!');
+        res.redirect('/contact');
+        return;
+    }
 
     const sender = {
         name: req.body.name,

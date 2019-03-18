@@ -8,6 +8,7 @@
     animation: slideInMobile 5s;
     @media (min-width: $maxMobile) {
         animation: slideIn 5s;
+        max-width: 550px;
     }
 
     .flash {
