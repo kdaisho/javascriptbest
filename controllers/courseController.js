@@ -48,8 +48,21 @@ exports.createCourse = async (req, res) => {
 };
 
 exports.getCourses = async (req, res) => {
-    const courses = await Course.find().populate('reviews');
-    res.render('courses', { title: 'Courses', courses });
+    const page = req.params.page || 1;
+    const numberCoursePerPage = 2;
+    const numberSkipPerPage = (page * numberCoursePerPage) - numberCoursePerPage;
+
+    const coursesPromise = Course
+        .find()
+        .skip(numberSkipPerPage)
+        .limit(numberCoursePerPage)
+        .populate('reviews');
+    const countPromise = Course.count();
+
+    const [courses, count] = await Promise.all([coursesPromise, countPromise]);
+    const pages = Math.ceil(count / numberCoursePerPage);
+
+    res.render('courses', { title: 'Courses', courses, page, pages, count });
 };
 
 const confirmOwner = (course, user) => {

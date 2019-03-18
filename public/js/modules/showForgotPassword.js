@@ -1,4 +1,6 @@
 function showForgotPassword (trigger, hideTarget, showTarget) {
+    if (!trigger) return false;
+
     trigger.addEventListener('click', () => {
         showTarget.style.display = 'block';
         trigger.style.display = 'none';

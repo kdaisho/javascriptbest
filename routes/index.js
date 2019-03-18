@@ -9,6 +9,7 @@ const { catchErrors } = require('../handlers/errorHandlers');
 // Do work here
 router.get('/', (req, res) => { res.redirect('/courses') });
 router.get('/courses', catchErrors(courseController.getCourses));
+router.get('/courses/page:page', catchErrors(courseController.getCourses));
 router.get('/add', authController.isLoggedIn, courseController.addCourse);
 router.post('/add',
     courseController.upload,

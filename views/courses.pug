@@ -1,11 +1,12 @@
 extends layout
 
 include mixins/_courseCard
+include mixins/_pagination
 
 block content
     .container
         h2.pageTitle= title
-        //- pre= h.dump(courses)
         .courses
             each course in courses
                 +courseCard(course)
+    +pagination(page, pages, count)

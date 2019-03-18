@@ -3,7 +3,6 @@ import { $ } from './bling';
 
 function ajaxLike(event) {
     event.preventDefault();
-    console.log('like it');
     axios
         .post(this.action)
         .then(res => {
