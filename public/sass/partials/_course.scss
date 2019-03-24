@@ -3,9 +3,11 @@
     margin: 0 auto;
 
     &__hero {
-        align-items: center;
+        align-items: flex-start;
         display: flex;
+        flex-flow: column nowrap;
         height: 200px;
+        justify-content: flex-end;
         overflow: hidden;
         position: relative;
         @media (min-width: $maxMobileSmall) {
@@ -20,22 +22,65 @@
         }
     }
 
-    &__heading {
-        background: rgba(14, 153, 231, .85);
-        left: 0;
-        padding: .5rem 1rem;
-        position: absolute;
-        bottom: 10%;
+    .title {
+        background: $lightBlue;
+        font-size: $courseTitleSize;
+        padding: .25rem .75rem;
+        position: relative;
 
-        .title {
-            color: $black;
-            font-size: $courseTitleSize;
-            margin-bottom: .5rem;
+        &:after {
+            content: "";
+            height: 0;
+            width: 0;
+            border-top: 35px solid transparent;
+            border-left: 18px solid $lightBlue;
+            position: absolute;
+            right: -22px;
+            top: 0;
             @media (min-width: $maxMobile) {
-                font-size: $courseTitleSizeTablet;
+                border-top: 46px solid transparent;
+            }
+        }
+
+        @media (min-width: $maxMobile) {
+            font-size: $courseTitleSizeTablet;
+        }
+    }
+
+    .instructor {
+        background: $yellow;
+        color: #000;
+        margin: 6px auto 9px 0;
+        padding: .25rem .75rem .2rem;
+        position: relative;
+
+        @media (min-width: $maxMobile) {
+            font-size: $btnFontSize;
+        }
+
+        &:after {
+            content: "";
+            height: 0;
+            width: 0;
+            border-top: 0 solid transparent;
+            border-left: 16px solid $yellow;
+            border-bottom: 30px solid transparent;
+            position: absolute;
+            right: -20px;
+            top: 0;
+            @media (min-width: $maxMobile) {
+                border-bottom: 35px solid transparent;
             }
         }
     }
+
+    // &__heading {
+    //     background: rgba(14, 153, 231, .85);
+    //     left: 0;
+    //     padding: .5rem 1rem;
+    //     position: absolute;
+    //     bottom: 10%;
+    // }
 
     &__description {
         padding: 1rem 0;

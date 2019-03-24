@@ -1,7 +1,6 @@
 mixin courseCard(course = {})
     .courseCard
         .courseCard__hero(style=`background: url('/uploads/${course.image || "review.jpg"}') center/cover no-repeat;`)
-            //- h2.title
             h2.title
                 a(href=`/course/${course.slug}`) #{course.course}
             h3.instructor

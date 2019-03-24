@@ -25,8 +25,8 @@
         position: relative;
 
         .title {
-            background: rgba(14, 153, 231, 1);
-            padding: .25rem 1rem;
+            background: $lightBlue;
+            padding: .25rem .75rem;
             position: relative;
             z-index: 30;
 
@@ -52,18 +52,16 @@
         }
 
         .instructor {
-            align-items: center;
             background: $yellow;
-            display: inline-flex;
-            padding: .1rem 1rem 0;
+            font-size: $baseFontSize;
+            padding: .25rem 1rem .2rem;
             position: relative;
-            margin-left: auto;
+            margin: 3px 0 6px auto;
             z-index: 30;
 
             span {
                 display: block;
                 color: #000;
-                font-size: 1rem;
             }
 
             &:after {
@@ -72,7 +70,7 @@
                 width: 0;
                 border-top: 0 solid transparent;
                 border-right: 16px solid $yellow;
-                border-bottom: 25px solid transparent;
+                border-bottom: 27px solid transparent;
                 position: absolute;
                 left: -20px;
                 top: 0;
