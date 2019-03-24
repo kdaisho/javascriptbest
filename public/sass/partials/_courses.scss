@@ -1,7 +1,7 @@
 .courses {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    align-items: flex-start;
 
     @media (min-width: $maxMobile) {
         justify-content: flex-start;

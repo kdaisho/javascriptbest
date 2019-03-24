@@ -1,9 +1,13 @@
 mixin courseCard(course = {})
     .courseCard
         .courseCard__hero(style=`background: url('/uploads/${course.image || "review.jpg"}') center/cover no-repeat;`)
-        .courseCard__details
+            //- h2.title
             h2.title
                 a(href=`/course/${course.slug}`) #{course.course}
+            h3.instructor
+                span By #{course.instructor}
+            .shade
+        .courseCard__details
             p.desc= course.description.split(' ').slice(0, 20).join(' ')
             .courseCard__action
                 .courseCard__action--edit
