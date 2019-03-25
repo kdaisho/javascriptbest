@@ -74,14 +74,6 @@
         }
     }
 
-    // &__heading {
-    //     background: rgba(14, 153, 231, .85);
-    //     left: 0;
-    //     padding: .5rem 1rem;
-    //     position: absolute;
-    //     bottom: 10%;
-    // }
-
     &__description {
         padding: 1rem 0;
 
@@ -95,20 +87,53 @@
         .tags {
             display: flex;
             flex-flow: row wrap;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
 
             .tag {
                 background: $yellow;
-                border-radius: .25rem;
                 line-height: 1rem;
                 margin: .25rem;
-                padding: .2rem .5rem .25rem;
+                padding: .2rem .5rem .25rem 1rem;
+                position: relative;
 
                 @media (min-width: $maxMobile) {
-                    padding: .35rem .75rem;
+                    padding: .35rem 0;
                 }
+
+                &:before {
+                    content: "";
+                    height: 0;
+                    width: 0;
+                    border-top: 12px solid transparent;
+                    border-left: 6px solid #222;
+                    border-bottom: 12px solid transparent;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    @media (min-width: $maxMobile) {
+                        border-top: 14px solid transparent;
+                        border-bottom: 13px solid transparent;
+                    }
+                }
+
+                &:after {
+                    content: "";
+                    height: 0;
+                    width: 0;
+                    border-top: 12px solid transparent;
+                    border-left: 6px solid $yellow;
+                    border-bottom: 12px solid transparent;
+                    position: absolute;
+                    right: -6px;
+                    top: 0;
+                    @media (min-width: $maxMobile) {
+                        border-top: 14px solid transparent;
+                        border-bottom: 13px solid transparent;
+                    }
+                }
+
                 &__link {
-                    color: $black;
+                    color: #000;
                     font-weight: bold;
                     font-size: .75rem;
                     letter-spacing: 0;

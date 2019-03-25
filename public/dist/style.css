@@ -283,7 +283,9 @@ textarea:focus {
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
   -ms-flex-align: start;
-      align-items: flex-start; }
+      align-items: flex-start;
+  -ms-flex-pack: center;
+      justify-content: center; }
   @media (min-width: 767px) {
     .courses {
       -ms-flex-pack: start;
@@ -475,18 +477,46 @@ textarea:focus {
       display: flex;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-      margin-bottom: 1rem; }
+      margin-bottom: 1.5rem; }
       .course__description .tags .tag {
         background: #ffeb3b;
-        border-radius: .25rem;
         line-height: 1rem;
         margin: .25rem;
-        padding: .2rem .5rem .25rem; }
+        padding: .2rem .5rem .25rem 1rem;
+        position: relative; }
         @media (min-width: 767px) {
           .course__description .tags .tag {
-            padding: .35rem .75rem; } }
+            padding: .35rem 0; } }
+        .course__description .tags .tag:before {
+          content: "";
+          height: 0;
+          width: 0;
+          border-top: 12px solid transparent;
+          border-left: 6px solid #222;
+          border-bottom: 12px solid transparent;
+          position: absolute;
+          left: 0;
+          top: 0; }
+          @media (min-width: 767px) {
+            .course__description .tags .tag:before {
+              border-top: 14px solid transparent;
+              border-bottom: 13px solid transparent; } }
+        .course__description .tags .tag:after {
+          content: "";
+          height: 0;
+          width: 0;
+          border-top: 12px solid transparent;
+          border-left: 6px solid #ffeb3b;
+          border-bottom: 12px solid transparent;
+          position: absolute;
+          right: -6px;
+          top: 0; }
+          @media (min-width: 767px) {
+            .course__description .tags .tag:after {
+              border-top: 14px solid transparent;
+              border-bottom: 13px solid transparent; } }
         .course__description .tags .tag__link {
-          color: #444;
+          color: #000;
           font-weight: bold;
           font-size: .75rem;
           letter-spacing: 0; }
@@ -568,6 +598,7 @@ textarea:focus {
         top: 0; }
     .courseCard__hero .shade {
       background: rgba(0, 0, 0, 0.25);
+      display: block;
       height: 100%;
       left: 0;
       position: absolute;

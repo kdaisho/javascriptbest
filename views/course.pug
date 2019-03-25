@@ -6,10 +6,10 @@ include mixins/_review
 block content
     .course
         .course__hero(style=`background: url('/uploads/${course.image || 'review.jpg'}') center/cover no-repeat`)
-            //- .course__heading
             h2.title
                 a(href=`/course/${course.slug}`) #{course.course}
             h3.instructor By #{course.instructor}
+
         .course__description
             p.description= course.description
 
