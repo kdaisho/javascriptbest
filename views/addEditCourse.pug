@@ -20,6 +20,10 @@ block content
             - const tags = course.tags || []
             label(for="description") Description
             textarea.required(name="description" required)= course.description
+            .reviewer__stars
+                each number in [5, 4, 3, 2, 1]
+                    input.rating(type="radio" id=`star${number}` name="rating" value=number)
+                    label(for=`star${number}`) #{number} Stars
             ul.tags
                 each choice in choices
                     .tag.tag__choice

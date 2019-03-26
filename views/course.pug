@@ -13,19 +13,24 @@ block content
         .course__description
             p.description= course.description
 
+            .rating
+                .stars(title=`Rated ${course.rating} out of five stars`)
+                    = `★`.repeat(course.rating)
+                    = `☆`.repeat(5 - course.rating)
+
             if course.tags
                 ul.tags
                     each tag in course.tags
                         li.tag
                             a.tag__link(href=`/tags/${tag}`) ##{tag}
 
-            a.course__url(href=`${course.url}` target="_blank" title=`Visit ${course.course}`) Visit this course
+        a.course__url(href=`${course.url}` target="_blank" title=`Visit ${course.course}`) Visit this course
 
-            if user
-                +reviewForm(course)
+        if user
+            +reviewForm(course)
 
-            if course.reviews
-                .reviews
-                    each re in course.reviews
-                        .eachReview
-                            +review(re)
+        if course.reviews
+            .reviews
+                each re in course.reviews
+                    .eachReview
+                        +review(re)

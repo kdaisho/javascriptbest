@@ -78,9 +78,25 @@
         padding: 1rem 0;
 
         .description {
-            margin-bottom: 2rem;
+            // margin-bottom: 2rem;
+            margin-bottom: .5rem;
             @media (min-width: $maxMobile) {
                 font-size: $btnFontSize;
+            }
+        }
+
+        .rating {
+            margin-bottom: .75rem;
+            @media (min-width: $maxMobile) {
+                display: flex;
+                flex-flow: row nowrap;
+            }
+            .stars {
+                color: $yellow;
+                text-align: left;
+                @media (min-width: $maxMobile) {
+                    font-size: 1.5rem;
+                }
             }
         }
 

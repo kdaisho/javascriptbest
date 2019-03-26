@@ -33,6 +33,11 @@ const courseSchema = new mongoose.Schema({
         type: mongoose.Schema.ObjectId,
         ref: 'User',
         required: 'You must supply an author'
+    },
+    rating: {
+        type: Number,
+        min: 1,
+        max: 5
     }
 }, {
     toJSON: { virtuals: true },

@@ -145,7 +145,7 @@ textarea:focus {
     height: 42px;
     width: 42px; }
     .nav__hamburger span {
-      height: 31px;
+      height: 32px;
       display: block; }
       .nav__hamburger span svg {
         fill: #fff; }
@@ -468,10 +468,24 @@ textarea:focus {
   .course__description {
     padding: 1rem 0; }
     .course__description .description {
-      margin-bottom: 2rem; }
+      margin-bottom: .5rem; }
       @media (min-width: 767px) {
         .course__description .description {
           font-size: 1.25rem; } }
+    .course__description .rating {
+      margin-bottom: .75rem; }
+      @media (min-width: 767px) {
+        .course__description .rating {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap; } }
+      .course__description .rating .stars {
+        color: #ffeb3b;
+        text-align: left; }
+        @media (min-width: 767px) {
+          .course__description .rating .stars {
+            font-size: 1.5rem; } }
     .course__description .tags {
       display: -ms-flexbox;
       display: flex;
