@@ -75,10 +75,9 @@
     }
 
     &__description {
-        padding: 1rem 0;
+        padding: 1rem 0 0;
 
         .description {
-            // margin-bottom: 2rem;
             margin-bottom: .5rem;
             @media (min-width: $maxMobile) {
                 font-size: $btnFontSize;
@@ -163,6 +162,17 @@
     }
 
     &__url {
+        color: $yellow;
         text-decoration: underline;
+    }
+
+    .wanna {
+        p, a {
+            font-size: $courseTitleSize;
+        }
+        a {
+            text-decoration: underline;
+            color: $yellow;
+        }
     }
 }

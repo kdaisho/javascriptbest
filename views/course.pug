@@ -34,3 +34,11 @@ block content
                 each re in course.reviews
                     .eachReview
                         +review(re)
+
+        if !user
+            .wanna
+                p Have something to say?
+                a(href="/login")  Log in
+                span  or
+                a(href="/signup")  Sign up
+                span  today!
