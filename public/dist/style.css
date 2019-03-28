@@ -36,7 +36,7 @@ a {
   color: inherit; }
 
 body {
-  background: #222; }
+  background: #272822; }
   body * {
     color: #efefef;
     font-family: 'Avenir', sans-serif;
@@ -53,7 +53,7 @@ textarea:focus {
   width: 100%; }
 
 .button {
-  background: #0e99e7;
+  background: #2680f9;
   border: none;
   border-radius: .25rem;
   color: #fff;
@@ -117,7 +117,7 @@ textarea:focus {
     z-index: 50; }
 
 .nav {
-  background: #0e99e7;
+  background: #2680f9;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
   height: 100%;
   left: -200px;
@@ -131,7 +131,7 @@ textarea:focus {
     .nav {
       left: 0; } }
   .nav__hamburger {
-    background: #0e99e7;
+    background: #2680f9;
     border: none;
     bottom: 10%;
     box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.5);
@@ -205,7 +205,7 @@ textarea:focus {
       .nav__wrapper li a:hover:not(.avatar):not(.likes-count),
       .nav__wrapper li span:hover:not(.avatar):not(.likes-count),
       .nav__wrapper li button:hover:not(.avatar):not(.likes-count) {
-        background: #0b79b7;
+        background: #0666e6;
         cursor: pointer; }
       @media (min-width: 1024px) {
         .nav__wrapper li a.nav__active,
@@ -220,14 +220,14 @@ textarea:focus {
             width: 0;
             border-top: 12px solid transparent;
             border-bottom: 12px solid transparent;
-            border-left: 12px solid #0e99e7;
+            border-left: 12px solid #2680f9;
             position: absolute;
             right: -12px;
             top: calc(50% - 12px); }
           .nav__wrapper li a.nav__active:hover:after,
           .nav__wrapper li span.nav__active:hover:after,
           .nav__wrapper li button.nav__active:hover:after {
-            border-left: 12px solid #0b79b7; } }
+            border-left: 12px solid #0666e6; } }
   .nav.active {
     left: 0; }
     .nav.active .nav__hamburger span.hamburger {
@@ -298,7 +298,7 @@ textarea:focus {
     font-size: 1.25rem;
     margin-bottom: .5rem; }
     .container.edit form label[for="image"] {
-      background: #0e99e7;
+      background: #2680f9;
       border-radius: .25rem;
       display: inline-block;
       margin-bottom: 2rem;
@@ -344,7 +344,8 @@ textarea:focus {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-flow: row wrap;
-        flex-flow: row wrap; }
+        flex-flow: row wrap;
+    margin-top: 1.5rem; }
     .container.edit form .tags .tag__choice {
       -ms-flex-align: center;
           align-items: center;
@@ -357,7 +358,7 @@ textarea:focus {
         top: -5px;
         z-index: 10; }
         .container.edit form .tags .tag__choice input[type="checkbox"]:checked + label {
-          background: #ffeb3b; }
+          background: #a6e22e; }
       .container.edit form .tags .tag__choice label {
         background: #dcdcdc;
         color: #444;
@@ -424,7 +425,7 @@ textarea:focus {
     .course__hero img {
       width: 100%; }
   .course .title {
-    background: #0e99e7;
+    background: #2680f9;
     font-size: 1.25rem;
     padding: .25rem .75rem;
     position: relative; }
@@ -433,7 +434,7 @@ textarea:focus {
       height: 0;
       width: 0;
       border-top: 35px solid transparent;
-      border-left: 18px solid #0e99e7;
+      border-left: 18px solid #2680f9;
       position: absolute;
       right: -22px;
       top: 0; }
@@ -444,7 +445,7 @@ textarea:focus {
       .course .title {
         font-size: 1.75rem; } }
   .course .instructor {
-    background: #ffeb3b;
+    background: #a6e22e;
     color: #000;
     margin: 6px auto 9px 0;
     padding: .25rem .75rem .2rem;
@@ -457,7 +458,7 @@ textarea:focus {
       height: 0;
       width: 0;
       border-top: 0 solid transparent;
-      border-left: 16px solid #ffeb3b;
+      border-left: 16px solid #a6e22e;
       border-bottom: 30px solid transparent;
       position: absolute;
       right: -20px;
@@ -481,7 +482,7 @@ textarea:focus {
           -ms-flex-flow: row nowrap;
               flex-flow: row nowrap; } }
       .course__description .rating .stars {
-        color: #ffeb3b;
+        color: #a6e22e;
         text-align: left; }
         @media (min-width: 767px) {
           .course__description .rating .stars {
@@ -493,7 +494,7 @@ textarea:focus {
           flex-flow: row wrap;
       margin-bottom: 1.5rem; }
       .course__description .tags .tag {
-        background: #ffeb3b;
+        background: #a6e22e;
         line-height: 1rem;
         margin: .25rem;
         padding: .2rem .5rem .25rem 1rem;
@@ -520,7 +521,7 @@ textarea:focus {
           height: 0;
           width: 0;
           border-top: 12px solid transparent;
-          border-left: 6px solid #ffeb3b;
+          border-left: 6px solid #a6e22e;
           border-bottom: 12px solid transparent;
           position: absolute;
           right: -6px;
@@ -539,13 +540,13 @@ textarea:focus {
               font-size: 1rem;
               padding: .35rem .75rem; } }
   .course__url {
-    color: #ffeb3b;
+    color: #a6e22e;
     text-decoration: underline; }
   .course .wanna p, .course .wanna a {
     font-size: 1.25rem; }
   .course .wanna a {
     text-decoration: underline;
-    color: #ffeb3b; }
+    color: #a6e22e; }
 
 .courseCard {
   -ms-flex: 0 0 98%;
@@ -577,7 +578,7 @@ textarea:focus {
     height: 200px;
     position: relative; }
     .courseCard__hero .title {
-      background: #0e99e7;
+      background: #2680f9;
       padding: .25rem .75rem;
       position: relative;
       z-index: 30; }
@@ -589,7 +590,7 @@ textarea:focus {
         height: 0;
         width: 0;
         border-top: 30px solid transparent;
-        border-left: 18px solid #0e99e7;
+        border-left: 18px solid #2680f9;
         position: absolute;
         right: -22px;
         top: 0; }
@@ -597,7 +598,7 @@ textarea:focus {
           .courseCard__hero .title:after {
             border-top: 35px solid transparent; } }
     .courseCard__hero .instructor {
-      background: #ffeb3b;
+      background: #a6e22e;
       font-size: 0.9rem;
       padding: .25rem 1rem .2rem;
       position: relative;
@@ -611,7 +612,7 @@ textarea:focus {
         height: 0;
         width: 0;
         border-top: 0 solid transparent;
-        border-right: 16px solid #ffeb3b;
+        border-right: 16px solid #a6e22e;
         border-bottom: 27px solid transparent;
         position: absolute;
         left: -20px;
@@ -645,7 +646,7 @@ textarea:focus {
     .courseCard__action--edit {
       padding: 0 8px; }
       .courseCard__action--edit svg {
-        stroke: #0e99e7;
+        stroke: #2680f9;
         stroke-width: 2.5; }
     .courseCard__action--like button {
       background: none;
@@ -654,13 +655,13 @@ textarea:focus {
       .courseCard__action--like button:hover {
         cursor: pointer; }
       .courseCard__action--like button svg {
-        stroke: #0e99e7;
+        stroke: #2680f9;
         stroke-width: 2;
         fill: none; }
       .courseCard__action--like button.isLiked svg {
-        fill: #0e99e7; }
+        fill: #2680f9; }
   .courseCard__reviews .count {
-    background: #0e99e7;
+    background: #2680f9;
     border-radius: 50%;
     box-sizing: border-box;
     display: inline-block;
@@ -669,6 +670,7 @@ textarea:focus {
     height: 18px;
     left: -16px;
     margin-top: -14px;
+    margin-right: -.75rem;
     padding: 2px 0 0 1px;
     position: relative;
     text-align: center;
@@ -694,7 +696,7 @@ textarea:focus {
     .reviewer__stars input[type="radio"] {
       display: none; }
       .reviewer__stars input[type="radio"]:checked ~ label {
-        color: #ffeb3b; }
+        color: #a6e22e; }
       .reviewer__stars input[type="radio"] + label {
         font-size: 0;
         -ms-flex: 0 0 2.5rem;
@@ -719,12 +721,12 @@ textarea:focus {
               order: 1; }
         .reviewer__stars input[type="radio"] + label:hover,
         .reviewer__stars input[type="radio"] + label:hover ~ label {
-          color: #ffeb3b;
+          color: #a6e22e;
           cursor: pointer; }
   .reviewer__error {
     visibility: hidden; }
     .reviewer__error p {
-      color: #ffeb3b;
+      color: #a6e22e;
       font-size: 1.25rem;
       text-align: center; }
     .reviewer__error.active {
@@ -733,7 +735,7 @@ textarea:focus {
 .reviews {
   margin: 3rem 0; }
   .reviews .eachReview {
-    border-left: 3px solid #0e99e7;
+    border-left: 3px solid #2680f9;
     padding: .5rem .5rem .5rem 1rem;
     margin-bottom: 1.5rem; }
     .reviews .eachReview__header {
@@ -756,7 +758,7 @@ textarea:focus {
         width: 50px;
         margin-right: 1rem; }
     .reviews .eachReview__rating {
-      color: #ffeb3b; }
+      color: #a6e22e; }
     .reviews .eachReview__time {
       font-size: 75%;
       opacity: .75;
@@ -774,7 +776,7 @@ textarea:focus {
       .popular .table .photo {
         display: block; } }
   .popular .table th {
-    background: #0e99e7;
+    background: #2680f9;
     color: #fff;
     vertical-align: middle; }
   .popular .table th,
@@ -792,7 +794,7 @@ textarea:focus {
     font-weight: bold;
     vertical-align: middle; }
     .popular .table td a {
-      color: #0e99e7;
+      color: #2680f9;
       font-weight: bold; }
       .popular .table td a:hover {
         text-decoration: underline; }
@@ -816,10 +818,10 @@ textarea:focus {
     .tagsPage .tag__link span.name {
       background: #fff; }
     .tagsPage .tag__link span.count {
-      background: #0e99e7;
+      background: #2680f9;
       color: #fff; }
   .tagsPage .tag__link--active span.name {
-    background: #0e99e7;
+    background: #2680f9;
     color: #fff; }
 
 .pagination {
@@ -831,19 +833,19 @@ textarea:focus {
   -ms-flex-pack: center;
       justify-content: center; }
   .pagination__prev, .pagination__next {
-    border: 1px solid #0e99e7; }
+    border: 1px solid #2680f9; }
     .pagination__prev a, .pagination__next a {
-      color: #0e99e7;
+      color: #2680f9;
       pointer-events: none;
       text-transform: uppercase; }
       .pagination__prev a:before, .pagination__prev a:after, .pagination__next a:before, .pagination__next a:after {
         position: relative;
         top: -1px; }
     .pagination__prev.active, .pagination__next.active {
-      background: #0e99e7;
+      background: #2680f9;
       color: #fff; }
       .pagination__prev.active a, .pagination__next.active a {
-        background: #0e99e7;
+        background: #2680f9;
         color: #fff;
         pointer-events: auto; }
   .pagination__prev {
@@ -856,8 +858,8 @@ textarea:focus {
           transform: scale(0.75, 1.25);
       padding-right: .25rem; }
   .pagination__text {
-    border-top: 1px solid #0e99e7;
-    border-bottom: 1px solid #0e99e7;
+    border-top: 1px solid #2680f9;
+    border-bottom: 1px solid #2680f9;
     padding: .25rem .5rem; }
     .pagination__text p {
       color: #fff; }
@@ -894,7 +896,7 @@ textarea:focus {
     margin: 1rem 0;
     padding: .25rem 1.5rem .25rem .5rem; }
     .flash-messages .flash.flash--success {
-      background: #0e99e7; }
+      background: #2680f9; }
     .flash-messages .flash.flash--error {
       background: #ff2155; }
     .flash-messages .flash__remove {
