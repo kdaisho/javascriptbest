@@ -679,6 +679,12 @@ textarea:focus {
 
 .reviewer {
   margin: 3rem 0; }
+  .reviewer__title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem; }
+    @media (min-width: 767px) {
+      .reviewer__title {
+        font-size: 1.75rem; } }
   .reviewer__text {
     border-radius: .25rem;
     box-sizing: border-box;

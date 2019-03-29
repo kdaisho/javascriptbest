@@ -1,6 +1,14 @@
 .reviewer {
     margin: 3rem 0;
 
+    &__title {
+        font-size: $courseTitleSize;
+        margin-bottom: 1rem;
+        @media (min-width: $maxMobile) {
+            font-size: $courseTitleSizeTablet;
+        }
+    }
+
     &__text {
         border-radius: .25rem;
         box-sizing: border-box;

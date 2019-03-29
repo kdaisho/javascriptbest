@@ -5,7 +5,6 @@ function ajaxLike(event) {
     event.preventDefault();
     axios.post(this.action).then(res => {
         const isLiked = this.like.classList.toggle('isLiked');
-        console.log(isLiked);
         $('.likes-count').textContent = res.data.likes.length;
     }).catch(console.error);
 }

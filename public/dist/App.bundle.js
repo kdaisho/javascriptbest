@@ -1016,7 +1016,6 @@ function ajaxLike(event) {
     event.preventDefault();
     _axios2.default.post(this.action).then(function (res) {
         var isLiked = _this.like.classList.toggle('isLiked');
-        console.log(isLiked);
         (0, _bling.$)('.likes-count').textContent = res.data.likes.length;
     }).catch(console.error);
 }
