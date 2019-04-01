@@ -16,7 +16,7 @@ block content
             input(type="file" id="image" name="image" accept="image/gif, image/png, image/jpeg")
             if course.image
                 img.preview(src=`/uploads/${course.image}` alt=course.course width=200)
-            - const choices = ['JavaScript', 'Node', 'React', 'Vue', 'Angular', 'Webpack', 'Database', 'CSS', 'Design', 'Typographie', 'Bash']
+            - const choices = ['JavaScript', 'Node', 'React', 'Vue', 'Angular', 'Webpack', 'Database', 'CSS', 'Git', 'PWA', 'Design', 'Typographie', 'Bash', 'Paid Course']
             - const tags = course.tags || []
             label(for="description") Description
             textarea.required(name="description" required)= course.description

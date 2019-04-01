@@ -65,7 +65,7 @@ exports.getCourses = async (req, res) => {
     if (!courses.length) {
         res.redirect(`/courses/page${pages}`);
     }
-    res.render('courses', { title: 'Courses', courses, page, pages, count });
+    res.render('courses', { title: 'All Reviews', courses, page, pages, count });
 };
 
 const confirmOwner = (course, user) => {

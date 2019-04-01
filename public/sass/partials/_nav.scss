@@ -20,16 +20,25 @@
         bottom: 10%;
         box-shadow: 3px 2px 4px rgba(0, 0, 0, .5);
         display: flex;
-        justify-content: center;
+        height: 42px;
+        justify-content: flex-end;
         outline: none;
         position: absolute;
-        right: -42px;
-        height: 42px;
+        right: -28px;
         width: 42px;
 
         span {
             height: 32px;
             display: block;
+
+            &.open {
+                height: 0;
+                width: 0;
+                border-top: 13px solid transparent;
+                border-left: 12px solid #fff;
+                border-bottom: 13px solid transparent;
+                padding-right: 1px;
+            }
 
             svg {
                 fill: #fff;
@@ -52,9 +61,11 @@
     &__wrapper {
         height: 100%;
         overflow-x: auto;
+
         @media (min-width: $maxTablet) {
             overflow: visible;
         }
+
         &__top {
             box-shadow: 0px 3px 4px rgba(0, 0, 0, .5);
             padding: 1.5rem 0 1rem;
@@ -112,6 +123,7 @@
             @media (min-width: $maxTablet) {
                 &.nav__active {
                     position: relative;
+
                     &:after {
                         content: "";
                         height: 0;
@@ -123,6 +135,7 @@
                         right: -12px;
                         top: calc(50% - 12px);
                     }
+
                     &:hover:after {
                         border-left: 12px solid darken($monokaiBlue, 10%);
                     }
@@ -135,8 +148,11 @@
         left: 0;
 
         .nav__hamburger {
+            justify-content: center;
+            right: -42px;
+
             span {
-                &.hamburger {
+                &.open {
                     display: none;
                 }
 

@@ -137,16 +137,23 @@ textarea:focus {
     box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.5);
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: center;
-        justify-content: center;
+    height: 42px;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
     outline: none;
     position: absolute;
-    right: -42px;
-    height: 42px;
+    right: -28px;
     width: 42px; }
     .nav__hamburger span {
       height: 32px;
       display: block; }
+      .nav__hamburger span.open {
+        height: 0;
+        width: 0;
+        border-top: 13px solid transparent;
+        border-left: 12px solid #fff;
+        border-bottom: 13px solid transparent;
+        padding-right: 1px; }
       .nav__hamburger span svg {
         fill: #fff; }
     .nav__hamburger .close {
@@ -230,10 +237,14 @@ textarea:focus {
             border-left: 12px solid #0666e6; } }
   .nav.active {
     left: 0; }
-    .nav.active .nav__hamburger span.hamburger {
-      display: none; }
-    .nav.active .nav__hamburger span.close {
-      display: block; }
+    .nav.active .nav__hamburger {
+      -ms-flex-pack: center;
+          justify-content: center;
+      right: -42px; }
+      .nav.active .nav__hamburger span.open {
+        display: none; }
+      .nav.active .nav__hamburger span.close {
+        display: block; }
 
 .search-container {
   display: none;

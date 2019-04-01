@@ -9,14 +9,15 @@ html
         block nav
             aside.nav#nav
                 button.nav__hamburger#hamburger
-                    span.hamburger
-                        != h.icon('menu')
+                    span.open
+                        //- != h.icon('menu')
                     span.close
                         != h.icon('close')
                 .nav__wrapper
                     .nav__wrapper__top
                         .logo
-                            h1 Frontend Masters Course
+                            //- h1 Frontend Masters Course
+                            h1 Frontend Review
                         ul
                             if user
                                 li
@@ -35,13 +36,13 @@ html
                     .nav__wrapper__main
                         ul
                             li
-                                a(href="/courses" class=currentPath.startsWith('/courses') ? 'nav__active' : '') Courses
+                                a(href="/courses" class=currentPath.startsWith('/courses') ? 'nav__active' : '') All Reviews
                             li
                                 a(href="/tags" class=currentPath.startsWith('/tags') ? 'nav__active' : '') Tags
                             li
                                 a(href="/popular" class=currentPath.startsWith('/popular') ? 'nav__active' : '') Popular
                             li
-                                a(href="/add" class=currentPath.startsWith('/add') ? 'nav__active' : '') Add Course
+                                a(href="/add" class=currentPath.startsWith('/add') ? 'nav__active' : '') Write a Review
                             li
                                 a(href="/contact" class=currentPath.startsWith('/contact') ? 'nav__active' : '') Contact
                             li
