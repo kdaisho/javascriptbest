@@ -1,5 +1,5 @@
 .nav {
-    background: $lightBlue;
+    background: $monokaiBlue;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .5);
     height: 100%;
     left: -200px;
@@ -15,7 +15,7 @@
     }
 
     &__hamburger {
-        background: $lightBlue;
+        background: $monokaiBlue;
         border: none;
         bottom: 10%;
         box-shadow: 3px 2px 4px rgba(0, 0, 0, .5);
@@ -105,7 +105,7 @@
             }
 
             &:hover:not(.avatar):not(.likes-count) {
-                background: darken($lightBlue, 10%);
+                background: darken($monokaiBlue, 10%);
                 cursor: pointer;
             }
 
@@ -118,13 +118,13 @@
                         width: 0;
                         border-top: 12px solid transparent;
                         border-bottom: 12px solid transparent;
-                        border-left: 12px solid $lightBlue;
+                        border-left: 12px solid $monokaiBlue;
                         position: absolute;
                         right: -12px;
                         top: calc(50% - 12px);
                     }
                     &:hover:after {
-                        border-left: 12px solid darken($lightBlue, 10%);
+                        border-left: 12px solid darken($monokaiBlue, 10%);
                     }
                 }
             }

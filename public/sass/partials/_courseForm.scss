@@ -8,7 +8,7 @@
             margin-bottom: .5rem;
 
             &[for="image"] {
-                background: $lightBlue;
+                background: $monokaiBlue;
                 border-radius: .25rem;
                 display: inline-block;
                 margin-bottom: 2rem;
@@ -86,7 +86,7 @@
                         z-index: 10;
 
                         &:checked + label {
-                            background: $yellow;
+                            background: $monokaiGreen;
                         }
                     }
 

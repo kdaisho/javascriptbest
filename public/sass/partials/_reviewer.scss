@@ -27,7 +27,7 @@
             display: none;
             &:checked {
                 & ~ label {
-                    color: $yellow;
+                    color: $monokaiGreen;
                 }
             }
 
@@ -55,7 +55,7 @@
                 }
                 &:hover,
                 &:hover ~ label {
-                    color: lighten($yellow, 0);
+                    color: lighten($monokaiGreen, 0);
                     cursor: pointer;
                 }
             }
@@ -65,7 +65,7 @@
     &__error {
         visibility: hidden;
         p {
-            color: $yellow;
+            color: $monokaiGreen;
             font-size: $btnFontSize;
             text-align: center;
         }

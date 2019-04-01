@@ -15,7 +15,7 @@ toggleSearch($('#searchButton'), $('#nav'), $('#hamburger'), $('#backdrop'), $('
 typeAhead($('.search'));
 handleFlash($('#flashMsg'));
 formValidate($$('.required'));
-ratingValidate($$('.rating'), $('#submitReview'), $('.reviewer'), $('.reviewer__error'));
+ratingValidate($$('.rating'), $('#submitReview'), $('#reviewer'), $('.reviewer__error'));
 showForgotPassword($('.forgotPassword'), $$('.loginForm'), $('.forgotPasswordForm'));
 const likeForms = $$('form.like');
 likeForms.on('submit', ajaxLike);

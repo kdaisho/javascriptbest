@@ -904,7 +904,7 @@ textarea:focus {
     .flash-messages .flash.flash--success {
       background: #2680f9; }
     .flash-messages .flash.flash--error {
-      background: #ff2155; }
+      background: #f92672; }
     .flash-messages .flash__remove {
       background: none;
       border: none;

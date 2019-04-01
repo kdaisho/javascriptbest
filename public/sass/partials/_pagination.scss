@@ -6,9 +6,9 @@
 
     &__prev,
     &__next {
-        border: 1px solid $lightBlue;
+        border: 1px solid $monokaiBlue;
         a {
-            color: $lightBlue;
+            color: $monokaiBlue;
             pointer-events: none;
             text-transform: uppercase;
             &:before,
@@ -18,10 +18,10 @@
             }
         }
         &.active {
-            background: $lightBlue;
+            background: $monokaiBlue;
             color: #fff;
             a {
-                background: $lightBlue;
+                background: $monokaiBlue;
                 color: #fff;
                 pointer-events: auto;
             }
@@ -42,8 +42,8 @@
     }
 
     &__text {
-        border-top: 1px solid $lightBlue;
-        border-bottom: 1px solid $lightBlue;
+        border-top: 1px solid $monokaiBlue;
+        border-bottom: 1px solid $monokaiBlue;
         padding: .25rem .5rem;
         p {
             color: #fff;

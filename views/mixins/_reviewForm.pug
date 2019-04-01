@@ -1,7 +1,7 @@
 mixin reviewForm(course)
     .reviewer
         h2.reviewer__title Leave a review!
-        form(action=`/reviews/${course._id}` method="POST")
+        form(id="reviewer" action=`/reviews/${course._id}` method="POST")
             textarea.reviewer__text.required(name="text" placeholder=`${course.course} course is specifically focused on...` required)
             .reviewer__meta
                 .reviewer__stars

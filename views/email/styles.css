@@ -57,7 +57,7 @@ table {
 ------------------------------------- */
 .main {
   background: #fff;
-  border-top:20px solid #fff200;
+  border-top:20px solid #2680f9;
   width: 100%; }
 
 .wrapper {
@@ -112,7 +112,7 @@ ol {
     margin-left: 5px; }
 
 a {
-  color: #fff200;
+  color: #2680f9;
   text-decoration: underline; }
 
 /* -------------------------------------
@@ -131,10 +131,10 @@ a {
     text-align: center; }
   .btn a {
     background-color: #ffffff;
-    border: solid 1px #fff200;
+    border: solid 1px #2680f9;
     border-radius: 5px;
     box-sizing: border-box;
-    color: #fff200;
+    color: #2680f9;
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
@@ -145,11 +145,11 @@ a {
     text-transform: capitalize; }
 
 .btn-primary table td {
-  background-color: #fff200; }
+  background-color: #2680f9; }
 
 .btn-primary a {
-  background-color: #fff200;
-  border-color: #fff200;
+  background-color: #2680f9;
+  border-color: #2680f9;
   color: #3a3a3a; }
 
 /* -------------------------------------

@@ -2,7 +2,7 @@
     margin: 3rem 0;
 
     .eachReview {
-        border-left: 3px solid $lightBlue;
+        border-left: 3px solid $monokaiBlue;
         padding: .5rem .5rem .5rem 1rem;
         margin-bottom: 1.5rem;
 
@@ -24,7 +24,7 @@
         }
 
         &__rating {
-            color: $yellow;
+            color: $monokaiGreen;
         }
 
         &__time {

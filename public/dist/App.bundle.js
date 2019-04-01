@@ -2871,7 +2871,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _typeAhead2.default)((0, _bling.$)('.search'));
 (0, _handleFlash2.default)((0, _bling.$)('#flashMsg'));
 (0, _formValidate2.default)((0, _bling.$$)('.required'));
-(0, _ratingValidate2.default)((0, _bling.$$)('.rating'), (0, _bling.$)('#submitReview'), (0, _bling.$)('.reviewer'), (0, _bling.$)('.reviewer__error'));
+(0, _ratingValidate2.default)((0, _bling.$$)('.rating'), (0, _bling.$)('#submitReview'), (0, _bling.$)('#reviewer'), (0, _bling.$)('.reviewer__error'));
 (0, _showForgotPassword2.default)((0, _bling.$)('.forgotPassword'), (0, _bling.$$)('.loginForm'), (0, _bling.$)('.forgotPasswordForm'));
 var likeForms = (0, _bling.$$)('form.like');
 likeForms.on('submit', _like2.default);
