@@ -26,6 +26,7 @@
 
         .title {
             background: $monokaiBlue;
+            font-size: $courseTitleSize;
             padding: .25rem .75rem;
             position: relative;
             z-index: 30;
@@ -40,7 +41,7 @@
                 content: "";
                 height: 0;
                 width: 0;
-                border-top: 30px solid transparent;
+                border-top: 35px solid transparent;
                 border-left: 18px solid $monokaiBlue;
                 position: absolute;
                 right: -22px;
