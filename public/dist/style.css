@@ -127,14 +127,11 @@ textarea:focus {
   background: #2680f9;
   -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-  height: 120%;
-  left: -180px;
+  height: 100%;
+  left: -200px;
   position: fixed;
   text-align: center;
   top: 0;
-  -webkit-transition: left .2s ease-out;
-  -o-transition: left .2s ease-out;
-  transition: left .2s ease-out;
   width: 200px;
   z-index: 60; }
   @media (min-width: 1024px) {
@@ -143,7 +140,7 @@ textarea:focus {
   .nav__hamburger {
     background: #2680f9;
     border: none;
-    bottom: 25%;
+    bottom: 10%;
     -webkit-box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.5);
             box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.5);
     display: -webkit-box;
@@ -154,8 +151,8 @@ textarea:focus {
         -ms-flex-pack: end;
             justify-content: flex-end;
     outline: none;
-    position: absolute;
-    right: -28px;
+    position: fixed;
+    left: -14px;
     width: 42px; }
     .nav__hamburger span {
       height: 32px;
@@ -256,7 +253,7 @@ textarea:focus {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
-      right: -42px; }
+      left: 200px; }
       .nav.active .nav__hamburger span.open {
         display: none; }
       .nav.active .nav__hamburger span.close {
