@@ -36,8 +36,14 @@ a {
   text-decoration: none;
   color: inherit; }
 
+html {
+  height: 100%;
+  overflow: hidden; }
+
 body {
-  background: #272822; }
+  background: #272822;
+  height: 100%;
+  overflow: auto; }
   body * {
     color: #efefef;
     font-family: 'Avenir', sans-serif;

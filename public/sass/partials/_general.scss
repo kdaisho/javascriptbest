@@ -1,5 +1,12 @@
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     background: $monokaiBlack;
+    height: 100%;
+    overflow: auto;
 
     * {
         color: #efefef;
