@@ -140,7 +140,7 @@ textarea:focus {
   .nav__hamburger {
     background: #2680f9;
     border: none;
-    bottom: 80px;
+    bottom: 100px;
     z-index: 60;
     -webkit-box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.5);
             box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.5);
