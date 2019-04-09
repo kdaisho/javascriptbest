@@ -6,7 +6,6 @@
     position: fixed;
     text-align: center;
     bottom: 0;
-    transition: left .1s ease-out;
     width: 200px;
     z-index: 60;
 
@@ -17,8 +16,7 @@
     &__hamburger {
         background: $monokaiBlue;
         border: none;
-        bottom: 10%;
-        // bottom: 80px;
+        bottom: 80px;
         z-index: 60;
         box-shadow: 3px 2px 4px rgba(0, 0, 0, .5);
         display: flex;
@@ -26,9 +24,8 @@
         justify-content: flex-end;
         outline: none;
         position: absolute;
-        // position: fixed;
-        right: -28px;
-        // left: -14px;
+        position: fixed;
+        left: -14px;
         width: 42px;
 
         span {
@@ -153,7 +150,6 @@
 
         .nav__hamburger {
             justify-content: center;
-            // right: -42px;
             left: 200px;
 
             span {
