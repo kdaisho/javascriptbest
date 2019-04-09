@@ -2,10 +2,12 @@
     background: $monokaiBlue;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .5);
     height: 100%;
-    left: -200px;
+    // left: -200px;
+    left: -180px;
     position: fixed;
     text-align: center;
-    top: 0;
+    // top: 0;
+    bottom: 0;
     // transition: left .2s ease-out;
     width: 200px;
     z-index: 60;
@@ -17,7 +19,10 @@
     &__hamburger {
         background: $monokaiBlue;
         border: none;
-        bottom: 10%;
+        // bottom: 10%;
+        bottom: 80px;
+        // top: 300px;
+        z-index: 60;
         box-shadow: 3px 2px 4px rgba(0, 0, 0, .5);
         display: flex;
         height: 42px;
