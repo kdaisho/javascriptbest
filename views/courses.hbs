@@ -1,0 +1,27 @@
+{{> header}}
+{{> nav }}
+<div style="background: #fff; color: black;">
+<h2 class="pageTitle">{{ title }}</h2>
+{{!-- {{#each h as |valu key|}}
+    {{key}}: {{value}}
+{{/each}} --}}
+
+{{!-- ==== {{h.dump(courses)}} ==== --}}
+{{!-- ++++ {{ courses }} ++++ --}}
+
+{{!-- {{#each courses as |value key| }}
+
+    {{key}} - {{value.course}}
+
+{{/each}} --}}
+{{!-- {{#each menu}}
+    {{#each this}}
+        this.slug
+    {{/each}}
+{{/each }} --}}
+{{h.menu.0.slug}}
+<div style="color: red; background: #444;">
+    haha {{{ getIcon 'close' }}} hhi
+</div>
+{{ dump courses }}
+</div>

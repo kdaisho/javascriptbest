@@ -47,6 +47,10 @@ exports.createCourse = async (req, res) => {
     res.redirect('/');
 };
 
+// exports.getCourses = (req, res) => {
+//     // res.render('courses', { title: 'All Reviews', courses, page, pages, count });
+//     res.render('courses');
+// };
 exports.getCourses = async (req, res) => {
     const page = req.params.page || 1;
     const numberCoursePerPage = 10;
@@ -67,7 +71,6 @@ exports.getCourses = async (req, res) => {
     }
     res.render('courses', { title: 'All Reviews', courses, page, pages, count });
 };
-
 const confirmOwner = (course, user) => {
     if (!course.author.equals(user._id)) {
         throw Error('You must be the one who created this review!');

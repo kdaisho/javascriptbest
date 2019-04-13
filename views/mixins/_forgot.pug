@@ -1,8 +1,0 @@
-mixin forgotForm()
-    button.forgotPassword Oh no! I forgot my password!
-    .forgotPasswordForm
-        h2.pageSubtitle I forgot my password!
-        form.form(action="/account/forgot" method="POST")
-            label(for="email") Email
-            input(type="email" name="email")
-            input.button(type="submit" value="Send a Reset")

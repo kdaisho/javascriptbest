@@ -5,6 +5,7 @@ const MongoStore = require('connect-mongo')(session);
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const exphbs = require('express-handlebars');
 const passport = require('passport');
 const promisify = require('es6-promisify');
 const flash = require('connect-flash');
@@ -12,14 +13,26 @@ const expressValidator = require('express-validator');
 const routes = require('./routes/index');
 const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
+const fs = require('fs');
 require('./handlers/passport');
 
 // create our Express app
 const app = express();
 
+const ehbs = exphbs.create({
+  extname: '.hbs',
+  defaultLayout: 'main',
+  // create custom helpers
+  helpers: {
+    getIcon: name => helpers.icon(name),
+    dump: (obj) => helpers.dump(obj)
+  }
+});
 // view engine setup
-app.set('views', path.join(__dirname, 'views')); // this is the folder where we keep our pug files
-app.set('view engine', 'pug'); // we use the engine pug, mustache or EJS work great too
+app.engine('.hbs', ehbs.engine);
+
+app.set('views', path.join(__dirname, 'views')); // this is the folder where we keep our handlebars files
+app.set('view engine', '.hbs'); // we use the engine handlebars
 
 // serves up static files from the public folder. Anything in public/ will just be served up as the file it is
 app.use(express.static(path.join(__dirname, 'public')));
