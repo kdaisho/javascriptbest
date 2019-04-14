@@ -25,7 +25,8 @@ const ehbs = exphbs.create({
   // create custom helpers
   helpers: {
     getIcon: name => helpers.icon(name),
-    dump: (obj) => helpers.dump(obj)
+    dump: (obj) => helpers.dump(obj),
+    addActiveByCurrentPath: (path, testValue) => helpers.addActiveByCurrentPath(path, testValue)
   }
 });
 // view engine setup

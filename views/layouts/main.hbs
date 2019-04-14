@@ -8,6 +8,71 @@
     <title>{{title}} | {{h.siteName}}</title>
 </head>
 <body>
+    <aside id="nav" class="nav">
+        <button id="hamburger" class="nav__hamburger">
+            <span class="open"></span>
+            <span class="close">
+                {{{getIcon 'close'}}}
+            </span>
+        </button>
+        <div class="nav__wrapper">
+            <div class="nav__wrapper__top">
+                <div class="logo">
+                    <h1>Frontend Tutorials Review</h1>
+                </div>
+                <ul>
+                    {{#if user}}
+                        <li>
+                            <a href="/likes" class={{addActiveByCurrentPath currentPath '/likes'}}>
+                                Like <span class="likes-count">
+                                    {{#if courses}}
+                                        {{courses.length}}
+                                    {{/if}}
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/logout" class={{addActiveByCurrentPath currentPath '/logout'}}>Logout</a>
+                        </li>
+                        <li>
+                            <a href="/account" class={{addActiveByCurrentPath currentPath '/account'}}>
+                                <img src={{user.gravatar}} alt={{user.name}}>
+                            </a>
+                        </li>
+                    {{else}}
+                        <li>
+                            <a href="/signup" class={{addActiveByCurrentPath currentPath '/signup'}}>Signup</a>
+                        </li>
+                        <li>
+                            <a href="/login" class={{addActiveByCurrentPath currentPath '/login'}}>Login</a>
+                        </li>
+                    {{/if}}
+                </ul>
+            </div>
+            <div class="nav__wrapper__main">
+                <ul>
+                    <li>
+                        <a href="/courses" class={{addActiveByCurrentPath currentPath '/courses'}}>All Reviews</a>
+                    </li>
+                    <li>
+                        <a href="/tags" class={{addActiveByCurrentPath currentPath '/tags'}}>Tags</a>
+                    </li>
+                    <li>
+                        <a href="/popular" class={{addActiveByCurrentPath currentPath '/popular'}}>Popular</a>
+                    </li>
+                    <li>
+                        <a href="/add" class={{addActiveByCurrentPath currentPath '/add'}}>Write a Review</a>
+                    </li>
+                    <li>
+                        <a href="/contact" class={{addActiveByCurrentPath currentPath '/contact'}}>Contact</a>
+                    </li>
+                    <li>
+                        <button id="searchButton">Search</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
     {{{ body }}}
 </body>
 </html>

@@ -17,6 +17,9 @@ exports.staticMap = ([lng, lat]) => `https://maps.googleapis.com/maps/api/static
 // inserting an SVG
 exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
 
+// Check the current path
+exports.addActiveByCurrentPath = (path, testValue) => path === testValue ? 'is-active' : '';
+
 // Some details about the site
 exports.siteName = 'Frontend Masters Course';
 

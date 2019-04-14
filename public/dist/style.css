@@ -229,13 +229,13 @@ textarea:focus {
         background: #0666e6;
         cursor: pointer; }
       @media (min-width: 1024px) {
-        .nav__wrapper li a.nav__active,
-        .nav__wrapper li span.nav__active,
-        .nav__wrapper li button.nav__active {
+        .nav__wrapper li a.is-active,
+        .nav__wrapper li span.is-active,
+        .nav__wrapper li button.is-active {
           position: relative; }
-          .nav__wrapper li a.nav__active:after,
-          .nav__wrapper li span.nav__active:after,
-          .nav__wrapper li button.nav__active:after {
+          .nav__wrapper li a.is-active:after,
+          .nav__wrapper li span.is-active:after,
+          .nav__wrapper li button.is-active:after {
             content: "";
             height: 0;
             width: 0;
@@ -245,9 +245,9 @@ textarea:focus {
             position: absolute;
             right: -12px;
             top: calc(50% - 12px); }
-          .nav__wrapper li a.nav__active:hover:after,
-          .nav__wrapper li span.nav__active:hover:after,
-          .nav__wrapper li button.nav__active:hover:after {
+          .nav__wrapper li a.is-active:hover:after,
+          .nav__wrapper li span.is-active:hover:after,
+          .nav__wrapper li button.is-active:hover:after {
             border-left: 12px solid #0666e6; } }
   .nav.active {
     left: 0; }
