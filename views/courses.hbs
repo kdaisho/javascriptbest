@@ -1,4 +1,10 @@
 {{> header}}
 <div class="content">
     <h2 class="pageTitle">{{ title }}</h2>
+    <div class="courses">
+        {{#each courses}}
+        {{!-- {{this}} --}}
+            {{> courseCard this}}
+        {{/each}}
+    </div>
 </div>
