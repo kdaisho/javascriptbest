@@ -19,16 +19,23 @@ require('./handlers/passport');
 // create our Express app
 const app = express();
 
+// app.use(flash());
+
 const ehbs = exphbs.create({
   extname: '.hbs',
   defaultLayout: 'main',
+  // fl: req.flash(),
   // create custom helpers
   helpers: {
+    fl: () => req.flash(),
     getIcon: name => helpers.icon(name),
     dump: (obj) => helpers.dump(obj),
-    addActiveByCurrentPath: (path, testValue) => helpers.addActiveByCurrentPath(path, testValue)
+    addActiveByCurrentPath: (path, testValue) => helpers.addActiveByCurrentPath(path, testValue),
+    equals: (valueOne, valueTwo) => helpers.equals(valueOne, valueTwo),
+    getString: (obj) => helpers.getString(obj)
   }
 });
+// console.log(req.flash());
 // view engine setup
 app.engine('.hbs', ehbs.engine);
 

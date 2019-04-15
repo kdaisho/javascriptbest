@@ -7,6 +7,26 @@
             <span>By {{this.instructor}}</span>
         </h3>
         <a href="/course/{{this.slug}}" class="shade"></a>
-
+    </div>
+    <div class="courseCard__details">
+        <p class="desc">{{this.description}}</p>
+        <div class="courseCard__action">
+            <div class="courseCard__action--edit" style="color: red;">
+                THIS IS AUTHOR: {{this.author}}<br />
+                THIS IS String AUTHOR: {{getString this.author}}<br />
+                {{!-- == {{equals this.author '5c8bd22f8886cd2f48260ec3'}} == --}}
+                {{!-- == {{equals (getString this.author) (getString user._id)}} == --}}
+                {{!-- {{#if (equals this.author 'nana')}} --}}
+                    {{!-- YES --}}
+                {{!-- {{/if}} --}}
+                {{#if user}}
+                    {{#if (equals (getString this.author) (getString user._id))}}
+                        <a href="/courses/{{this._id}}/edit" title="edit">
+                            {{getIcon 'edit'}}
+                        </a>
+                    {{/if}}
+                {{/if}}
+            </div>
+        </div>
     </div>
 </div>
