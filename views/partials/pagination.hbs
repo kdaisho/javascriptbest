@@ -1,0 +1,17 @@
+<div class="pagination">
+    = {{ @root.currentPath }} =
+
+    {{!-- {{addActiveByPage  @root.currentPath --}}
+    <div class="pagination__prev">
+        <a href="/courses/page{{page}}">Prev</a>
+    </div>
+    <div class="pagination__text">
+        <p>Page {{@root.page}} of {{@root.pages}}</p>
+    </div>
+    <div class="pagination__next">
+        <a href="/courses/page{{page}}">Next</a>
+    </div>
+</div>
+<div class="pagination--footer m-10">
+    <p>{{@root.count}} total results</p>
+</div>

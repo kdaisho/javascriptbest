@@ -23,7 +23,7 @@
                 <ul>
                     {{#if user}}
                         <li>
-                            <a href="/likes" class={{addActiveByCurrentPath currentPath '/likes'}}>
+                            <a href="/likes" class="{{addActiveByCurrentPath currentPath '/likes'}}">
                                 Like <span class="likes-count">
                                     {{#if courses}}
                                         {{courses.length}}
@@ -32,19 +32,19 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/logout" class={{addActiveByCurrentPath currentPath '/logout'}}>Logout</a>
+                            <a href="/logout" class="{{addActiveByCurrentPath currentPath '/logout'}}">Logout</a>
                         </li>
                         <li>
-                            <a href="/account" class={{addActiveByCurrentPath currentPath '/account'}}>
+                            <a href="/account" class="{{addActiveByCurrentPath currentPath '/account'}} avatar">
                                 <img src={{user.gravatar}} alt={{user.name}}>
                             </a>
                         </li>
                     {{else}}
                         <li>
-                            <a href="/signup" class={{addActiveByCurrentPath currentPath '/signup'}}>Signup</a>
+                            <a href="/signup" class="{{addActiveByCurrentPath currentPath '/signup'}}">Signup</a>
                         </li>
                         <li>
-                            <a href="/login" class={{addActiveByCurrentPath currentPath '/login'}}>Login</a>
+                            <a href="/login" class="{{addActiveByCurrentPath currentPath '/login'}}">Login</a>
                         </li>
                     {{/if}}
                 </ul>
@@ -52,19 +52,19 @@
             <div class="nav__wrapper__main">
                 <ul>
                     <li>
-                        <a href="/courses" class={{addActiveByCurrentPath currentPath '/courses'}}>All Reviews</a>
+                        <a href="/courses" class="{{addActiveByCurrentPath currentPath '/courses'}}">All Reviews</a>
                     </li>
                     <li>
-                        <a href="/tags" class={{addActiveByCurrentPath currentPath '/tags'}}>Tags</a>
+                        <a href="/tags" class="{{addActiveByCurrentPath currentPath '/tags'}}">Tags</a>
                     </li>
                     <li>
-                        <a href="/popular" class={{addActiveByCurrentPath currentPath '/popular'}}>Popular</a>
+                        <a href="/popular" class="{{addActiveByCurrentPath currentPath '/popular'}}">Popular</a>
                     </li>
                     <li>
-                        <a href="/add" class={{addActiveByCurrentPath currentPath '/add'}}>Write a Review</a>
+                        <a href="/add" class="{{addActiveByCurrentPath currentPath '/add'}}">Write a Review</a>
                     </li>
                     <li>
-                        <a href="/contact" class={{addActiveByCurrentPath currentPath '/contact'}}>Contact</a>
+                        <a href="/contact" class="{{addActiveByCurrentPath currentPath '/contact'}}">Contact</a>
                     </li>
                     <li>
                         <button id="searchButton">Search</button>
@@ -73,13 +73,22 @@
             </div>
         </div>
     </aside>
-    {{{ body }}}
+
     <div class="content">
-        <h1>Flash Message Here</h1>
-        === {{dump flashes}} ===
-        {{#each flashes}}
-            <h1>haha haha {{@key}}: {{this}}</h1>
-        {{/each}}
+        {{{ body }}}
     </div>
+
+    <div class="container">
+        <div class="flash-messages">
+            {{#each flashes}}
+                <div id="flashMsg" class="flash flash--{{@key}}">
+                    <button class="flash__remove" onclick="this.parentElement.remove()">&times;</button>
+                    <p class="flash__text">{{this}}</p>
+                </div>
+            {{/each}}
+        </div>
+        === FLASH: {{dump flashes}} ===
+    </div>
+    <script src="/dist/App.bundle.js"></script>
 </body>
 </html>

@@ -1,10 +1,12 @@
-{{> header}}
-<div class="content">
+<div class="container">
     <h2 class="pageTitle">{{ title }}</h2>
     <div class="courses">
         {{#each courses}}
-        {{!-- {{this}} --}}
-            {{> courseCard this}}
+            {{> courseCard}}
         {{/each}}
     </div>
 </div>
+pages: {{pages}} <br />
+page: {{page}} <br />
+count: {{count}}
+{{> pagination page}}

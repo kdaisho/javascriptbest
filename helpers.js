@@ -20,24 +20,12 @@ exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
 // Check the current path
 exports.addActiveByCurrentPath = (path, testValue) => path === testValue ? 'is-active' : '';
 
-// Check if equals
+// Check if two values are equal
 exports.equals = (valueOne, valueTwo) => valueOne === valueTwo ? true : false;
 
 // Convert ObjectId to string
 exports.getString = (obj) => {
-  // console.log(typeof obj);
-  const str = obj.toString();
-  return str;
-  // return typeof obj;
+  return str = obj.toString();
 };
 
-// Some details about the site
-exports.siteName = 'Frontend Masters Course';
-
-exports.menu = [
-  { slug: '/stores', title: 'Stores', icon: 'store', },
-  { slug: '/tags', title: 'Tags', icon: 'tag', },
-  { slug: '/top', title: 'Top', icon: 'top', },
-  { slug: '/add', title: 'Add', icon: 'add', },
-  { slug: '/map', title: 'Map', icon: 'map', },
-];
+exports.siteName = 'Frontend Tutorials Review';

@@ -11,20 +11,32 @@
     <div class="courseCard__details">
         <p class="desc">{{this.description}}</p>
         <div class="courseCard__action">
-            <div class="courseCard__action--edit" style="color: red;">
-                THIS IS AUTHOR: {{this.author}}<br />
-                THIS IS String AUTHOR: {{getString this.author}}<br />
-                {{!-- == {{equals this.author '5c8bd22f8886cd2f48260ec3'}} == --}}
-                {{!-- == {{equals (getString this.author) (getString user._id)}} == --}}
-                {{!-- {{#if (equals this.author 'nana')}} --}}
-                    {{!-- YES --}}
-                {{!-- {{/if}} --}}
-                {{#if user}}
-                    {{#if (equals (getString this.author) (getString user._id))}}
+            <div class="courseCard__action--edit">
+                {{#if @root.user}}
+                    {{#if (equals (getString this.author) (getString @root.user._id))}}
                         <a href="/courses/{{this._id}}/edit" title="edit">
-                            {{getIcon 'edit'}}
+                            {{{getIcon 'edit'}}}
                         </a>
                     {{/if}}
+                {{/if}}
+            </div>
+            {{#if this.reviews}}
+                <div class="courseCard__reviews" title="{{this.reviews.length}} comments">
+                    <a href="/course/{{this.slug}}">
+                        {{{getIcon 'comments'}}}
+                        {{#if this.reviews.length}}
+                            <span class="count">{{this.reviews.length}}</span>
+                        {{/if}}
+                    </a>
+                </div>
+            {{/if}}
+            <div class="courseCard__action--like">
+                {{#if @root.user}}
+                    <form action="/api/courses/{{this._id}}/like" class="like">
+                        <button class="like__button" type="submit" name="like" title="Like">
+                            {{{getIcon 'like'}}}
+                        </button>
+                    </form>
                 {{/if}}
             </div>
         </div>
