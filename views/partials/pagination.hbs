@@ -1,17 +1,14 @@
 <div class="pagination">
-    = {{ @root.currentPath }} =
-
-    {{!-- {{addActiveByPage  @root.currentPath --}}
-    <div class="pagination__prev">
-        <a href="/courses/page{{page}}">Prev</a>
+    <div class="pagination__prev {{#if (compare @root.page 2)}}is-active{{/if}}">
+        <a href="/courses/page/{{addNumber @root.page -1}}">Prev</a>
     </div>
     <div class="pagination__text">
         <p>Page {{@root.page}} of {{@root.pages}}</p>
     </div>
-    <div class="pagination__next">
-        <a href="/courses/page{{page}}">Next</a>
+    <div class="pagination__next {{#if (endsWith @root.currentPath @root.pages)}}is-active{{/if}}">
+        <a href="/courses/page/{{addNumber @root.page 1}}">Next</a>
     </div>
 </div>
-<div class="pagination--footer m-10">
+<div class="pagination--footer m-t10">
     <p>{{@root.count}} total results</p>
 </div>

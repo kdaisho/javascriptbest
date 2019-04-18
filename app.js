@@ -32,7 +32,10 @@ const ehbs = exphbs.create({
     dump: (obj) => helpers.dump(obj),
     addActiveByCurrentPath: (path, testValue) => helpers.addActiveByCurrentPath(path, testValue),
     equals: (valueOne, valueTwo) => helpers.equals(valueOne, valueTwo),
-    getString: (obj) => helpers.getString(obj)
+    getString: (obj) => helpers.getString(obj),
+    addNumber: (target, number) => helpers.addNumber(target, number),
+    compare: (currentPage, number) => helpers.compare(currentPage, number),
+    endsWith: (currentPath, pages) => helpers.endsWith(currentPath, pages)
   }
 });
 // console.log(req.flash());

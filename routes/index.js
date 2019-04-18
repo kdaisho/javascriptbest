@@ -13,6 +13,7 @@ const { catchErrors } = require('../handlers/errorHandlers');
 // });
 router.get('/', (req, res) => { res.redirect('/courses') });
 router.get('/courses', catchErrors(courseController.getCourses));
+router.get('/courses/page/:page', catchErrors(courseController.getCourses));
 
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);

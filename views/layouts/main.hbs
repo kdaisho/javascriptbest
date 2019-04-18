@@ -34,7 +34,7 @@
                         <li>
                             <a href="/logout" class="{{addActiveByCurrentPath currentPath '/logout'}}">Logout</a>
                         </li>
-                        <li>
+                        <li class="thumbnail">
                             <a href="/account" class="{{addActiveByCurrentPath currentPath '/account'}} avatar">
                                 <img src={{user.gravatar}} alt={{user.name}}>
                             </a>
@@ -67,7 +67,7 @@
                         <a href="/contact" class="{{addActiveByCurrentPath currentPath '/contact'}}">Contact</a>
                     </li>
                     <li>
-                        <button id="searchButton">Search</button>
+                        <button id="searchButton" class="search-button">Search</button>
                     </li>
                 </ul>
             </div>

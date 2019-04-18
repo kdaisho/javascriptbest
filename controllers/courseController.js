@@ -47,31 +47,30 @@ exports.createCourse = async (req, res) => {
     res.redirect('/');
 };
 
-// exports.getCourses = (req, res) => {
-//     // res.render('courses', { title: 'All Reviews', courses, page, pages, count });
-//     res.render('courses');
-// };
 exports.getCourses = async (req, res) => {
     const page = req.params.page || 1;
-    const numberCoursePerPage = 10;
-    const numberSkipPerPage = (page * numberCoursePerPage) - numberCoursePerPage;
+    const coursesPerPage = 2;
+    const numberOfSkip = (page * coursesPerPage) - coursesPerPage;
 
     const coursesPromise = Course
         .find()
-        .skip(numberSkipPerPage)
-        .limit(numberCoursePerPage)
+        .skip(numberOfSkip)
+        .limit(coursesPerPage)
         .sort({ created: 'desc' })
         .populate('reviews');
     const countPromise = Course.count();
 
     const [courses, count] = await Promise.all([coursesPromise, countPromise]);
-    const pages = Math.ceil(count / numberCoursePerPage);
-    if (!courses.length) {
-        res.redirect(`/courses/page${pages}`);
+    const pages = Math.ceil(count / coursesPerPage);
+
+    if (!courses.length && numberOfSkip) {
+        res.redirect(`/courses/page/${pages}`);
+        return;
     }
-    req.flash('success', `Successfully created!`);
+
     res.render('courses', { title: 'All Reviews', courses, page, pages, count });
 };
+
 const confirmOwner = (course, user) => {
     if (!course.author.equals(user._id)) {
         throw Error('You must be the one who created this review!');

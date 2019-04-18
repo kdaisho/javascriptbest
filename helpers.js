@@ -9,13 +9,13 @@ const fs = require('fs');
 exports.moment = require('moment');
 
 // Dump is a handy debugging function we can use to sort of "console.log" our data
-exports.dump = (obj) => JSON.stringify(obj, null, 2);
+exports.dump = obj => JSON.stringify(obj, null, 2);
 
 // Making a static map is really long - this is a handy helper function to make one
-exports.staticMap = ([lng, lat]) => `https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=14&size=800x150&key=${process.env.MAP_KEY}&markers=${lat},${lng}&scale=2`;
+// exports.staticMap = ([lng, lat]) => `https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=14&size=800x150&key=${process.env.MAP_KEY}&markers=${lat},${lng}&scale=2`;
 
-// inserting an SVG
-exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
+// Inserting an SVG
+exports.icon = name => fs.readFileSync(`./public/images/icons/${name}.svg`);
 
 // Check the current path
 exports.addActiveByCurrentPath = (path, testValue) => path === testValue ? 'is-active' : '';
@@ -24,8 +24,13 @@ exports.addActiveByCurrentPath = (path, testValue) => path === testValue ? 'is-a
 exports.equals = (valueOne, valueTwo) => valueOne === valueTwo ? true : false;
 
 // Convert ObjectId to string
-exports.getString = (obj) => {
-  return str = obj.toString();
-};
+exports.getString = obj => obj.toString();
+
+// Check current page then return a class
+exports.compare = (currentPage, number) => currentPage >= number ? true : false;
+
+exports.endsWith = (currentPath, pages) => currentPath.endsWith(pages) ? false : true;
+
+exports.addNumber = (target, number) => Number(target) + number;
 
 exports.siteName = 'Frontend Tutorials Review';
