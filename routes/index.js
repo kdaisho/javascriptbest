@@ -15,6 +15,8 @@ router.get('/', (req, res) => { res.redirect('/courses') });
 router.get('/courses', catchErrors(courseController.getCourses));
 router.get('/courses/page/:page', catchErrors(courseController.getCourses));
 
+router.get('/course/:slug', catchErrors(courseController.getCourseBySlug));
+
 
 router.get('/signup', userController.signupForm);
 router.post('/signup',

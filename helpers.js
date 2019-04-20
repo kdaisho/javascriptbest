@@ -1,4 +1,5 @@
 /*
+ *
   This is a file of data and helper functions that we can expose and use in our templating function
 */
 
@@ -32,5 +33,14 @@ exports.compare = (currentPage, number) => currentPage >= number ? true : false;
 exports.endsWith = (currentPath, pages) => currentPath.endsWith(pages) ? false : true;
 
 exports.addNumber = (target, number) => Number(target) + number;
+
+exports.repeat = (item, times, total) => {
+	let output = ''
+	let count = total ? Number(total) - Number(times) : times;
+	for (let i = 0; i < count; i++) {
+		output += item;
+	}
+	return output;
+};
 
 exports.siteName = 'Frontend Tutorials Review';

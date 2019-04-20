@@ -35,7 +35,8 @@ const ehbs = exphbs.create({
     getString: (obj) => helpers.getString(obj),
     addNumber: (target, number) => helpers.addNumber(target, number),
     compare: (currentPage, number) => helpers.compare(currentPage, number),
-    endsWith: (currentPath, pages) => helpers.endsWith(currentPath, pages)
+    endsWith: (currentPath, pages) => helpers.endsWith(currentPath, pages),
+    repeat: (item, times, total) => helpers.repeat(item, times, total)
   }
 });
 // console.log(req.flash());
