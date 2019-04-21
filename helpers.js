@@ -43,4 +43,5 @@ exports.repeat = (item, times, total) => {
 	return output;
 };
 
+// exports.getTimeHistory = ()
 exports.siteName = 'Frontend Tutorials Review';

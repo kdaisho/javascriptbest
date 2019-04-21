@@ -1,0 +1,17 @@
+<div class="eachReview__header">
+    <div class="eachReview__author">
+        <img src="{{this.author.gravatar}}" alt="user thumbnail" class="avatar">
+        <span>
+            <p>{{this.author.name}}</p>
+            <time class="eachReview__time" datetime={{this.created}}>
+                {{getDateFromNow this.created}}
+            </time>
+        </span>
+    </div>
+</div>
+<div class="eachReview__rating m-t05" title="Rated {{this.rating}} out of five stars">
+    {{repeat "★" this.rating false}}{{repeat "☆" this.rating 5}}
+</div>
+<p class="eachReview__text m-t05">
+    {{this.text}}
+</p>

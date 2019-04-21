@@ -18,5 +18,39 @@
                 {{repeat "★" course.rating false}}{{repeat "☆" course.rating 5}}
             </div>
         </div>
+        {{#if course.tags}}
+            <ul class="tags">
+                {{#each course.tags}}
+                    <li class="tag">
+                        <a href="/tags/{{this}}" class="tag__link">#{{this}}</a>
+                    </li>
+                {{/each}}
+            </ul>
+        {{/if}}
     </div>
+    <a href="{{course.url}}" target="_blank" title="Visit {{course.course}}" class="course__url">Visit this course</a>
+
+    {{#if @root.user}}
+        {{>reviewForm course}}
+    {{/if}}
+
+    {{#if course.reviews}}
+        <div class="reviews">
+            {{#each course.reviews}}
+                <div class="eachReview">
+                    {{>review this}}
+                </div>
+            {{/each}}
+        </div>
+    {{/if}}
+
+    {{#if @root.user}}
+        <div class="wanna">
+            <p>Have something to say?</p>
+            <a href="/login">Log in</a>
+            <span> or</span>
+            <a href="/signup">Sign up</a>
+            <span> today!</span>
+        </div>
+    {{/if}}
 </div>

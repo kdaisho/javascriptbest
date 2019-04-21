@@ -36,7 +36,8 @@ const ehbs = exphbs.create({
     addNumber: (target, number) => helpers.addNumber(target, number),
     compare: (currentPage, number) => helpers.compare(currentPage, number),
     endsWith: (currentPath, pages) => helpers.endsWith(currentPath, pages),
-    repeat: (item, times, total) => helpers.repeat(item, times, total)
+    repeat: (item, times, total) => helpers.repeat(item, times, total),
+    getDateFromNow: (timestamp) => helpers.moment(timestamp).fromNow()
   }
 });
 // console.log(req.flash());
