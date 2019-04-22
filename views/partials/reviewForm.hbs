@@ -1,0 +1,14 @@
+<div class="reviewer">
+    <h2 class="reviewer__title">Leave a review!</h2>
+    <form id="reviewer" action="/reviews/{{course._id}}" method="POST">
+        <textarea class="reviewer__text required" name="text" placeholder="{{course.course}} course is specifically focused on..." required></textarea>
+        <div class="reviewer__meta">
+            <div class="reviewer__stars">
+                {{#each @root.arrayFive}}
+                    <input type="radio" id="star{{this}}" name="rating" value="{{this}}" class="rating">
+                    <label for="star{{this}}"> #{{this}} Stars</label>
+                {{/each}}
+            </div>
+        </div>
+    </form>
+</div>

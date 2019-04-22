@@ -143,5 +143,5 @@ exports.getLikes = async (req, res) => {
 exports.getPopularCourses = async (req, res) => {
     const courses = await Course.getPopularCourses();
     // res.json(courses);
-    res.render('popularCourses', { courses, title: 'Popular Courses Yey!' });
+    res.render('popularCourses', { courses, title: 'Popular Courses' });
 };

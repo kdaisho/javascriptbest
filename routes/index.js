@@ -30,4 +30,6 @@ router.post('/login', authController.login);
 
 router.get('/logout', authController.logout);
 
+router.get('/popular', catchErrors(courseController.getPopularCourses));
+
 module.exports = router;

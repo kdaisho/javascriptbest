@@ -1,0 +1,27 @@
+<div class="popular contents-center">
+    <h2 class="pageTitle">Top {{courses.length}} {{title}}</h2>
+    {{#if courses.length}}
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th class="photo">Photo</th>
+                <th>Course</th>
+                <th>Reviews</th>
+                <th>Average</th>
+        {{#each courses}}
+            <tr>
+                <td>{{@index}}</td>
+                <td class="photo">
+                    <a href="/course/{{this.slug}}" style="background: url('/uploads/{{#if this.image}}{{this.image}}{{else}}review.jpg{{/if}}') center/cover no-repeat"></a>
+                </td>
+                <td>
+                    <a href="/course/{{this.slug}}">{{this.course}}</a>
+                </td>
+                <td>{{this.reviewsForPopularPage.length}}</td>
+                <td>{{this.averageRating}}</td>
+            </tr>
+        {{/each}}
+            </tr>
+        </table>
+    {{/if}}
+</div>
