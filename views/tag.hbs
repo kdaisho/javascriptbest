@@ -1,0 +1,18 @@
+<div class="container tagsPage">
+    <h2 class="pageTitle">{{tag}}</h2>
+    {{!-- <p>{{dump this.}}</p> --}}
+    {{!-- -- {{courses}} -- --}}
+    <ul class="tags">
+        {{#each tags}}
+            <li class="tag">
+                <a href="/tags/{{this._id}}" class="tag__link {{addActiveByCurrentPath this._id @root.tag}}">
+                    <span class="name">{{this._id}}</span><span class="count">{{this.count}}</span>
+                </a>
+            </li>
+            {{!-- {{this}} --}}
+        {{/each}}
+    </ul>
+    <div class="courses">
+        {{> courseCard this.courses}}
+    </div>
+</div>

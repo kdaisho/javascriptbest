@@ -15,6 +15,8 @@ router.get('/', (req, res) => { res.redirect('/courses') });
 router.get('/courses', catchErrors(courseController.getCourses));
 router.get('/courses/page/:page', catchErrors(courseController.getCourses));
 
+router.get('/tags', catchErrors(courseController.getCourseByTag));
+
 router.get('/course/:slug', catchErrors(courseController.getCourseBySlug));
 
 
