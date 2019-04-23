@@ -13,6 +13,8 @@
         {{/each}}
     </ul>
     <div class="courses">
-        {{> courseCard this.courses}}
+        {{#each courses}}
+            {{>courseCard}}
+        {{/each}}
     </div>
 </div>
