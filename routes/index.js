@@ -16,6 +16,7 @@ router.get('/courses', catchErrors(courseController.getCourses));
 router.get('/courses/page/:page', catchErrors(courseController.getCourses));
 
 router.get('/tags', catchErrors(courseController.getCourseByTag));
+router.get('/tags/:tag', catchErrors(courseController.getCourseByTag));
 
 router.get('/course/:slug', catchErrors(courseController.getCourseBySlug));
 
@@ -34,5 +35,8 @@ router.get('/account', authController.isLoggedIn, userController.account);
 router.post('/account', catchErrors(userController.updateAccount));
 
 router.get('/popular', catchErrors(courseController.getPopularCourses));
+
+router.get('/contact', userController.contact);
+router.post('/contact/send', catchErrors(userController.sendMessage));
 
 module.exports = router;
