@@ -1,9 +1,9 @@
 const nodemailer = require('nodemailer');
-const pug = require('pug');
+const Handlebars = require('handlebars');
+const fs = require('fs');
 const juice = require('juice');
 const htmlToText = require('html-to-text');
 const promisify = require('es6-promisify');
-
 const transport = nodemailer.createTransport({
     host: process.env.MAIL_HOST,
     port: process.env.MAIL_PORT,
@@ -14,7 +14,9 @@ const transport = nodemailer.createTransport({
 });
 
 const generateHTML = (filename, options = {}) => {
-    const html = pug.renderFile(`${__dirname}/../views/email/${filename}.pug`, options);
+    const src = fs.readFileSync(`${__dirname}/../views/email/${filename}.hbs`, 'utf8');
+    const template = Handlebars.compile(src);
+    const html = template(options);
     const inlined = juice(html);
     return inlined;
 };

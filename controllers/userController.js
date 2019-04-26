@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const User = mongoose.model('User');
 const crypto = require('crypto');
 const promisify = require('es6-promisify');
-// const mail = require('../handlers/mail');
+const mail = require('../handlers/mail');
 
 exports.loginForm = (req, res) => {
     res.render('login', { title: 'Login' });
@@ -67,7 +67,7 @@ exports.sendMessage = async (req, res) => {
 
     await mail.send({
         to: 'daishokomiyama@gmail.com',
-        filename: 'contact-message',
+        filename: 'emails',
         subject: 'Message from app',
         sender,
         fromContact: true

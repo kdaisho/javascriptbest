@@ -1,7 +1,5 @@
 <div class="container tagsPage">
     <h2 class="pageTitle">{{title}}</h2>
-    {{!-- <p>{{dump this.}}</p> --}}
-    {{!-- -- {{courses}} -- --}}
     <ul class="tags">
         {{#each tags}}
             <li class="tag">
@@ -9,7 +7,6 @@
                     <span class="name">{{this._id}}</span><span class="count">{{this.count}}</span>
                 </a>
             </li>
-            {{!-- {{this}} --}}
         {{/each}}
     </ul>
     <div class="courses">

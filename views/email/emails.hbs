@@ -350,9 +350,37 @@
                                 <table border="0" cellpadding="0" cellspacing="0">
                                     <tr>
                                         <td>
-                                            <h2>Message from {{sender.name}}</h2>
-                                            <p>Name: {{sender.name}}</p>
-                                            <p>Message: {{sender.msg}}</p>
+                                            {{#if sender}}
+                                                <h2>Message from {{sender.name}}</h2>
+                                                <p>Name: {{sender.name}}</p>
+                                                <p>Message: {{sender.msg}}</p>
+                                            {{/if}}
+                                        </td>
+                                        <td>
+                                            {{#if resetURL}}
+                                                <h2>Password Reset</h2>
+                                                <p>You have requested a password reset. Please click the following button to continue on with resetting your password.</p>
+                                                <p>Please note this link is only valide for the next hour.</p>
+
+                                                {{!-- button --}}
+                                                <table class="btn btn-primary" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td align="left">
+                                                            <table border="0" cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        <a href="{{resetURL}}" target="_blank" style="color: #ffffff;">Reset my Password</a>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <br>
+                                                <p>If you can't click the button above please visit {{resetURL}}</p>
+                                                <br>
+                                                <p>If you didn't request this email, please ignore it.</p>
+                                            {{/if}}
                                         </td>
                                     </tr>
                                 </table>
