@@ -37,7 +37,8 @@ const ehbs = exphbs.create({
     compare: (currentPage, number) => helpers.compare(currentPage, number),
     endsWith: (currentPath, pages) => helpers.endsWith(currentPath, pages),
     repeat: (item, times, total) => helpers.repeat(item, times, total),
-    getDateFromNow: (timestamp) => helpers.moment(timestamp).fromNow()
+    getDateFromNow: (timestamp) => helpers.moment(timestamp).fromNow(),
+    includes: (array, value) => helpers.includes(array, value)
   }
 });
 // console.log(req.flash());
@@ -83,7 +84,6 @@ app.use((req, res, next) => {
   res.locals.flashes = req.flash();
   res.locals.user = req.user || null;
   res.locals.currentPath = req.path;
-  res.locals.arrayFive = [5, 4, 3, 2, 1];
   next();
 });
 

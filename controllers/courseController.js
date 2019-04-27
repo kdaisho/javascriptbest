@@ -20,7 +20,8 @@ const multerOptions = {
 
 exports.addCourse = (req, res) => {
     const course = {};
-    res.render('addEditCourse', { title: 'Add Course', course });
+    const tags = [];
+    res.render('addEditCourse', { title: 'Add Course', course, tags });
 };
 
 exports.upload = multer(multerOptions).single('image');
@@ -79,8 +80,9 @@ const confirmOwner = (course, user) => {
 
 exports.editCourse = async (req, res) => {
     const course = await Course.findOne({ _id: req.params.id });
+    const tags = course.tags;
     confirmOwner(course, req.user);
-    res.render('addEditCourse', { title: `Edit ${course.course}`, course });
+    res.render('addEditCourse', { title: `Edit ${course.course}`, course, tags });
 };
 
 exports.updateCourse = async (req, res) => {

@@ -34,8 +34,10 @@ exports.endsWith = (currentPath, pages) => currentPath.endsWith(pages) ? false :
 
 exports.addNumber = (target, number) => Number(target) + number;
 
+exports.includes = (array, value) => array.includes(value);
+
 exports.repeat = (item, times, total) => {
-	let output = ''
+	let output = '';
 	let count = total ? Number(total) - Number(times) : times;
 	for (let i = 0; i < count; i++) {
 		output += item;
@@ -43,5 +45,7 @@ exports.repeat = (item, times, total) => {
 	return output;
 };
 
-// exports.getTimeHistory = ()
+exports.arrayFive = [5, 4, 3, 2, 1];
+exports.technologies = ['JavaScript', 'Node', 'React', 'Angular', 'Webpack', 'Database', 'CSS', 'Git', 'PWA', 'Design', 'Typographie', 'Bash', 'Paid Course'];
+
 exports.siteName = 'Frontend Tutorials Review';

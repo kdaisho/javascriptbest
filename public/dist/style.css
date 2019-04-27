@@ -398,7 +398,7 @@ textarea:focus {
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
     margin-top: 1.5rem; }
-    .container.edit form .tags .tag__choice {
+    .container.edit form .tags .tag__technology {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
@@ -406,14 +406,14 @@ textarea:focus {
       display: -ms-flexbox;
       display: flex;
       margin-bottom: .25rem; }
-      .container.edit form .tags .tag__choice input[type="checkbox"] {
+      .container.edit form .tags .tag__technology input[type="checkbox"] {
         position: relative;
         right: -1.5rem;
         top: -5px;
         z-index: 10; }
-        .container.edit form .tags .tag__choice input[type="checkbox"]:checked + label {
+        .container.edit form .tags .tag__technology input[type="checkbox"]:checked + label {
           background: #a6e22e; }
-      .container.edit form .tags .tag__choice label {
+      .container.edit form .tags .tag__technology label {
         background: #dcdcdc;
         color: #444;
         border-radius: .25rem;
@@ -425,7 +425,7 @@ textarea:focus {
            -moz-user-select: none;
             -ms-user-select: none;
                 user-select: none; }
-        .container.edit form .tags .tag__choice label:hover {
+        .container.edit form .tags .tag__technology label:hover {
           cursor: pointer; }
   .container.edit form .honey {
     display: none; }

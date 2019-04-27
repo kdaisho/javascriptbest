@@ -14,12 +14,24 @@ const { catchErrors } = require('../handlers/errorHandlers');
 router.get('/', (req, res) => { res.redirect('/courses') });
 router.get('/courses', catchErrors(courseController.getCourses));
 router.get('/courses/page/:page', catchErrors(courseController.getCourses));
+router.get('/courses/:id/edit', catchErrors(courseController.editCourse));
+
+router.get('/add', authController.isLoggedIn, courseController.addCourse);
+router.post('/add',
+    courseController.upload,
+    catchErrors(courseController.resize),
+    catchErrors(courseController.createCourse)
+);
+router.post('/add/:id',
+    courseController.upload,
+    catchErrors(courseController.resize),
+    catchErrors(courseController.updateCourse)
+);
 
 router.get('/tags', catchErrors(courseController.getCourseByTag));
 router.get('/tags/:tag', catchErrors(courseController.getCourseByTag));
 
 router.get('/course/:slug', catchErrors(courseController.getCourseBySlug));
-
 
 router.get('/signup', userController.signupForm);
 router.post('/signup',

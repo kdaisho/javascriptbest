@@ -1,0 +1,40 @@
+<div class="container contents-center edit">
+    <h2 class="pageTitle">{{title}}</h2>
+    <form action="/add/{{#if course._id}}{{course._id}}{{/if}}" class="card" method="POST" enctype="multipart/form-data">
+        <label for="course">Course</label>
+        <input type="text" class="required" name="course" value="{{course.course}}" required>
+        <label for="instructor">Instructor</label>
+        <input type="text" class="required" name="instructor" value="{{course.instructor}}" required>
+        <label for="url">URL</label>
+        <input type="url" name="url" value="{{course.url}}">
+
+        <!-- Image upload -->
+        <label>Image</label>
+        <label for="image">Choose Upload Image</label>
+        <input type="file" id="image" name="image" accept="image/gif, image/png, image/jpeg">
+        {{#if course.image}}
+            <img src="/uploads/{{course.image}}" class="preview" alt="{{course.course}}" width="200">
+        {{/if}}
+
+        <label for="description">Description</label>
+        <textarea class="required" name="description" required>{{course.description}}</textarea>
+
+        <div class="reviewer__stars">
+            {{#each h.arrayFive}}
+                <input type="radio" id="star{{this}}" name="rating" value="{{this}}">
+                <label for="star{{this}}">{{this}} Stars</label>
+            {{/each}}
+        </div>
+
+        <ul class="tags">
+            {{#each h.technologies}}
+                <div class="tag tag__technology">
+                    <input type="checkbox" id="{{this}}" value="{{this}}" name="tags" {{#if (includes @root.tags this)}}checked{{/if}}>
+                    <label for="{{this}}" class="no-letter-spacing">{{this}}</label>
+                </div>
+            {{/each}}
+        </ul>
+
+        <input type="submit" class="button m-t30" value="Send">
+    </form>
+</div>
