@@ -27,10 +27,7 @@ exports.equals = (valueOne, valueTwo) => valueOne === valueTwo ? true : false;
 // Convert ObjectId to string
 exports.getString = obj => obj.toString();
 
-// Check current page then return a class
-exports.compare = (currentPage, number) => currentPage >= number ? true : false;
-
-exports.endsWith = (currentPath, pages) => currentPath.endsWith(pages) ? false : true;
+exports.compare = (first, second) => first > second ? true : false;
 
 exports.addNumber = (target, number) => Number(target) + number;
 
