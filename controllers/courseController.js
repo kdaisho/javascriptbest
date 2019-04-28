@@ -50,7 +50,7 @@ exports.createCourse = async (req, res) => {
 
 exports.getCourses = async (req, res) => {
     const page = req.params.page || 1;
-    const coursesPerPage = 2;
+    const coursesPerPage = 10;
     const numberOfSkip = (page * coursesPerPage) - coursesPerPage;
 
     const coursesPromise = Course

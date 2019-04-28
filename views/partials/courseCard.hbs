@@ -33,7 +33,7 @@
             <div class="courseCard__action--like">
                 {{#if @root.user}}
                     <form action="/api/courses/{{this._id}}/like" class="like">
-                        <button class="like__button" type="submit" name="like" title="Like">
+                        <button class="like__button {{#if (includes @root.user.likes (getString this._id))}}isLiked{{/if}}" type="submit" name="like" title="Like">
                             {{{getIcon 'like'}}}
                         </button>
                     </form>

@@ -34,7 +34,7 @@ exports.endsWith = (currentPath, pages) => currentPath.endsWith(pages) ? false :
 
 exports.addNumber = (target, number) => Number(target) + number;
 
-exports.includes = (array, value) => array.includes(value);
+exports.includes = (array, value) => array.indexOf(value) >= 0 ? true : false;
 
 exports.repeat = (item, times, total) => {
 	let output = '';

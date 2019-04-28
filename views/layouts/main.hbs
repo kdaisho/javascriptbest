@@ -25,8 +25,8 @@
                         <li>
                             <a href="/likes" class="{{addActiveByCurrentPath currentPath '/likes'}}">
                                 Like <span class="likes-count">
-                                    {{#if courses}}
-                                        {{courses.length}}
+                                    {{#if user.likes}}
+                                        {{user.likes.length}}
                                     {{/if}}
                                 </span>
                             </a>
