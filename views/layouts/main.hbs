@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/dist/style.css">
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
     <title>{{title}} | {{h.siteName}}</title>
 </head>
 <body>
@@ -88,6 +89,18 @@
             {{/each}}
         </div>
     </div>
+
+    <div class="content">
+        <div class="backdrop" id="backdrop">
+            <div class="search-container">
+                <div class="search">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search courses.." name="search">
+                    <div class="search-results"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="/dist/App.bundle.js"></script>
 </body>
 </html>

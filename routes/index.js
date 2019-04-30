@@ -54,6 +54,8 @@ router.post('/account/reset/:token',
 router.get('/popular', catchErrors(courseController.getPopularCourses));
 
 router.get('/likes', authController.isLoggedIn, catchErrors(courseController.getLikes));
+
+router.get('/api/search', catchErrors(courseController.searchCourses));
 router.post('/api/courses/:id/like', catchErrors(courseController.likeCourse));
 
 router.get('/contact', userController.contact);
