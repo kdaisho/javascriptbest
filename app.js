@@ -19,12 +19,9 @@ require('./handlers/passport');
 // create our Express app
 const app = express();
 
-// app.use(flash());
-
 const ehbs = exphbs.create({
 	extname: '.hbs',
 	defaultLayout: 'main',
-	// fl: req.flash(),
 	// create custom helpers
 	helpers: {
 		fl: () => req.flash(),
@@ -40,13 +37,12 @@ const ehbs = exphbs.create({
 		includes: (array, value) => helpers.includes(array, value)
 	}
 });
-// console.log(req.flash());
+
 // view engine setup
 app.engine('.hbs', ehbs.engine);
 
 app.set('views', path.join(__dirname, 'views')); // this is the folder where we keep our handlebars files
 app.set('view engine', '.hbs'); // we use the engine handlebars
-
 
 // serves up static files from the public folder. Anything in public/ will just be served up as the file it is
 app.use(express.static(path.join(__dirname, 'public')));
