@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const passport = require('passport');
 const promisify = require('es6-promisify');
@@ -47,10 +46,9 @@ app.set('view engine', '.hbs'); // we use the engine handlebars
 // serves up static files from the public folder. Anything in public/ will just be served up as the file it is
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/favicon.ico', express.static('images/favicon.ico'));
-// Takes the raw requests and turns them into usable properties on req.body
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
+// Using built in body parser
+app.use(express.json());
+app.use(express.urlencoded({
 	extended: true
 }));
 
@@ -72,7 +70,7 @@ app.use(session({
 	})
 }));
 
-// // Passport JS is what we use to handle our logins
+// Passport JS is what we use to handle our logins
 app.use(passport.initialize());
 app.use(passport.session());
 
