@@ -18,6 +18,11 @@ const multerOptions = {
     }
 };
 
+exports.getHomepage = async (req, res) => {
+    const count = await Course.find();
+    res.render('home', { title: 'Welcome to Frontend Reviews', count: count.length });
+};
+
 exports.addCourse = (req, res) => {
     const course = {};
     const tags = [];

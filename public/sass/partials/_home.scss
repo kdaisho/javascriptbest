@@ -1,0 +1,13 @@
+.home {
+    .hero {
+        background: #efefef;
+        padding: 3rem 0;
+        .pageTitle {
+            color: $monokaiBlack;
+        }
+        .lead {
+            color: $monokaiBlack;
+            font-size: $courseTitleSize;
+        }
+    }
+}

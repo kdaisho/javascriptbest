@@ -69,12 +69,12 @@
 
         &__top {
             box-shadow: 0px 3px 4px rgba(0, 0, 0, .5);
-            padding: 1.5rem 0 1rem;
+            padding: 2rem 0 1rem;
 
             .logo {
                 font-size: 1.75rem;
                 font-weight: bold;
-                margin-bottom: 1rem;
+                margin-bottom: 2rem;
 
                 h1 {
                     line-height: 1;
@@ -87,11 +87,24 @@
         }
 
         li {
-            height: 40px;
-            line-height: 40px;
-            margin: .25rem 0;
+            height: 50px;
+            line-height: 50px;
+            margin: 1.25rem 0;
+            position: relative;
+
             &.thumbnail {
                 height: auto;
+            }
+
+            &:after {
+                content: "";
+                background: #fff;
+                height: 1px;
+                width: 30px;
+                position: absolute;
+                top: 50px;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
 
@@ -102,12 +115,10 @@
             border: none;
             box-sizing: border-box;
             display: block;
-            font-size: 1.25rem;
-            font-weight: bold;
+            font-size: $cardTitleSize;
             margin: 0 auto;
             outline: none;
             padding: 0 .75rem;
-            text-transform: uppercase;
             width: 100%;
 
             &.search-button {

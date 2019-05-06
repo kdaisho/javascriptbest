@@ -92,6 +92,8 @@ textarea:focus {
 
 .content {
   padding: 3rem 1rem; }
+  .content.is-active {
+    padding: 0; }
   @media (min-width: 1024px) {
     .content {
       margin-left: 200px; } }
@@ -184,21 +186,33 @@ textarea:focus {
     .nav__wrapper__top {
       -webkit-box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
               box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
-      padding: 1.5rem 0 1rem; }
+      padding: 2rem 0 1rem; }
       .nav__wrapper__top .logo {
         font-size: 1.75rem;
         font-weight: bold;
-        margin-bottom: 1rem; }
+        margin-bottom: 2rem; }
         .nav__wrapper__top .logo h1 {
           line-height: 1; }
     .nav__wrapper__main {
       padding: 1.25rem 0; }
     .nav__wrapper li {
-      height: 40px;
-      line-height: 40px;
-      margin: .25rem 0; }
+      height: 50px;
+      line-height: 50px;
+      margin: 1.25rem 0;
+      position: relative; }
       .nav__wrapper li.thumbnail {
         height: auto; }
+      .nav__wrapper li:after {
+        content: "";
+        background: #fff;
+        height: 1px;
+        width: 30px;
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%); }
     .nav__wrapper li a,
     .nav__wrapper li span,
     .nav__wrapper li button {
@@ -207,12 +221,10 @@ textarea:focus {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       display: block;
-      font-size: 1.25rem;
-      font-weight: bold;
+      font-size: 1.5rem;
       margin: 0 auto;
       outline: none;
       padding: 0 .75rem;
-      text-transform: uppercase;
       width: 100%; }
       .nav__wrapper li a.search-button,
       .nav__wrapper li span.search-button,
@@ -319,6 +331,15 @@ textarea:focus {
     .search-container .search .search-results .search-result strong {
       font-size: 1.25rem;
       color: #fff; }
+
+.home .hero {
+  background: #efefef;
+  padding: 3rem 0; }
+  .home .hero .pageTitle {
+    color: #272822; }
+  .home .hero .lead {
+    color: #272822;
+    font-size: 1.25rem; }
 
 .courses {
   display: -webkit-box;

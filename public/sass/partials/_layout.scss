@@ -1,6 +1,10 @@
 .content {
     padding: 3rem 1rem;
 
+    &.is-active {
+        padding: 0;
+    }
+
     @media (min-width: $maxTablet) {
         margin-left: 200px;
     }
