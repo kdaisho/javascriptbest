@@ -82,29 +82,17 @@
             }
         }
 
-        &__main {
-            padding: 1.25rem 0;
-        }
-
-        li {
+        li:not(.thumbnail) {
             height: 50px;
             line-height: 50px;
-            margin: 1.25rem 0;
-            position: relative;
+            border-bottom: 1px solid #1d6dd6;
 
             &.thumbnail {
                 height: auto;
             }
 
-            &:after {
-                content: "";
-                background: #fff;
-                height: 1px;
-                width: 30px;
-                position: absolute;
-                top: 50px;
-                left: 50%;
-                transform: translateX(-50%);
+            &:first-child {
+                border-top: 1px solid #1d6dd6;
             }
         }
 
@@ -130,7 +118,7 @@
             }
 
             &.avatar {
-                padding: .5rem .75rem 0;
+                padding: 1.5rem .75rem .5rem;
                 text-align: center;
 
                 img {
@@ -142,8 +130,12 @@
             }
 
             &:hover:not(.avatar):not(.likes-count) {
-                background: darken($monokaiBlue, 10%);
+                background: #fff;
+                color: $monokaiBlue;
                 cursor: pointer;
+                span {
+                    color: $monokaiBlue;
+                }
             }
 
             @media (min-width: $maxTablet) {
@@ -163,7 +155,7 @@
                     }
 
                     &:hover:after {
-                        border-left: 12px solid darken($monokaiBlue, 10%);
+                        border-left: 12px solid #fff;
                     }
                 }
             }

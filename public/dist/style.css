@@ -193,26 +193,14 @@ textarea:focus {
         margin-bottom: 2rem; }
         .nav__wrapper__top .logo h1 {
           line-height: 1; }
-    .nav__wrapper__main {
-      padding: 1.25rem 0; }
-    .nav__wrapper li {
+    .nav__wrapper li:not(.thumbnail) {
       height: 50px;
       line-height: 50px;
-      margin: 1.25rem 0;
-      position: relative; }
-      .nav__wrapper li.thumbnail {
+      border-bottom: 1px solid #1d6dd6; }
+      .nav__wrapper li:not(.thumbnail).thumbnail {
         height: auto; }
-      .nav__wrapper li:after {
-        content: "";
-        background: #fff;
-        height: 1px;
-        width: 30px;
-        position: absolute;
-        top: 50px;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-            -ms-transform: translateX(-50%);
-                transform: translateX(-50%); }
+      .nav__wrapper li:not(.thumbnail):first-child {
+        border-top: 1px solid #1d6dd6; }
     .nav__wrapper li a,
     .nav__wrapper li span,
     .nav__wrapper li button {
@@ -237,7 +225,7 @@ textarea:focus {
       .nav__wrapper li a.avatar,
       .nav__wrapper li span.avatar,
       .nav__wrapper li button.avatar {
-        padding: .5rem .75rem 0;
+        padding: 1.5rem .75rem .5rem;
         text-align: center; }
         .nav__wrapper li a.avatar img,
         .nav__wrapper li span.avatar img,
@@ -249,8 +237,13 @@ textarea:focus {
       .nav__wrapper li a:hover:not(.avatar):not(.likes-count),
       .nav__wrapper li span:hover:not(.avatar):not(.likes-count),
       .nav__wrapper li button:hover:not(.avatar):not(.likes-count) {
-        background: #0666e6;
+        background: #fff;
+        color: #2680f9;
         cursor: pointer; }
+        .nav__wrapper li a:hover:not(.avatar):not(.likes-count) span,
+        .nav__wrapper li span:hover:not(.avatar):not(.likes-count) span,
+        .nav__wrapper li button:hover:not(.avatar):not(.likes-count) span {
+          color: #2680f9; }
       @media (min-width: 1024px) {
         .nav__wrapper li a.is-active,
         .nav__wrapper li span.is-active,
@@ -271,7 +264,7 @@ textarea:focus {
           .nav__wrapper li a.is-active:hover:after,
           .nav__wrapper li span.is-active:hover:after,
           .nav__wrapper li button.is-active:hover:after {
-            border-left: 12px solid #0666e6; } }
+            border-left: 12px solid #fff; } }
   .nav.active {
     left: 0; }
     .nav.active .nav__hamburger {
