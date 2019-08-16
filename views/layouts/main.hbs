@@ -11,7 +11,11 @@
 <body>
     <aside id="nav" class="nav">
         <button id="hamburger" class="nav__hamburger">
-            <span class="open"></span>
+            <span class="open">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </span>
             <span class="close">
                 {{{getIcon 'close'}}}
             </span>
@@ -20,7 +24,7 @@
             <div class="nav__wrapper__top">
                 <div class="logo">
                     <h1>
-                        <a href="/">JavaScript Best</a>
+                        <a href="/">JSBest</a>
                     </h1>
                     <p>JavaScript online course reviews</p>
                 </div>
@@ -56,7 +60,7 @@
             <div class="nav__wrapper__main">
                 <ul>
                     <li>
-                        <a href="/courses" class="{{addActiveByCurrentPath currentPath '/courses'}}">All Reviews</a>
+                        <a href="/courses" class="{{addActiveByCurrentPath currentPath '/courses'}}">Reviews</a>
                     </li>
                     <li>
                         <a href="/tags" class="{{addActiveByCurrentPath currentPath '/tags'}}">Tags</a>
@@ -65,7 +69,7 @@
                         <a href="/popular" class="{{addActiveByCurrentPath currentPath '/popular'}}">Popular</a>
                     </li>
                     <li>
-                        <a href="/add" class="{{addActiveByCurrentPath currentPath '/add'}}">Write a Review</a>
+                        <a href="/add" class="{{addActiveByCurrentPath currentPath '/add'}}">Add</a>
                     </li>
                     <li>
                         <a href="/contact" class="{{addActiveByCurrentPath currentPath '/contact'}}">Contact</a>
