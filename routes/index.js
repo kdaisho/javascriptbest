@@ -5,8 +5,8 @@ const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
-// router.get('/', (req, res) => { res.redirect('/courses') });
-router.get('/', courseController.getHomepage);
+router.get('/', (req, res) => { res.redirect('/courses') });
+// router.get('/', courseController.getHomepage);
 router.get('/courses', catchErrors(courseController.getCourses));
 router.get('/courses/page/:page', catchErrors(courseController.getCourses));
 router.get('/courses/:id/edit', catchErrors(courseController.editCourse));
