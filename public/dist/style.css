@@ -118,12 +118,15 @@ textarea:focus {
     display: block;
     background: #000;
     height: 100%;
-    opacity: .85;
+    opacity: .5;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 50; }
+    @media (min-width: 1024px) {
+      .backdrop.active {
+        display: none; } }
 
 .nav {
   background: #2680f9;
@@ -192,10 +195,16 @@ textarea:focus {
       .nav__wrapper {
         overflow: visible; } }
     .nav__wrapper__top {
-      padding: 3rem 0 1rem; }
+      padding: 1rem 0 1rem; }
+      @media (min-width: 376px) {
+        .nav__wrapper__top {
+          padding: 3rem 0 1rem; } }
       .nav__wrapper__top .logo {
         padding: 0 1.25rem;
-        margin-bottom: 3rem; }
+        margin-bottom: 1rem; }
+        @media (min-width: 376px) {
+          .nav__wrapper__top .logo {
+            margin-bottom: 3rem; } }
         .nav__wrapper__top .logo h1 {
           font-size: 2.8rem;
           font-weight: bold;
