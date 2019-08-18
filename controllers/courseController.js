@@ -102,13 +102,14 @@ exports.updateCourse = async (req, res) => {
         new: true, //Return the new course instead of the old one
         runValidators: true
     }).exec();
-    req.flash('success', `Successfully updated <strong>${course.course}</strong>. <a href="/courses/${course.slug}">View Course</a>`);
+    req.flash('success', `Successfully updated ${course.course}!`);
     res.redirect(`/courses/${course._id}/edit`);
 };
 
 exports.getCourseBySlug = async (req, res, next) => {
     const course = await Course.findOne({ slug: req.params.slug }).populate('author reviews');
     if (!course) return next();
+    console.log(course.author.name);
     res.render('course', { title: course.course, course });
 };
 

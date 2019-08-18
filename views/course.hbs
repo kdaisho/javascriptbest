@@ -13,6 +13,10 @@
         <p class="description">
             {{course.description}}
         </p>
+        <div class="author-info">
+            <img src="{{course.author.gravatar}}" alt="Reviewer {{course.author.name}}">
+            {{course.author.name}} / {{getDateFromNow course.created}}
+        </div>
         <div class="rating">
             <div class="stars" title="Rated {{course.rating}} out of five stars">
                 {{repeat "★" course.rating false}}{{repeat "☆" course.rating 5}}

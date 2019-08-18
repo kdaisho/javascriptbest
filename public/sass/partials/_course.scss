@@ -84,6 +84,16 @@
             }
         }
 
+        .author-info {
+            color: $monokaiGreen;
+            padding: .75rem 0;
+            img {
+                margin-right: 6px;
+                width: 30px;
+                vertical-align: middle;
+            }
+        }
+
         .rating {
             margin-bottom: .75rem;
             @media (min-width: $maxMobile) {

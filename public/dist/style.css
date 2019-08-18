@@ -571,6 +571,13 @@ textarea:focus {
       @media (min-width: 767px) {
         .course__description .description {
           font-size: 1.25rem; } }
+    .course__description .author-info {
+      color: #a6e22e;
+      padding: .75rem 0; }
+      .course__description .author-info img {
+        margin-right: 6px;
+        width: 30px;
+        vertical-align: middle; }
     .course__description .rating {
       margin-bottom: .75rem; }
       @media (min-width: 767px) {
