@@ -495,7 +495,7 @@ textarea:focus {
   display: none; }
 
 .course {
-  max-width: 960px;
+  max-width: 768px;
   margin: 0 auto; }
   .course__hero {
     -webkit-box-align: start;

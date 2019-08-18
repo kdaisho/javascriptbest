@@ -9,7 +9,7 @@
         <a href="/course/{{this.slug}}" class="shade"></a>
     </div>
     <div class="courseCard__details">
-        <p class="desc">{{this.description}}</p>
+        <p class="desc">{{@root.trimmed}}<p>
         <div class="courseCard__action">
             <div class="courseCard__action--edit">
                 {{#if @root.user}}

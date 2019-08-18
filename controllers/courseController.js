@@ -41,7 +41,7 @@ exports.resize = async (req, res, next) => {
     req.body.image = `${uuid.v4()}.${extension}`;
     // Resize image
     const img = await jimp.read(req.file.buffer);
-    await img.resize(400, jimp.AUTO);
+    await img.resize(600, jimp.AUTO);
     await img.write(`./public/uploads/${req.body.image}`);
     next();
 };
@@ -58,6 +58,7 @@ exports.getCourses = async (req, res) => {
     const page = req.params.page || 1;
     const coursesPerPage = 10;
     const numberOfSkip = (page * coursesPerPage) - coursesPerPage;
+    let trimmed;
 
     const coursesPromise = Course
         .find()
@@ -75,7 +76,12 @@ exports.getCourses = async (req, res) => {
         return;
     }
 
-    res.render('courses', { title: 'All Reviews', courses, page, pages, count });
+    for (let i = 0; i < courses.length; i++) {
+        if (courses[i].description.length >= 120) {
+            trimmed = courses[0].description.substring(0, 120) + '...';
+        }
+    }
+    res.render('courses', { title: 'All Reviews', courses, page, pages, count, trimmed });
 };
 
 const confirmOwner = (course, user) => {
