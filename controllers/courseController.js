@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Course = mongoose.model('Course');
 const User = mongoose.model('User');
+const Review = mongoose.model('Review');
 const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
@@ -151,4 +152,13 @@ exports.getPopularCourses = async (req, res) => {
     const courses = await Course.getPopularCourses();
     // res.json(courses);
     res.render('popularCourses', { courses, title: 'Popular Courses' });
+};
+
+exports.addReview = async (req, res) => {
+    req.body.author = req.user._id;
+    req.body.course = req.params.id;
+    const newReview = new Review(req.body);
+    await newReview.save();
+    req.flash('success', 'Done!');
+    res.redirect('back');
 };
