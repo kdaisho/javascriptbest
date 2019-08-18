@@ -43,6 +43,6 @@ exports.repeat = (item, times, total) => {
 };
 
 exports.arrayFive = [5, 4, 3, 2, 1];
-exports.technologies = ['JavaScript', 'Node', 'React', 'Angular', 'Webpack', 'Database', 'CSS', 'Git', 'PWA', 'Design', 'Typographie', 'Bash', 'Paid Course'];
+exports.technologies = ['Vanilla', 'Node.js', 'React', 'Angular', 'Vue', 'TypeScript', 'PWA', 'Graphical/Visualization', 'Data-Driven', 'Paid Course', 'Others'];
 
 exports.siteName = 'Frontend Tutorials Review';

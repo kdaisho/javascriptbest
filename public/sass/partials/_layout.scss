@@ -44,5 +44,9 @@
         @media (min-width: $maxTablet) {
             display: none;
         }
+        &.isForSearch {
+            display: block;
+            opacity: .875;
+        }
     }
 }

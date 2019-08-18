@@ -1,7 +1,7 @@
 <div class="reviewer">
     <h2 class="reviewer__title">Leave a review!</h2>
     <form id="reviewer" action="/reviews/{{@root.course._id}}" method="POST">
-        <textarea class="reviewer__text required" name="text" placeholder="{{course.course}} course is specifically focused on..." required></textarea>
+        <textarea class="reviewer__text required" name="text" placeholder="Do you like {{@root.course.course}} course?" required></textarea>
         <div class="reviewer__meta">
             <div class="reviewer__stars">
                 {{#each @root.h.arrayFive}}

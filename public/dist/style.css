@@ -127,6 +127,9 @@ textarea:focus {
     @media (min-width: 1024px) {
       .backdrop.active {
         display: none; } }
+    .backdrop.active.isForSearch {
+      display: block;
+      opacity: .875; }
 
 .nav {
   background: #2680f9;

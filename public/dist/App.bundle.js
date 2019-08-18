@@ -1050,7 +1050,7 @@ function toggleSearch(searchButton, nav, menuButton, backdrop, input, searchCont
         if (showSearch) {
             backdrop.classList.remove('active');
         }
-        backdrop.classList.add('active');
+        backdrop.classList.add('active', 'isForSearch');
         backdrop.style.zIndex = '70';
         menuButton.classList.toggle('active');
         searchContainer.classList.toggle('active');
@@ -1059,7 +1059,7 @@ function toggleSearch(searchButton, nav, menuButton, backdrop, input, searchCont
     });
     backdrop.on('click', function () {
         if (showSearch) {
-            backdrop.classList.remove('active');
+            backdrop.classList.remove('active', 'isForSearch');
             input.value = '';
             searchResults.innerHTML = '';
             searchContainer.classList.remove('active');
