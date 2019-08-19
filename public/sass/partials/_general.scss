@@ -38,6 +38,7 @@ textarea {
     height: 2.5rem;
     text-align: center;
     text-transform: uppercase;
+    -webkit-appearance: none;
     width: 100%;
     &:hover {
         cursor: pointer;

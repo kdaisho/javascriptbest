@@ -68,6 +68,7 @@ textarea:focus {
   height: 2.5rem;
   text-align: center;
   text-transform: uppercase;
+  -webkit-appearance: none;
   width: 100%; }
   .button:hover {
     cursor: pointer; }
