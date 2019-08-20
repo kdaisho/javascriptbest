@@ -12,7 +12,28 @@
         left: 0;
     }
 
-    &__hamburger {
+    &.active {
+        left: 0;
+
+        .nav__hamburger {
+            justify-content: center;
+            left: 200px;
+            width: 42px;
+
+            span {
+                &.open {
+                    display: none;
+                }
+
+                &.close {
+                    display: block;
+                    padding-top: .225rem;
+                }
+            }
+        }
+    }
+
+    .nav__hamburger {
         background: $monokaiBlue;
         border: none;
         bottom: 100px;
@@ -20,23 +41,23 @@
         box-shadow: 3px 2px 4px rgba(0, 0, 0, .5);
         display: flex;
         height: 42px;
-        justify-content: flex-end;
+        justify-content: center;
         outline: none;
         position: absolute;
         position: fixed;
-        left: -14px;
-        width: 42px;
+        left: 0;
+        width: 26px;
 
-        span {
+        .open {
+            display: flex;
+            flex-flow: row nowrap;
             height: 32px;
-            display: block;
-
-            &.open {
+            justify-content: center;
+            .dots {
                 align-items: center;
                 display: flex;
                 flex-flow: column nowrap;
                 justify-content: space-around;
-                padding-right: .25rem;
                 .dot {
                     background: #fff;
                     border-radius: 50%;
@@ -44,10 +65,10 @@
                     width: 5px;
                 }
             }
+        }
 
-            svg {
-                fill: #fff;
-            }
+        svg {
+            fill: #fff;
         }
 
         .close {
@@ -178,25 +199,6 @@
                     &:hover:after {
                         border-left: 12px solid #fff;
                     }
-                }
-            }
-        }
-    }
-
-    &.active {
-        left: 0;
-
-        .nav__hamburger {
-            justify-content: center;
-            left: 200px;
-
-            span {
-                &.open {
-                    display: none;
-                }
-
-                &.close {
-                    display: block;
                 }
             }
         }

@@ -145,7 +145,20 @@ textarea:focus {
   @media (min-width: 1024px) {
     .nav {
       left: 0; } }
-  .nav__hamburger {
+  .nav.active {
+    left: 0; }
+    .nav.active .nav__hamburger {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      left: 200px;
+      width: 42px; }
+      .nav.active .nav__hamburger span.open {
+        display: none; }
+      .nav.active .nav__hamburger span.close {
+        display: block;
+        padding-top: .225rem; }
+  .nav .nav__hamburger {
     background: #2680f9;
     border: none;
     bottom: 100px;
@@ -156,18 +169,27 @@ textarea:focus {
     display: -ms-flexbox;
     display: flex;
     height: 42px;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     outline: none;
     position: absolute;
     position: fixed;
-    left: -14px;
-    width: 42px; }
-    .nav__hamburger span {
+    left: 0;
+    width: 26px; }
+    .nav .nav__hamburger .open {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
       height: 32px;
-      display: block; }
-      .nav__hamburger span.open {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      .nav .nav__hamburger .open .dots {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
@@ -179,21 +201,20 @@ textarea:focus {
             -ms-flex-flow: column nowrap;
                 flex-flow: column nowrap;
         -ms-flex-pack: distribute;
-            justify-content: space-around;
-        padding-right: .25rem; }
-        .nav__hamburger span.open .dot {
+            justify-content: space-around; }
+        .nav .nav__hamburger .open .dots .dot {
           background: #fff;
           border-radius: 50%;
           height: 5px;
           width: 5px; }
-      .nav__hamburger span svg {
-        fill: #fff; }
-    .nav__hamburger .close {
+    .nav .nav__hamburger svg {
+      fill: #fff; }
+    .nav .nav__hamburger .close {
       display: none; }
-    .nav__hamburger:hover {
+    .nav .nav__hamburger:hover {
       cursor: pointer; }
     @media (min-width: 1024px) {
-      .nav__hamburger {
+      .nav .nav__hamburger {
         display: none; } }
   .nav__wrapper {
     height: 100%;
@@ -293,17 +314,6 @@ textarea:focus {
           .nav__wrapper li span.is-active:hover:after,
           .nav__wrapper li button.is-active:hover:after {
             border-left: 12px solid #fff; } }
-  .nav.active {
-    left: 0; }
-    .nav.active .nav__hamburger {
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      left: 200px; }
-      .nav.active .nav__hamburger span.open {
-        display: none; }
-      .nav.active .nav__hamburger span.close {
-        display: block; }
 
 .search-container {
   display: none;
