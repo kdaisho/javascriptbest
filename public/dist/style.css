@@ -156,7 +156,19 @@ textarea:focus {
       .nav.active .nav__hamburger span.open {
         display: none; }
       .nav.active .nav__hamburger span.close {
-        display: block; }
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: row nowrap;
+                flex-flow: row nowrap;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
         .nav.active .nav__hamburger span.close .icon-container {
           display: block; }
   .nav .nav__hamburger {
