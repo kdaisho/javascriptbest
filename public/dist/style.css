@@ -168,6 +168,9 @@ textarea:focus {
       height: 32px;
       display: block; }
       .nav__hamburger span.open {
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;

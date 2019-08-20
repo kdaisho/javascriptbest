@@ -32,6 +32,7 @@
             display: block;
 
             &.open {
+                align-items: center;
                 display: flex;
                 flex-flow: column nowrap;
                 justify-content: space-around;
