@@ -156,8 +156,7 @@ textarea:focus {
       .nav.active .nav__hamburger span.open {
         display: none; }
       .nav.active .nav__hamburger span.close {
-        display: block;
-        padding-top: .225rem; }
+        display: block; }
   .nav .nav__hamburger {
     background: #2680f9;
     border: none;
