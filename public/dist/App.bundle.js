@@ -1002,6 +1002,10 @@ function toggleNav(nav, menuButton, backdrop) {
         nav.classList.toggle('active');
         backdrop.classList.toggle('active');
     });
+    backdrop.on('click', function () {
+        nav.classList.remove('active');
+        backdrop.classList.remove('active');
+    });
 }
 
 exports.default = toggleNav;
@@ -3379,4 +3383,4 @@ likeForms.on('submit', _like2.default);
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=App.bundle.js.map
+//# sourceMappingURL=app.bundle.js.map

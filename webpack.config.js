@@ -49,7 +49,7 @@ const uglify = new webpack.optimize.UglifyJsPlugin({ // eslint-disable-line
 // OK - now it's time to put it all together
 const config = {
   entry: {
-    App: './public/js/app.js'
+    app: './public/js/app.js'
   },
   // we're using sourcemaps and here is where we specify which kind of sourcemap to use
   devtool: 'source-map',
@@ -59,7 +59,6 @@ const config = {
     // __dirname is a variable from node that gives us the
     path: path.resolve(__dirname, 'public', 'dist'),
     // we can use "substitutions" in file names like [name] and [hash]
-    // name will be `App` because that is what we used above in our entry
     filename: '[name].bundle.js'
   },
 
