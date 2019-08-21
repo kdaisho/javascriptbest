@@ -86,7 +86,8 @@
                         z-index: 10;
 
                         &:checked + label {
-                            background: $monokaiGreen;
+                            background: $monokaiBlue;
+                            color: #fff;
                         }
                     }
 

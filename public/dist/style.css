@@ -477,7 +477,8 @@ textarea:focus {
         top: -5px;
         z-index: 10; }
         .container.edit form .tags .tag__technology input[type="checkbox"]:checked + label {
-          background: #a6e22e; }
+          background: #2680f9;
+          color: #fff; }
       .container.edit form .tags .tag__technology label {
         background: #dcdcdc;
         color: #444;

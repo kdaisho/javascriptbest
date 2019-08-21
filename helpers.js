@@ -43,6 +43,6 @@ exports.repeat = (item, times, total) => {
 };
 
 exports.arrayFive = [5, 4, 3, 2, 1];
-exports.technologies = ['Vanilla', 'Node.js', 'React', 'Angular', 'Vue', 'TypeScript', 'PWA', 'Graphical/Visualization', 'Data-Driven', 'Paid Course'];
+exports.technologies = ['Vanilla', 'Node', 'React', 'Angular', 'Vue', 'Library', 'TypeScript', 'PWA', 'Graphical/Visualization', 'Data-Driven', 'Test-Driven', 'Paid Course'];
 
 exports.siteName = 'JavaScriptBest';
