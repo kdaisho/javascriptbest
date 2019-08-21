@@ -75,7 +75,7 @@
     }
 
     &__description {
-        padding: 1rem 0 0;
+        padding: 1.25rem 0 0;
 
         .description {
             margin-bottom: .5rem;
@@ -86,84 +86,66 @@
 
         .author-info {
             color: $monokaiGreen;
-            padding: .75rem 0;
+            padding: 1rem 0;
             img {
                 margin-right: 6px;
-                width: 30px;
+                width: 36px;
                 vertical-align: middle;
             }
-        }
-
-        .rating {
-            margin-bottom: .75rem;
-            @media (min-width: $maxMobile) {
-                display: flex;
-                flex-flow: row nowrap;
-            }
-            .stars {
-                color: $monokaiGreen;
-                text-align: left;
+            .rating {
+                padding: .5rem 0;
                 @media (min-width: $maxMobile) {
+                    display: flex;
+                    flex-flow: row nowrap;
+                }
+                .stars {
+                    color: $monokaiGreen;
                     font-size: 1.5rem;
+                    text-align: left;
                 }
             }
-        }
 
-        .tags {
-            display: flex;
-            flex-flow: row wrap;
-            margin-bottom: 1.5rem;
+            .tags {
+                display: flex;
+                flex-flow: row wrap;
+                margin-bottom: 1rem;
 
-            .tag {
-                background: $monokaiGreen;
-                line-height: 1rem;
-                margin: .25rem;
-                padding: .2rem .5rem .25rem 1rem;
-                position: relative;
-
-                @media (min-width: $maxMobile) {
+                .tag {
+                    background: $monokaiGreen;
+                    line-height: 1rem;
+                    margin: .25rem;
                     padding: .35rem 0;
-                }
+                    position: relative;
 
-                &:before {
-                    content: "";
-                    height: 0;
-                    width: 0;
-                    border-top: 12px solid transparent;
-                    border-left: 6px solid #222;
-                    border-bottom: 12px solid transparent;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    @media (min-width: $maxMobile) {
-                        border-top: 14px solid transparent;
+                    &:before {
+                        content: "";
+                        height: 0;
+                        width: 0;
                         border-bottom: 13px solid transparent;
-                    }
-                }
-
-                &:after {
-                    content: "";
-                    height: 0;
-                    width: 0;
-                    border-top: 12px solid transparent;
-                    border-left: 6px solid $monokaiGreen;
-                    border-bottom: 12px solid transparent;
-                    position: absolute;
-                    right: -6px;
-                    top: 0;
-                    @media (min-width: $maxMobile) {
+                        border-left: 6px solid #222;
                         border-top: 14px solid transparent;
-                        border-bottom: 13px solid transparent;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
                     }
-                }
 
-                &__link {
-                    color: #000;
-                    font-weight: bold;
-                    font-size: .75rem;
-                    letter-spacing: 0;
-                    @media (min-width: $maxMobile) {
+                    &:after {
+                        content: "";
+                        height: 0;
+                        width: 0;
+                        border-bottom: 13px solid transparent;
+                        border-left: 6px solid $monokaiGreen;
+                        border-top: 14px solid transparent;
+                        position: absolute;
+                        right: -6px;
+                        top: 0;
+                    }
+
+                    &__link {
+                        color: #000;
+                        font-weight: bold;
                         font-size: 1rem;
+                        letter-spacing: 0;
                         padding: .35rem .75rem;
                     }
                 }
@@ -173,10 +155,23 @@
 
     &__url {
         color: $monokaiGreen;
+        display: inline-block;
+        margin-bottom: 1rem;
         text-decoration: underline;
     }
 
+    .is-visit-course {
+        display: block;
+        line-height: 2.6rem;
+        margin-bottom: 2rem;
+    }
+
     .wanna {
+        .user-actions {
+            display: inline-block;
+            margin-top: .25rem;
+            white-space: nowrap;
+        }
         p, a {
             font-size: $courseTitleSize;
         }

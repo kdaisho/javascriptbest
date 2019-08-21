@@ -16,13 +16,12 @@
         <div class="author-info">
             <img src="{{course.author.gravatar}}" alt="Reviewer {{course.author.name}}">
             {{course.author.name}} / {{getDateFromNow course.created}}
-        </div>
-        <div class="rating">
-            <div class="stars" title="Rated {{course.rating}} out of five stars">
-                {{repeat "★" course.rating false}}{{repeat "☆" course.rating 5}}
+            <div class="rating">
+                <div class="stars" title="Rated {{course.rating}} out of five stars">
+                    {{repeat "★" course.rating false}}{{repeat "☆" course.rating 5}}
+                </div>
             </div>
-        </div>
-        {{#if course.tags}}
+            {{#if course.tags}}
             <ul class="tags">
                 {{#each course.tags}}
                     <li class="tag">
@@ -30,9 +29,10 @@
                     </li>
                 {{/each}}
             </ul>
-        {{/if}}
+            {{/if}}
+        </div>
     </div>
-    <a href="{{course.url}}" target="_blank" title="Visit {{course.course}}" class="course__url">Visit this course</a>
+    <a class="button is-visit-course" href="{{course.url}}" target="_blank" title="Visit {{course.course}}" class="course__url">Visit this course</a>
 
     {{#if @root.user}}
         {{>reviewForm course}}
@@ -50,11 +50,14 @@
 
     {{#unless @root.user}}
         <div class="wanna">
-            <p>Have something to say?</p>
-            <a href="/login">Log in</a>
-            <span> or</span>
-            <a href="/signup">Sign up</a>
-            <span> today!</span>
+            <p>Have something to say?
+                <span class="user-actions">
+                    <a href="/login">Log in</a>
+                    <span> or</span>
+                    <a href="/signup">Sign up</a>
+                    <span> today!</span>
+                </span>
+            </p>
         </div>
     {{/unless}}
 </div>
