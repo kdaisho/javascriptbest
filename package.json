@@ -1,6 +1,6 @@
 {
-  "name": "frontend-review",
-  "version": "0.0.1",
+  "name": "javascriptbest",
+  "version": "1.0.0",
   "private": true,
   "engines": {
     "node": ">= 7.6.0"

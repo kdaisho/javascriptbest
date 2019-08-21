@@ -49,8 +49,7 @@ const uglify = new webpack.optimize.UglifyJsPlugin({ // eslint-disable-line
 // OK - now it's time to put it all together
 const config = {
   entry: {
-    // we only have 1 entry, but I've set it up for multiple in the future
-    App: './public/js/frontend-masters-review.js'
+    App: './public/js/app.js'
   },
   // we're using sourcemaps and here is where we specify which kind of sourcemap to use
   devtool: 'source-map',
