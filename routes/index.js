@@ -21,6 +21,7 @@ router.post('/add',
 router.post('/add/:id',
     courseController.upload,
     catchErrors(courseController.resize),
+    catchErrors(courseController.compress),
     catchErrors(courseController.updateCourse)
 );
 
