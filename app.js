@@ -67,7 +67,10 @@ app.use(session({
 	saveUninitialized: false,
 	store: new MongoStore({
 		mongooseConnection: mongoose.connection
-	})
+	}),
+	cookie: {
+		expires: new Date(Date.now() + 1000 * 60 * 60 * 24)//lasts 24 hours
+	}
 }));
 
 // Passport JS is what we use to handle our logins

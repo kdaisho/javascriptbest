@@ -3,4 +3,5 @@
 variables.env
 public/dist/App.bundle.js.map
 public/dist/style.css.map
+public/uploads/**
 .vscode/**
