@@ -57,6 +57,7 @@ app.use(expressValidator());
 
 // populates req.cookies with any cookies that came along with the request
 app.use(cookieParser());
+// app.use(flash());
 
 // Sessions allow us to store data on visitors from request to request
 // This keeps users logged in and allows us to send flash messages
@@ -67,17 +68,17 @@ app.use(session({
 	saveUninitialized: false,
 	store: new MongoStore({
 		mongooseConnection: mongoose.connection
-	}),
-	cookie: {
-		expires: new Date(Date.now() + 1000 * 60 * 60 * 24)//lasts 24 hours
-	}
+	})
+	// cookie: {
+	// 	expires: new Date(Date.now() + 1000 * 60 * 60 * 24)//24 hours
+	// }
 }));
 
 // Passport JS is what we use to handle our logins
 app.use(passport.initialize());
 app.use(passport.session());
 
-// // The flash middleware let's us use req.flash('error', 'Shit!'), which will then pass that message to the next page the user requests
+// The flash middleware let's us use req.flash('error', 'Shit!'), which will then pass that message to the next page the user requests
 app.use(flash());
 
 // pass variables to our templates + all requests
