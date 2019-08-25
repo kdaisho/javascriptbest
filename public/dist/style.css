@@ -36,6 +36,9 @@ a {
   text-decoration: none;
   color: inherit; }
 
+button::-moz-focus-inner {
+  border: 0; }
+
 html {
   height: 100%;
   overflow: hidden; }
@@ -238,13 +241,13 @@ textarea:focus {
       padding: 1rem 0 1rem; }
       @media (min-width: 376px) {
         .nav__wrapper__top {
-          padding: 3rem 0 1rem; } }
+          padding: 2.5rem 0 1rem; } }
       .nav__wrapper__top .logo {
         padding: 0 1.25rem;
         margin-bottom: 1rem; }
         @media (min-width: 376px) {
           .nav__wrapper__top .logo {
-            margin-bottom: 3rem; } }
+            margin-bottom: 2rem; } }
         .nav__wrapper__top .logo h1 a {
           font-family: Helvetica, Arial, sans-serif;
           font-size: 2.8rem;
@@ -255,13 +258,21 @@ textarea:focus {
           line-height: 1.25;
           padding-top: .5rem; }
     .nav__wrapper li:not(.thumbnail) {
-      height: 50px;
-      line-height: 50px;
-      border-bottom: 1px solid #1d6dd6; }
+      height: 40px;
+      line-height: 40px; }
       .nav__wrapper li:not(.thumbnail).thumbnail {
         height: auto; }
-      .nav__wrapper li:not(.thumbnail):first-child {
-        border-top: 1px solid #1d6dd6; }
+    .nav__wrapper li.category {
+      opacity: .75;
+      padding-left: 1.25rem; }
+      .nav__wrapper li.category:after {
+        content: "\203A";
+        display: inline-block;
+        font-size: 1.25rem;
+        padding: 0 12px 3px 12px;
+        -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+                transform: rotate(90deg); }
     .nav__wrapper li a,
     .nav__wrapper li span,
     .nav__wrapper li button {
@@ -270,10 +281,10 @@ textarea:focus {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       display: block;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       margin: 0 auto;
       outline: none;
-      padding: 0 .75rem 0 1.5rem;
+      padding: 0 .75rem 0 1.75rem;
       text-align: left;
       width: 100%; }
       .nav__wrapper li a.search-button,
@@ -298,13 +309,8 @@ textarea:focus {
       .nav__wrapper li a:hover:not(.avatar):not(.likes-count),
       .nav__wrapper li span:hover:not(.avatar):not(.likes-count),
       .nav__wrapper li button:hover:not(.avatar):not(.likes-count) {
-        background: #fff;
-        color: #2680f9;
+        background: #589dfa;
         cursor: pointer; }
-        .nav__wrapper li a:hover:not(.avatar):not(.likes-count) span,
-        .nav__wrapper li span:hover:not(.avatar):not(.likes-count) span,
-        .nav__wrapper li button:hover:not(.avatar):not(.likes-count) span {
-          color: #2680f9; }
       @media (min-width: 1024px) {
         .nav__wrapper li a.is-active,
         .nav__wrapper li span.is-active,
@@ -325,7 +331,7 @@ textarea:focus {
           .nav__wrapper li a.is-active:hover:after,
           .nav__wrapper li span.is-active:hover:after,
           .nav__wrapper li button.is-active:hover:after {
-            border-left: 12px solid #fff; } }
+            border-left: 12px solid #589dfa; } }
 
 .search-container {
   display: none;

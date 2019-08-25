@@ -99,7 +99,7 @@
             padding: 1rem 0 1rem;
 
             @media (min-width: $maxMobileSmall) {
-                padding: 3rem 0 1rem;
+                padding: 2.5rem 0 1rem;
             }
 
             .logo {
@@ -107,7 +107,7 @@
                 margin-bottom: 1rem;
 
                 @media (min-width: $maxMobileSmall) {
-                    margin-bottom: 3rem;
+                    margin-bottom: 2rem;
                 }
 
                 h1 {
@@ -128,16 +128,22 @@
         }
 
         li:not(.thumbnail) {
-            height: 50px;
-            line-height: 50px;
-            border-bottom: 1px solid #1d6dd6;
-
+            height: 40px;
+            line-height: 40px;
             &.thumbnail {
                 height: auto;
             }
+        }
 
-            &:first-child {
-                border-top: 1px solid #1d6dd6;
+        li.category {
+            opacity: .75;
+            padding-left: 1.25rem;
+            &:after {
+                content: "\0203A";
+                display: inline-block;
+                font-size: $btnFontSize;
+                padding: 0 12px 3px 12px;
+                transform: rotate(90deg);
             }
         }
 
@@ -148,10 +154,10 @@
             border: none;
             box-sizing: border-box;
             display: block;
-            font-size: $cardTitleSize;
+            font-size: $btnFontSize;
             margin: 0 auto;
             outline: none;
-            padding: 0 .75rem 0 1.5rem;
+            padding: 0 .75rem 0 1.75rem;
             text-align: left;
             width: 100%;
 
@@ -175,12 +181,8 @@
             }
 
             &:hover:not(.avatar):not(.likes-count) {
-                background: #fff;
-                color: $monokaiBlue;
+                background: lighten($monokaiBlue, 10%);
                 cursor: pointer;
-                span {
-                    color: $monokaiBlue;
-                }
             }
 
             @media (min-width: $maxTablet) {
@@ -200,7 +202,7 @@
                     }
 
                     &:hover:after {
-                        border-left: 12px solid #fff;
+                        border-left: 12px solid lighten($monokaiBlue, 10%);
                     }
                 }
             }
