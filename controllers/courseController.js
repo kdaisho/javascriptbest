@@ -6,7 +6,6 @@ const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
 const imagemin = require('imagemin');
-// const imageminJpegtran = require('imagemin-jpegtran');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');
 
@@ -22,6 +21,15 @@ const multerOptions = {
         }
     }
 };
+
+const trimText = (array, prop, max) => {
+    array.forEach((obj) => {
+        if (obj[prop].length >= max) {
+            obj[prop] = obj[prop].substring(0, max) + '...';
+        }
+    });
+    return array;
+}
 
 exports.getHomepage = async (req, res) => {
     const count = await Course.find();
@@ -75,8 +83,6 @@ exports.getCourses = async (req, res) => {
     const page = req.params.page || 1;
     const coursesPerPage = 10;
     const numberOfSkip = (page * coursesPerPage) - coursesPerPage;
-    let trimmed;
-
     const coursesPromise = Course
         .find()
         .skip(numberOfSkip)
@@ -84,8 +90,7 @@ exports.getCourses = async (req, res) => {
         .sort({ created: 'desc' })
         .populate('reviews');
     const countPromise = Course.count();
-
-    const [courses, count] = await Promise.all([coursesPromise, countPromise]);
+    let [courses, count] = await Promise.all([coursesPromise, countPromise]);
     const pages = Math.ceil(count / coursesPerPage);
 
     if (!courses.length && numberOfSkip) {
@@ -93,12 +98,8 @@ exports.getCourses = async (req, res) => {
         return;
     }
 
-    for (let i = 0; i < courses.length; i++) {
-        if (courses[i].description.length >= 120) {
-            trimmed = courses[0].description.substring(0, 120) + '...';
-        }
-    }
-    res.render('courses', { title: 'All Reviews', courses, page, pages, count, trimmed });
+    courses = trimText(courses, 'description', 120);
+    res.render('courses', { title: 'All Reviews', courses, page, pages, count });
 };
 
 const confirmOwner = (course, user) => {
@@ -135,7 +136,8 @@ exports.getCourseByTag = async (req, res) => {
     const tagQuery = tag || { $exists: true };
     const tagsPromise = Course.getTagsList();
     const coursesPromise = Course.find({ tags: tagQuery }).populate('reviews');
-    const [tags, courses] = await Promise.all([tagsPromise, coursesPromise]);
+    let [tags, courses] = await Promise.all([tagsPromise, coursesPromise]);
+    courses = trimText(courses, 'description', 120);
     res.render('tag', { tags, title: 'Tags', tag, courses });
 };
 
@@ -166,9 +168,10 @@ exports.likeCourse = async (req, res) => {
 };
 
 exports.getLikes = async (req, res) => {
-    const courses = await Course.find({
+    let courses = await Course.find({
         _id: { $in: req.user.likes }
     }).populate('reviews');
+    courses = trimText(courses, 'description', 120);
     res.render('courses', { title: 'Liked Courses', courses });
 };
 
