@@ -23,12 +23,12 @@ const multerOptions = {
 };
 
 const trimText = (array, prop, max) => {
-    array.forEach((obj) => {
+    return array.map((obj) => {
         if (obj[prop].length >= max) {
             obj[prop] = obj[prop].substring(0, max) + '...';
         }
+        return obj;
     });
-    return array;
 }
 
 exports.getHomepage = async (req, res) => {
