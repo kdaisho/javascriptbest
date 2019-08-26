@@ -1,4 +1,5 @@
 const express = require('express');
+const favicon = require('serve-favicon');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
@@ -17,6 +18,7 @@ require('./handlers/passport');
 
 // create our Express app
 const app = express();
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 const ehbs = exphbs.create({
 	extname: '.hbs',
