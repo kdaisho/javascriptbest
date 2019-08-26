@@ -67,7 +67,9 @@ app.use(session({
 	resave: false,
 	saveUninitialized: false,
 	store: new MongoStore({
-		mongooseConnection: mongoose.connection
+		mongooseConnection: mongoose.connection,
+		autoRemove: 'interval',
+		autoRemoveInterval: 1
 	})
 }));
 
