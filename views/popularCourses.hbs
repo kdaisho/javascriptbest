@@ -12,7 +12,7 @@
             <tr>
                 <td>{{@index}}</td>
                 <td class="photo">
-                    <a href="/course/{{this.slug}}" style="background: url('/uploads/{{#if this.image}}{{this.image}}{{else}}review.jpg{{/if}}') center/cover no-repeat"></a>
+                    <a href="/course/{{this.slug}}" style="background: url('/uploads/{{#if this.image}}{{this.image}}{{else}}fallback.jpg{{/if}}') center/cover no-repeat"></a>
                 </td>
                 <td>
                     <a href="/course/{{this.slug}}">{{this.course}}</a>

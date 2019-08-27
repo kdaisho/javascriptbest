@@ -70,8 +70,7 @@ app.use(session({
 	saveUninitialized: false,
 	store: new MongoStore({
 		mongooseConnection: mongoose.connection,
-		autoRemove: 'interval',
-		autoRemoveInterval: 1
+		ttl: 60 * 60 * 24 * 7 // 1 week
 	})
 }));
 
