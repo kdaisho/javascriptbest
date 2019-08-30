@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="369px" height="112px" viewBox="0 0 369 112" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>LOGO</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M26.9428217,-1 L27.9428217,-1 C32.9133845,-1 36.9428217,3.02943725 36.9428217,8 L36.9428217,56 L17.9428217,56 L17.9428217,8 C17.9428217,3.02943725 21.972259,-1 26.9428217,-1 Z" id="path-1"></path>
+        <filter x="-72.0%" y="-72.0%" width="244.0%" height="244.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="6" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <path d="M26.9428217,-1 L27.9428217,-1 C32.9133845,-1 36.9428217,3.02943725 36.9428217,8 L36.9428217,56 L17.9428217,56 L17.9428217,8 C17.9428217,3.02943725 21.972259,-1 26.9428217,-1 Z" id="path-4"></path>
+        <filter x="-72.0%" y="-72.0%" width="244.0%" height="244.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="6" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-215.000000, -219.000000)">
+            <g id="LOGO" transform="translate(214.000000, 215.000000)">
+                <text id="ONLINE-JS-COURSE-REV" font-family="YuKyo-Bold, YuKyokasho" font-size="24" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="0" y="115">ONLINE JS COURSE REVIEWS</tspan>
+                </text>
+                <text id="JSBest" font-family="YuKyo-Bold, YuKyokasho" font-size="70" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="65" y="68">JSBest</tspan>
+                </text>
+                <g id="lefty" transform="translate(2.000000, 0.000000)">
+                    <g id="Rectangle" transform="translate(0.935029, 26.955560)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#FFEB3B" transform="translate(27.442822, 27.500000) rotate(-225.000000) translate(-27.442822, -27.500000) " xlink:href="#path-1"></use>
+                        <rect fill-opacity="0.4" fill="#000000" filter="url(#filter-3)" mask="url(#mask-2)" transform="translate(14.742641, 15.479469) rotate(-315.000000) translate(-14.742641, -15.479469) " x="2.24264069" y="2.97946851" width="25" height="25" rx="8"></rect>
+                    </g>
+                    <path d="M28,-1 L29,-1 C33.9705627,-1 38,3.02943725 38,8 L38,56 L19,56 L19,8 C19,3.02943725 23.0294373,-1 28,-1 Z" id="Rectangle" fill="#FFEB3B" transform="translate(28.500000, 27.500000) rotate(-315.000000) translate(-28.500000, -27.500000) "></path>
+                </g>
+                <g id="righty" transform="translate(342.000000, 41.000000) rotate(-180.000000) translate(-342.000000, -41.000000) translate(314.000000, 0.000000)">
+                    <g id="Rectangle" transform="translate(0.935029, 26.955560)">
+                        <mask id="mask-5" fill="white">
+                            <use xlink:href="#path-4"></use>
+                        </mask>
+                        <use id="Mask" fill="#FFEB3B" transform="translate(27.442822, 27.500000) rotate(-225.000000) translate(-27.442822, -27.500000) " xlink:href="#path-4"></use>
+                        <rect fill-opacity="0.4" fill="#000000" filter="url(#filter-6)" mask="url(#mask-5)" transform="translate(14.742641, 15.479469) rotate(-315.000000) translate(-14.742641, -15.479469) " x="2.24264069" y="2.97946851" width="25" height="25" rx="8"></rect>
+                    </g>
+                    <path d="M28,-1 L29,-1 C33.9705627,-1 38,3.02943725 38,8 L38,56 L19,56 L19,8 C19,3.02943725 23.0294373,-1 28,-1 Z" id="Rectangle" fill="#FFEB3B" transform="translate(28.500000, 27.500000) rotate(-315.000000) translate(-28.500000, -27.500000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

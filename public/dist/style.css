@@ -238,25 +238,12 @@ textarea:focus {
       .nav__wrapper {
         overflow: visible; } }
     .nav__wrapper__top {
-      padding: 1rem 0 1rem; }
-      @media (min-width: 376px) {
-        .nav__wrapper__top {
-          padding: 2.5rem 0 1rem; } }
+      padding: 2rem 0 1rem; }
       .nav__wrapper__top .logo {
         padding: 0 1.25rem;
         margin-bottom: 1rem; }
-        @media (min-width: 376px) {
-          .nav__wrapper__top .logo {
-            margin-bottom: 2rem; } }
-        .nav__wrapper__top .logo h1 a {
-          font-family: Helvetica, Arial, sans-serif;
-          font-size: 2.8rem;
-          font-weight: bold;
-          line-height: 1;
-          letter-spacing: -2px; }
-        .nav__wrapper__top .logo p {
-          line-height: 1.25;
-          padding-top: .5rem; }
+        .nav__wrapper__top .logo .jsb-logo {
+          width: 160px; }
     .nav__wrapper li:not(.thumbnail) {
       height: 40px;
       line-height: 40px; }
