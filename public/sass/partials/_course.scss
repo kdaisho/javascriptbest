@@ -48,7 +48,7 @@
     }
 
     .instructor {
-        background: $monokaiGreen;
+        background: $chromeYellow;
         color: #000;
         margin: 6px auto 9px 0;
         padding: .25rem .75rem .2rem;
@@ -63,7 +63,7 @@
             height: 0;
             width: 0;
             border-top: 0 solid transparent;
-            border-left: 16px solid $monokaiGreen;
+            border-left: 16px solid $chromeYellow;
             border-bottom: 30px solid transparent;
             position: absolute;
             right: -20px;
@@ -85,7 +85,7 @@
         }
 
         .author-info {
-            color: $monokaiGreen;
+            color: $chromeYellow;
             padding: 1rem 0;
             img {
                 margin-right: 6px;
@@ -99,7 +99,7 @@
                     flex-flow: row nowrap;
                 }
                 .stars {
-                    color: $monokaiGreen;
+                    color: $chromeYellow;
                     font-size: 1.5rem;
                     text-align: left;
                 }
@@ -111,7 +111,7 @@
                 margin-bottom: 1rem;
 
                 .tag {
-                    background: $monokaiGreen;
+                    background: $chromeYellow;
                     line-height: 1rem;
                     margin: .25rem;
                     padding: .35rem 0;
@@ -134,7 +134,7 @@
                         height: 0;
                         width: 0;
                         border-bottom: 13px solid transparent;
-                        border-left: 6px solid $monokaiGreen;
+                        border-left: 6px solid $chromeYellow;
                         border-top: 14px solid transparent;
                         position: absolute;
                         right: -6px;
@@ -154,7 +154,7 @@
     }
 
     &__url {
-        color: $monokaiGreen;
+        color: $chromeYellow;
         display: inline-block;
         margin-bottom: 1rem;
         text-decoration: underline;
@@ -177,7 +177,7 @@
         }
         a {
             text-decoration: underline;
-            color: $monokaiGreen;
+            color: $chromeYellow;
         }
     }
 }
