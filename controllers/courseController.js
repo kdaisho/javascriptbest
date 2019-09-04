@@ -51,6 +51,7 @@ exports.resize = async (req, res, next) => {
     }
     const extension = req.file.mimetype.split('/')[1];
     req.body.image = `${uuid.v4()}.${extension}`;
+    req.body.extension = extension;
     // Resize image
     const img = await jimp.read(req.file.buffer);
     await img.resize(800, jimp.AUTO);
@@ -59,15 +60,27 @@ exports.resize = async (req, res, next) => {
 };
 
 exports.compress = async (req, res, next) => {
-    await imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
-        destination: './public/uploads',
-        plugins: [
-        //    imageminMozjpeg(),
-           imageminPngquant({
-               quality: [0.95, 1]
-           })
-        ]
-    });
+    console.log('EXT:', req.body.extension);
+    if (req.body.extension === 'png') {
+        await imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
+            destination: './public/uploads',
+            plugins: [
+               imageminPngquant({
+                   quality: [0.95, 1]
+               })
+            ]
+        });
+    }
+    else if (req.body.extension === 'jpeg') {
+        await imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
+            destination: './public/uploads',
+            use: [
+               imageminMozjpeg({
+                   quality: 70
+               })
+            ]
+        });
+    }
     next();
 };
 
