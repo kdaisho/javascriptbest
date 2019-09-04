@@ -51,49 +51,22 @@ exports.resize = async (req, res, next) => {
     }
     const extension = req.file.mimetype.split('/')[1];
     req.body.image = `${uuid.v4()}.${extension}`;
-    req.body.extension = extension;
     // Resize image
     const img = await jimp.read(req.file.buffer);
-    await img.resize(800, jimp.AUTO);
+    await img.resize(768, jimp.AUTO);
     await img.write(`./public/uploads/${req.body.image}`);
-    // if (req.body.extension === 'png') {
-        await imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
-            destination: './public/uploads',
-            plugins: [
-               imageminMozjpeg({
-                   quality: 70
-               }),
-               imageminPngquant({
-                   quality: [0.95, 1]
-               })
-            ]
-        });
-    // }
     next();
 };
 
 exports.compress = async (req, res, next) => {
-    console.log('EXT:', req.body.extension);
-    if (req.body.extension === 'png') {
-        await imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
-            destination: './public/uploads',
-            plugins: [
-               imageminPngquant({
-                   quality: [0.95, 1]
-               })
-            ]
-        });
-    }
-    else if (req.body.extension === 'jpeg') {
-        await imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
-            destination: './public/uploads',
-            use: [
-               imageminMozjpeg({
-                   quality: 70
-               })
-            ]
-        });
-    }
+    await imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
+        destination: './public/uploads',
+        plugins: [
+            imageminPngquant({
+                quality: [0.95, 1]
+            })
+        ]
+    });
     next();
 };
 
