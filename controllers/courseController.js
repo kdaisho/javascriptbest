@@ -62,7 +62,7 @@ exports.compress = async (req, res, next) => {
     await imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
         destination: './public/uploads',
         plugins: [
-           imageminMozjpeg(),
+        //    imageminMozjpeg(),
            imageminPngquant({
                quality: [0.95, 1]
            })
