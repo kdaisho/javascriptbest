@@ -56,6 +56,19 @@ exports.resize = async (req, res, next) => {
     const img = await jimp.read(req.file.buffer);
     await img.resize(800, jimp.AUTO);
     await img.write(`./public/uploads/${req.body.image}`);
+    // if (req.body.extension === 'png') {
+        await imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
+            destination: './public/uploads',
+            plugins: [
+               imageminMozjpeg({
+                   quality: 70
+               }),
+               imageminPngquant({
+                   quality: [0.95, 1]
+               })
+            ]
+        });
+    // }
     next();
 };
 

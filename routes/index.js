@@ -15,13 +15,13 @@ router.get('/add', authController.isLoggedIn, courseController.addCourse);
 router.post('/add',
     courseController.upload,
     catchErrors(courseController.resize),
-    catchErrors(courseController.compress),
+    // catchErrors(courseController.compress),
     catchErrors(courseController.createCourse)
 );
 router.post('/add/:id',
     courseController.upload,
     catchErrors(courseController.resize),
-    catchErrors(courseController.compress),
+    // catchErrors(courseController.compress),
     catchErrors(courseController.updateCourse)
 );
 
