@@ -59,18 +59,6 @@ exports.resize = async (req, res, next) => {
     next();
 };
 
-exports.compress = async (req, res, next) => {
-    await imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
-        destination: './public/uploads',
-        plugins: [
-            imageminPngquant({
-                quality: [0.95, 1]
-            })
-        ]
-    });
-    next();
-};
-
 exports.createCourse = async (req, res) => {
     req.body.author = req.user._id;
     const course = new Course(req.body);
