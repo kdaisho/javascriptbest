@@ -59,7 +59,7 @@ exports.resize = async (req, res, next) => {
 };
 
 exports.compress = async (req, res, next) => {
-    const files = await imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
+    await imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
         destination: './public/uploads',
         plugins: [
            imageminMozjpeg(),
