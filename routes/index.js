@@ -5,7 +5,7 @@ const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
 const { catchErrors } = require('../handlers/errorHandlers');
 const passport = require('passport');
-console.log('GE', passport.authenticate);
+
 router.get('/', (req, res) => { res.redirect('/courses') });
 // router.get('/', courseController.getHomepage);
 router.get('/courses', catchErrors(courseController.getCourses));
@@ -58,20 +58,11 @@ router.get('/contact', userController.contact);
 router.post('/contact/send', catchErrors(userController.sendMessage));
 
 //logging in using OAUTH
-console.log('PROF:', passport.authenticate('google', {scope: 'https://www.googleapis.com/auth/userinfo.email'}));
 router.get('/auth/google', passport.authenticate('google', {
-    // scope: ['profile']
-    // scope: 'https://www.googleapis.com/auth/daishokomiyama@gmail.com'
-    // scope: 'https://www.googleapis.com/auth/userinfo.profile'
     scope: ['https://www.googleapis.com/auth/plus.login']
-    // scope: 'https://www.googleapis.com/m8/feeds'
-    // scope: ['openid']
 }));
-// router.get('/auth/login', (req, res) => {
-// router.get('/auth/google', (req, res) => {
-//     res.send('Hi')
-// });
-// router.get('/auth/google', (req, res) => {
-//     res.send('yapi');
-// });
+
+router.get('/auth/google/redirect', passport.authenticate('google'), (req, res) => {
+    res.send('yapi');
+});
 module.exports = router;
