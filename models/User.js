@@ -41,8 +41,8 @@ const userSchema = new Schema({
 //     const hash = md5(this.email);
 //     return `https://gravatar.com/avatar/${hash}?s=200&d=monsterid`;
 // });
-userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
-userSchema.plugin(mongodbErrorHandler);
+// userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
+// userSchema.plugin(mongodbErrorHandler);
 
 module.exports = mongoose.model('User', userSchema);
 // module.exports = mongoose.model('User', oauthUserSchema);

@@ -12,6 +12,12 @@ exports.login = passport.authenticate('local', {
     successFlash: 'Woohoo! You are now logged in'
 });
 
+exports.oauthLogin = (req, res) => {
+    req.flash('success', 'You are now logged in!');
+    console.log("NOW LOGGED IN");
+    res.redirect('/');
+}
+
 exports.logout = (req, res) => {
     req.logout();
     req.flash('success', 'You are now logged out!');
