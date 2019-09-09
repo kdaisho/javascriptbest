@@ -13,8 +13,8 @@ exports.login = passport.authenticate('local', {
 });
 
 exports.oauthLogin = (req, res) => {
+    req.session.passport.user = req.user;
     req.flash('success', 'You are now logged in!');
-    console.log("NOW LOGGED IN");
     res.redirect('/');
 }
 

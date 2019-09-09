@@ -62,10 +62,11 @@ router.get('/auth/google', passport.authenticate('google', {
     scope: ['https://www.googleapis.com/auth/plus.login']
 }));
 
-// router.get('/auth/google/redirect', passport.authenticate('google'), catchErrors(authController.oauthLogin));
-router.get('/auth/google/redirect', passport.authenticate('google'), authController.oauthLogin);
 // router.get('/auth/google/redirect', passport.authenticate('google'), (req, res) => {
-//     res.send('YES');
+//     req.session.passport.user = req.user;
+//     req.flash('success', 'You are now logged in!');
+//     res.redirect('/');
 // });
 
+router.get('/auth/google/redirect', passport.authenticate('google'), authController.oauthLogin);
 module.exports = router;

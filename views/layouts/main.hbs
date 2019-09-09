@@ -46,9 +46,7 @@
                         <li>
                             <a href="/likes" class="{{addActiveByCurrentPath currentPath '/likes'}}">
                                 Like <span class="likes-count">
-                                    {{#if user.likes}}
-                                        {{user.likes.length}}
-                                    {{/if}}
+                                    {{user.likes.length}}
                                 </span>
                             </a>
                         </li>
@@ -57,7 +55,7 @@
                         </li>
                         <li class="thumbnail">
                             <a href="/account" class="{{addActiveByCurrentPath currentPath '/account'}} avatar">
-                                <img src={{user.gravatar}} alt={{user.name}}>
+                                <img src="{{user.thumbnail}}" alt="{{user.name}}">
                             </a>
                         </li>
                     {{else}}

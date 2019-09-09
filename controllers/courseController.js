@@ -8,6 +8,7 @@ const uuid = require('uuid');
 const imagemin = require('imagemin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');
+const passport = require('passport');
 
 const multerOptions = {
     storage: multer.memoryStorage(),
@@ -80,12 +81,14 @@ exports.getCourses = async (req, res) => {
     const countPromise = Course.count();
     let [courses, count] = await Promise.all([coursesPromise, countPromise]);
     const pages = Math.ceil(count / coursesPerPage);
+    // console.log(res.json(req.session.passport));
+    // console.log('bare', req.user);
+    console.log('pass', req.session.passport.user);
 
     if (!courses.length && numberOfSkip) {
         res.redirect(`/courses/page/${pages}`);
         return;
     }
-
     courses = trimText(courses, 'description', 120);
     res.render('courses', { title: 'All Reviews', courses, page, pages, count });
 };
@@ -147,11 +150,16 @@ exports.searchCourses = async (req, res) => {
 
 exports.likeCourse = async (req, res) => {
     const likes = req.user.likes.map(obj => obj.toString());
+    // const likes = req.session.passport.user;
+    console.log('PA', req.session.passport.user);
+    console.log('LIKES:', likes);
+    console.log('req.PARAMS.ID:', req.params.id);
     const operator = likes.includes(req.params.id) ? '$pull' : '$addToSet';
     const user = await User.findByIdAndUpdate(req.user._id,
         { [operator]: { likes: req.params.id }},
         { new: true }
     );
+    console.log('UER', user);
     res.send(user);
 };
 
