@@ -81,9 +81,6 @@ exports.getCourses = async (req, res) => {
     const countPromise = Course.count();
     let [courses, count] = await Promise.all([coursesPromise, countPromise]);
     const pages = Math.ceil(count / coursesPerPage);
-    // console.log(res.json(req.session.passport));
-    // console.log('bare', req.user);
-    console.log('pass', req.session.passport.user);
 
     if (!courses.length && numberOfSkip) {
         res.redirect(`/courses/page/${pages}`);
@@ -150,16 +147,12 @@ exports.searchCourses = async (req, res) => {
 
 exports.likeCourse = async (req, res) => {
     const likes = req.user.likes.map(obj => obj.toString());
-    // const likes = req.session.passport.user;
-    console.log('PA', req.session.passport.user);
-    console.log('LIKES:', likes);
-    console.log('req.PARAMS.ID:', req.params.id);
     const operator = likes.includes(req.params.id) ? '$pull' : '$addToSet';
     const user = await User.findByIdAndUpdate(req.user._id,
         { [operator]: { likes: req.params.id }},
         { new: true }
     );
-    console.log('UER', user);
+    req.session.passport.user = user;
     res.send(user);
 };
 
