@@ -5,10 +5,6 @@ const Review = mongoose.model('Review');
 const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
-const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-const imageminPngquant = require('imagemin-pngquant');
-const passport = require('passport');
 
 const multerOptions = {
     storage: multer.memoryStorage(),
@@ -175,6 +171,6 @@ exports.addReview = async (req, res) => {
     req.body.course = req.params.id;
     const newReview = new Review(req.body);
     await newReview.save();
-    req.flash('success', 'Done!');
+    req.flash('success', 'You\'ve added your review!');
     res.redirect('back');
 };

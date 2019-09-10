@@ -29,15 +29,15 @@ router.get('/tags/:tag', catchErrors(courseController.getCourseByTag));
 
 router.get('/course/:slug', catchErrors(courseController.getCourseBySlug));
 
-router.get('/signup', userController.signupForm);
-router.post('/signup',
-    userController.validateRegister,
-    userController.register,
-    authController.login
-);
+// router.get('/signup', userController.signupForm);
+// router.post('/signup',
+//     userController.validateRegister,
+//     userController.register,
+//     authController.login
+// );
 
 router.get('/login', userController.loginForm);
-router.post('/login', authController.login);
+// router.post('/login', authController.login);
 router.get('/logout', authController.logout);
 router.get('/account', authController.isLoggedIn, userController.account);
 router.post('/account', catchErrors(userController.updateAccount));
@@ -62,11 +62,6 @@ router.get('/auth/google', passport.authenticate('google', {
     scope: ['https://www.googleapis.com/auth/plus.login']
 }));
 
-// router.get('/auth/google/redirect', passport.authenticate('google'), (req, res) => {
-//     req.session.passport.user = req.user;
-//     req.flash('success', 'You are now logged in!');
-//     res.redirect('/');
-// });
+router.get('/auth/google/redirect', passport.authenticate('google', { failureRedirect: '/login', }), authController.oauthLogin);
 
-router.get('/auth/google/redirect', passport.authenticate('google'), authController.oauthLogin);
 module.exports = router;
