@@ -62,6 +62,12 @@ router.get('/auth/google', passport.authenticate('google', {
     scope: ['https://www.googleapis.com/auth/plus.login']
 }));
 
+//using Github strategy
+router.get('/auth/github', passport.authenticate('github', {
+    scope: ['user:email']
+}));
+
 router.get('/auth/google/redirect', passport.authenticate('google', { failureRedirect: '/login', }), authController.oauthLogin);
+router.get('/auth/github/redirect', passport.authenticate('github', { failureRedirect: '/login', }), authController.oauthLogin);
 
 module.exports = router;

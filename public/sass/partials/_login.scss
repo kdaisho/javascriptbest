@@ -1,41 +1,44 @@
 .login {
-    .content {
+    text-align: center;
+    @media (min-width: $maxMobile) {
         padding-top: 3rem;
-        text-align: center;
-        .jsb-logo {
-            width: 90%;
-            max-width: 320px;
+    }
+    .jsb-logo {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .text {
+        padding: 4rem 0 2rem;
+        .lead {
+            font-size: $pageSubtitleSize;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            @media (min-width: $maxMobile) {
+                font-size: $pageTitleSizeDesk;
+            }
         }
-        .text {
-            padding-top: 4rem;
-            .lead {
-                font-size: $pageSubtitleSize;
-                margin-bottom: 1rem;
-                @media (min-width: $maxMobile) {
-                    font-size: $pageTitleSizeDesk;
-                }
-            }
-            .description {
-                font-size: $btnFontSize;
-            }
-            .login-button {
-                align-items: center;
-                background: $monokaiBlue;
-                border-radius: .25rem;
-                color: #fff;
-                display: flex;
-                font-size: $btnFontSize;
-                flex-flow: column nowrap;
-                padding: .75rem 1rem .75rem 2rem;
-                position: relative;
-                margin: 3rem auto 0;
-                max-width: 260px;
-                text-align: center;
+        .description {
+            font-size: $btnFontSize;
+        }
+    }
+
+    .links {
+        .login-button {
+            align-items: center;
+            border-radius: .25rem;
+            display: flex;
+            font-size: $btnFontSize;
+            font-weight: bold;
+            flex-flow: column nowrap;
+            padding: .75rem 1rem .75rem 2.25rem;
+            position: relative;
+            margin: 2rem auto 0;
+            max-width: 260px;
+            text-align: center;
                 &:before {
                     content: "";
                     display: block;
-                    background: url(/images/google-logo.svg) no-repeat center;
-                    background-size: contain;
                     height: 30px;
                     left: 16px;
                     position: absolute;
@@ -43,7 +46,26 @@
                     transform: translateY(-50%);
                     width: 30px;
                 }
+            &.is-google {
+                background: $monokaiBlue;
+                color: #fff;
+                &:before {
+                    background: url(/images/google-logo.svg) no-repeat center;
+                    background-size: contain;
+                }
+            }
+            &.is-github {
+                background: $chromeYellow;
+                color: $black;
+                &:before {
+                    background: url(/images/octcat.svg) no-repeat center;
+                    background-size: contain;
+                }
             }
         }
+    }
+
+    .author {
+        margin-top: 2rem;
     }
 }
