@@ -687,13 +687,8 @@ textarea:focus {
   @media (min-width: 1024px) {
     .courseCard {
       -webkit-box-flex: 0;
-          -ms-flex: 0 0 30%;
-              flex: 0 0 30%; } }
-  @media (min-width: 1680px) {
-    .courseCard {
-      -webkit-box-flex: 0;
-          -ms-flex: 0 0 23%;
-              flex: 0 0 23%; } }
+          -ms-flex: 0 0 320px;
+              flex: 0 0 320px; } }
   .courseCard__hero {
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -1049,6 +1044,56 @@ textarea:focus {
       padding-left: .25rem; }
   .pagination--footer p {
     text-align: center; }
+
+.login .content {
+  padding-top: 3rem;
+  text-align: center; }
+  .login .content .jsb-logo {
+    width: 90%;
+    max-width: 320px; }
+  .login .content .text {
+    padding-top: 4rem; }
+    .login .content .text .lead {
+      font-size: 1.75rem;
+      margin-bottom: 1rem; }
+      @media (min-width: 767px) {
+        .login .content .text .lead {
+          font-size: 2.75rem; } }
+    .login .content .text .description {
+      font-size: 1.25rem; }
+    .login .content .text .login-button {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      background: #2680f9;
+      border-radius: .25rem;
+      color: #fff;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 1.25rem;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: column nowrap;
+              flex-flow: column nowrap;
+      padding: .75rem 1rem .75rem 2rem;
+      position: relative;
+      margin: 3rem auto 0;
+      max-width: 260px;
+      text-align: center; }
+      .login .content .text .login-button:before {
+        content: "";
+        display: block;
+        background: url(/images/google-logo.svg) no-repeat center;
+        background-size: contain;
+        height: 30px;
+        left: 16px;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        width: 30px; }
 
 .flash-messages {
   border-radius: .25rem;

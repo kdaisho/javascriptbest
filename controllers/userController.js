@@ -5,7 +5,7 @@ const promisify = require('es6-promisify');
 const mail = require('../handlers/mail');
 
 exports.loginForm = (req, res) => {
-    res.render('login', { title: 'Login' });
+    res.render('login', { title: 'Sign In' });
 };
 
 exports.signupForm = (req, res) => {

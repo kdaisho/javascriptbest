@@ -1,0 +1,49 @@
+.login {
+    .content {
+        padding-top: 3rem;
+        text-align: center;
+        .jsb-logo {
+            width: 90%;
+            max-width: 320px;
+        }
+        .text {
+            padding-top: 4rem;
+            .lead {
+                font-size: $pageSubtitleSize;
+                margin-bottom: 1rem;
+                @media (min-width: $maxMobile) {
+                    font-size: $pageTitleSizeDesk;
+                }
+            }
+            .description {
+                font-size: $btnFontSize;
+            }
+            .login-button {
+                align-items: center;
+                background: $monokaiBlue;
+                border-radius: .25rem;
+                color: #fff;
+                display: flex;
+                font-size: $btnFontSize;
+                flex-flow: column nowrap;
+                padding: .75rem 1rem .75rem 2rem;
+                position: relative;
+                margin: 3rem auto 0;
+                max-width: 260px;
+                text-align: center;
+                &:before {
+                    content: "";
+                    display: block;
+                    background: url(/images/google-logo.svg) no-repeat center;
+                    background-size: contain;
+                    height: 30px;
+                    left: 16px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 30px;
+                }
+            }
+        }
+    }
+}
