@@ -8,7 +8,7 @@ passport.use(
     new GoogleStrategy({
         clientID: process.env.clientId,
         clientSecret: process.env.clientSecret,
-        callbackURL: '/auth/google/redirect'
+        callbackURL: 'https://javascriptbest.com/auth/google/redirect'
     }, (accessToken, refreshToken, profile, done) => {
         User.findOne({userId: profile.id}).then((currentUser) => {
             if (currentUser) {
@@ -31,7 +31,7 @@ passport.use(
     new GithubStrategy ({
         clientID: process.env.clientIdGithub,
         clientSecret: process.env.clientSecretGithub,
-        callbackURL: '/auth/github/redirect'
+        callbackURL: 'https://javascriptbest.com/auth/github/redirect'
     }, (accessToken, refreshToken, profile, done) => {
         User.findOne({userId: profile.id}).then((currentUser) => {
             if (currentUser) {
