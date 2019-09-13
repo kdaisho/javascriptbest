@@ -33,17 +33,17 @@
             flex-flow: column nowrap;
             padding: .75rem 1rem .75rem 2.25rem;
             position: relative;
-            margin: 2rem auto 0;
+            margin: 1rem auto 0;
             max-width: 260px;
             text-align: center;
                 &:before {
                     content: "";
                     display: block;
                     height: 30px;
-                    left: 16px;
+                    left: calc(50% - 110px);
                     position: absolute;
                     top: 50%;
-                    transform: translateY(-50%);
+                    transform: translate(-50%, -50%);
                     width: 30px;
                 }
             &.is-google {
