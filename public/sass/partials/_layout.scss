@@ -13,10 +13,10 @@
 
 .pageTitle {
     font-size: $pageTitleSize;
+    margin: 0 0 .5rem 1rem;
 
     @media (min-width: $maxTablet) {
         font-size: $pageTitleSizeTablet;
-        margin: 0 0 .5rem 1rem;
     }
 
     @media (min-width: $maxLaptop) {
