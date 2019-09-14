@@ -5,8 +5,8 @@ const Review = mongoose.model('Review');
 const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
-const imagemin = require('imagemin');
 const imageminPngquant = require('imagemin-pngquant');
+const imagemin = require('imagemin');
 
 const multerOptions = {
     storage: multer.memoryStorage(),
@@ -57,13 +57,12 @@ exports.resize = async (req, res, next) => {
 };
 
 exports.compressPng = async (req, res, next) => {
-    console.log('REQ BODY:', req.body);
     if (req.body.extension === 'png') {
-        imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
+        await imagemin([`./public/uploads/${req.body.image}`], {//no space allowed as glob!!
             destination: './public/uploads',
             plugins: [
                imageminPngquant({
-                   quality: [0.95, 1]
+                   quality: [0.5, 1]
                })
             ]
         });
