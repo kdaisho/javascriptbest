@@ -13,7 +13,6 @@ const expressValidator = require('express-validator');
 const routes = require('./routes/index');
 const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
-// const fs = require('fs');
 require('./handlers/passport');
 
 // create our Express app
