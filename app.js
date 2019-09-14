@@ -65,6 +65,7 @@ const sessionOptions = {
 	key: process.env.KEY,
 	resave: false,
 	saveUninitialized: true,
+	cookie: {},
 	store: new MongoStore({
 		mongooseConnection: mongoose.connection,
 		ttl: 60 * 60 * 24 * 7 // 1 week
