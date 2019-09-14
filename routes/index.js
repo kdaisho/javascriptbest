@@ -13,14 +13,17 @@ router.get('/courses/page/:page', catchErrors(courseController.getCourses));
 router.get('/courses/:id/edit', catchErrors(courseController.editCourse));
 
 router.get('/add', authController.isLoggedIn, courseController.addCourse);
+
 router.post('/add',
     courseController.upload,
     catchErrors(courseController.resize),
+    catchErrors(courseController.compressPng),
     catchErrors(courseController.createCourse)
 );
 router.post('/add/:id',
     courseController.upload,
     catchErrors(courseController.resize),
+    catchErrors(courseController.compressPng),
     catchErrors(courseController.updateCourse)
 );
 
