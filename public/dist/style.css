@@ -1109,6 +1109,38 @@ textarea:focus {
         background-size: contain; }
   .login .author {
     margin-top: 2rem; }
+    .login .author .privacy-statement {
+      margin-top: 2rem; }
+      .login .author .privacy-statement a {
+        text-decoration: underline; }
+
+.privacy .header {
+  padding-bottom: 1rem; }
+  .privacy .header .title {
+    font-size: 2.25rem; }
+    @media (min-width: 1024px) {
+      .privacy .header .title {
+        font-size: 2.75rem; } }
+  .privacy .header .effective-date {
+    display: block;
+    padding-top: .25rem; }
+
+.privacy .text {
+  padding: 1rem 0; }
+  .privacy .text h2 {
+    font-size: 1.25rem;
+    padding-bottom: 1rem; }
+    @media (min-width: 1024px) {
+      .privacy .text h2 {
+        font-size: 1.5rem; } }
+  .privacy .text p {
+    line-height: 1.6; }
+  .privacy .text .list {
+    list-style: disc;
+    padding: .5rem 0 .5rem 2rem; }
+  .privacy .text .link,
+  .privacy .text .email {
+    text-decoration: underline; }
 
 .flash-messages {
   border-radius: .25rem;

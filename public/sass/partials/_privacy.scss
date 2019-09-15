@@ -1,0 +1,36 @@
+.privacy {
+    .header {
+        padding-bottom: 1rem;
+        .title {
+            font-size: $pageTitleSizeTablet;
+            @media (min-width: $maxTablet) {
+                font-size: $pageTitleSizeDesk;
+            }
+        }
+        .effective-date {
+            display: block;
+            padding-top: .25rem;
+        }
+    }
+    .text {
+        padding: 1rem 0;
+        h2 {
+            font-size: $courseTitleSize;
+            padding-bottom: 1rem;
+            @media (min-width: $maxTablet) {
+                font-size: $cardTitleSize;
+            }
+        }
+        p {
+            line-height: 1.6;
+        }
+        .list {
+            list-style: disc;
+            padding: .5rem 0 .5rem 2rem;
+        }
+        .link,
+        .email {
+            text-decoration: underline;
+        }
+    }
+}

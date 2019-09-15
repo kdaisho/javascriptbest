@@ -67,5 +67,11 @@
 
     .author {
         margin-top: 2rem;
+        .privacy-statement {
+            margin-top: 2rem;
+            a {
+                text-decoration: underline;
+            }
+        }
     }
 }

@@ -92,3 +92,7 @@ exports.updateAccount = async (req, res) => {
     req.flash('success', 'Updated your profile!');
     res.redirect('back');
 };
+
+exports.privacy = (req, res) => {
+    res.render('privacy-policy');
+};

@@ -60,6 +60,8 @@ router.post('/api/courses/:id/like', catchErrors(courseController.likeCourse));
 router.get('/contact', userController.contact);
 router.post('/contact/send', catchErrors(userController.sendMessage));
 
+router.get('/privacy', userController.privacy);
+
 //logging in using OAUTH
 router.get('/auth/google', passport.authenticate('google', {
     scope: ['https://www.googleapis.com/auth/plus.login']
