@@ -116,6 +116,9 @@
         .receiveCopy {
             margin-bottom: 2rem;
 
+            input {
+                vertical-align: middle;
+            }
             input,
             label {
                 &:hover {

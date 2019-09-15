@@ -491,6 +491,8 @@ textarea:focus {
     display: none; }
   .container.edit form .receiveCopy {
     margin-bottom: 2rem; }
+    .container.edit form .receiveCopy input {
+      vertical-align: middle; }
     .container.edit form .receiveCopy input:hover,
     .container.edit form .receiveCopy label:hover {
       cursor: pointer; }
