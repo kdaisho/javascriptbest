@@ -59,25 +59,16 @@ app.use(expressValidator());
 // populates req.cookies with any cookies that came along with the request
 app.use(cookieParser());
 
-const sessionOptions = {
+app.use(session({
 	secret: process.env.SECRET,
 	key: process.env.KEY,
 	resave: false,
-	saveUninitialized: true,
-	cookie: {},
+	saveUninitialized: false,
 	store: new MongoStore({
 		mongooseConnection: mongoose.connection,
 		ttl: 60 * 60 * 24 * 7 // 1 week
 	})
-};
-
-if (app.get('env') === 'production') {
-	app.set('trust proxy', 1);
-	sessionOptions.cookie.secure = true;
-}
-
-// This keeps users logged in and allows us to send flash messages
-app.use(session(sessionOptions));
+}));
 
 // Passport JS is what we use to handle our logins
 app.use(passport.initialize());
