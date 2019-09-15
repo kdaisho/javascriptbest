@@ -20,13 +20,11 @@
                     color: #fff;
                 }
             }
-            &--active {
-                span {
-                    &.name {
-                        background: $monokaiBlue;
-                        color: #fff;
-                    }
-                }
+        }
+        .is-active {
+            .name {
+                background: $monokaiBlue;
+                color: #fff;
             }
         }
     }

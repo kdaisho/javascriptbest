@@ -32,11 +32,17 @@
                     justify-content: center;
                     width: 100%;
                 }
+
+                .icon-container {
+                    align-items: center;
+                    display: flex;
+                }
             }
         }
     }
 
     .nav__hamburger {
+        align-items: center;
         background: $monokaiBlue;
         border: none;
         bottom: 100px;

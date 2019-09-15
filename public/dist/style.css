@@ -174,7 +174,17 @@ textarea:focus {
             -ms-flex-pack: center;
                 justify-content: center;
         width: 100%; }
+      .nav.active .nav__hamburger span .icon-container {
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
   .nav .nav__hamburger {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background: #2680f9;
     border: none;
     bottom: 100px;
@@ -986,7 +996,7 @@ textarea:focus {
     .tagsPage .tag__link span.count {
       background: #2680f9;
       color: #fff; }
-  .tagsPage .tag__link--active span.name {
+  .tagsPage .tag .is-active .name {
     background: #2680f9;
     color: #fff; }
 

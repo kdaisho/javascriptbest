@@ -1,5 +1,5 @@
 <div class="container tagsPage">
-    <h2 class="pageTitle">{{title}}</h2>
+    <h2 class="pageTitle">{{title}}{{#if tag}}: {{tag}}{{/if}}</h2>
     <ul class="tags">
         {{#each tags}}
             <li class="tag">
