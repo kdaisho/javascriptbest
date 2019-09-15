@@ -29,29 +29,28 @@
             border-radius: .25rem;
             display: flex;
             font-size: $btnFontSize;
-            font-weight: bold;
             flex-flow: column nowrap;
             padding: .75rem 1rem .75rem 2.25rem;
             position: relative;
-            margin: 1rem auto 0;
+            margin: 1.5rem auto 0;
             max-width: 260px;
             text-align: center;
-                &:before {
-                    content: "";
-                    display: block;
-                    height: 30px;
-                    left: calc(50% - 110px);
-                    position: absolute;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 30px;
-                }
+            &:before {
+                content: "";
+                display: block;
+                height: 30px;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 30px;
+            }
             &.is-google {
                 background: $monokaiBlue;
                 color: #fff;
                 &:before {
                     background: url(/images/google-logo.svg) no-repeat center;
                     background-size: contain;
+                    left: calc(50% - 115px);
                 }
             }
             &.is-github {
@@ -60,6 +59,7 @@
                 &:before {
                     background: url(/images/octcat.svg) no-repeat center;
                     background-size: contain;
+                    left: calc(50% - 110px);
                 }
             }
         }

@@ -1086,21 +1086,19 @@ textarea:focus {
     display: -ms-flexbox;
     display: flex;
     font-size: 1.25rem;
-    font-weight: bold;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
     padding: .75rem 1rem .75rem 2.25rem;
     position: relative;
-    margin: 1rem auto 0;
+    margin: 1.5rem auto 0;
     max-width: 260px;
     text-align: center; }
     .login .links .login-button:before {
       content: "";
       display: block;
       height: 30px;
-      left: calc(50% - 110px);
       position: absolute;
       top: 50%;
       -webkit-transform: translate(-50%, -50%);
@@ -1112,13 +1110,15 @@ textarea:focus {
       color: #fff; }
       .login .links .login-button.is-google:before {
         background: url(/images/google-logo.svg) no-repeat center;
-        background-size: contain; }
+        background-size: contain;
+        left: calc(50% - 115px); }
     .login .links .login-button.is-github {
       background: #ffeb3b;
       color: #444; }
       .login .links .login-button.is-github:before {
         background: url(/images/octcat.svg) no-repeat center;
-        background-size: contain; }
+        background-size: contain;
+        left: calc(50% - 110px); }
   .login .author {
     margin-top: 2rem; }
     .login .author .privacy-statement {
