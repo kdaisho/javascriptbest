@@ -6,12 +6,12 @@
         <label for="instructor">Instructor</label>
         <input type="text" class="required" name="instructor" value="{{course.instructor}}" required>
         <label for="url">URL</label>
-        <input type="url" name="url" value="{{course.url}}">
+        <input type="url" class="required" name="url" value="{{course.url}}" required>
 
         <!-- Image upload -->
         <label>Image</label>
         <label for="image">Choose Upload Image</label>
-        <input type="file" id="image" name="image" accept="image/gif, image/png, image/jpeg">
+        <input type="file" id="image" name="image" accept="image/png, image/jpeg">
         {{#if course.image}}
             <img src="/uploads/{{course.image}}" class="preview" alt="{{course.course}}" width="200">
         {{/if}}
