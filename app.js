@@ -63,7 +63,7 @@ app.use(session({
 	secret: process.env.SECRET,
 	key: process.env.KEY,
 	resave: false,
-	saveUninitialized: false,
+	saveUninitialized: true,
 	store: new MongoStore({
 		mongooseConnection: mongoose.connection,
 		ttl: 60 * 60 * 24 * 7 // 1 week
