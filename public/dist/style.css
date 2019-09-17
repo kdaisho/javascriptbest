@@ -258,8 +258,13 @@ textarea:focus {
     .nav__wrapper li:not(.thumbnail) {
       height: 40px;
       line-height: 40px; }
-      .nav__wrapper li:not(.thumbnail).thumbnail {
-        height: auto; }
+    .nav__wrapper li.thumbnail {
+      padding: 1rem .75rem 0; }
+      .nav__wrapper li.thumbnail img {
+        border-radius: .25rem;
+        display: block;
+        margin-left: .75rem;
+        width: 75px; }
     .nav__wrapper li.category {
       opacity: .75;
       padding-left: 1.25rem; }
@@ -293,20 +298,9 @@ textarea:focus {
       .nav__wrapper li span.likes-count,
       .nav__wrapper li button.likes-count {
         display: inline; }
-      .nav__wrapper li a.avatar,
-      .nav__wrapper li span.avatar,
-      .nav__wrapper li button.avatar {
-        padding: 1rem .75rem 0; }
-        .nav__wrapper li a.avatar img,
-        .nav__wrapper li span.avatar img,
-        .nav__wrapper li button.avatar img {
-          border-radius: .25rem;
-          display: block;
-          margin-left: .75rem;
-          width: 75px; }
-      .nav__wrapper li a:hover:not(.avatar):not(.likes-count),
-      .nav__wrapper li span:hover:not(.avatar):not(.likes-count),
-      .nav__wrapper li button:hover:not(.avatar):not(.likes-count) {
+      .nav__wrapper li a:hover:not(.likes-count),
+      .nav__wrapper li span:hover:not(.likes-count),
+      .nav__wrapper li button:hover:not(.likes-count) {
         background: #589dfa;
         cursor: pointer; }
       @media (min-width: 1024px) {

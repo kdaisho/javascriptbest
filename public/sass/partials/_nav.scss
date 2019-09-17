@@ -117,11 +117,16 @@
         li:not(.thumbnail) {
             height: 40px;
             line-height: 40px;
-            &.thumbnail {
-                height: auto;
+        }
+        li.thumbnail {
+            padding: 1rem .75rem 0;
+            img {
+                border-radius: .25rem;
+                display: block;
+                margin-left: .75rem;
+                width: 75px;
             }
         }
-
         li.category {
             opacity: .75;
             padding-left: 1.25rem;
@@ -156,18 +161,7 @@
                 display: inline;
             }
 
-            &.avatar {
-                padding: 1rem .75rem 0;
-
-                img {
-                    border-radius: .25rem;
-                    display: block;
-                    margin-left: .75rem;
-                    width: 75px;
-                }
-            }
-
-            &:hover:not(.avatar):not(.likes-count) {
+            &:hover:not(.likes-count) {
                 background: lighten($monokaiBlue, 10%);
                 cursor: pointer;
             }
