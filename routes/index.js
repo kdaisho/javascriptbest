@@ -29,27 +29,10 @@ router.post('/add/:id',
 
 router.get('/tags', catchErrors(courseController.getCourseByTag));
 router.get('/tags/:tag', catchErrors(courseController.getCourseByTag));
-
 router.get('/course/:slug', catchErrors(courseController.getCourseBySlug));
 
-// router.get('/signup', userController.signupForm);
-// router.post('/signup',
-//     userController.validateRegister,
-//     userController.register,
-//     authController.login
-// );
-
-router.get('/login', userController.loginForm);
-// router.post('/login', authController.login);
+router.get('/login', userController.login);
 router.get('/logout', authController.logout);
-router.get('/account', authController.isLoggedIn, userController.account);
-router.post('/account', catchErrors(userController.updateAccount));
-router.post('/account/forgot', catchErrors(authController.forgot));
-router.get('/account/reset/:token', catchErrors(authController.reset));
-router.post('/account/reset/:token',
-    authController.confirmedPasswords,
-    catchErrors(authController.update)
-);
 router.get('/popular', catchErrors(courseController.getPopularCourses));
 
 router.get('/likes', authController.isLoggedIn, catchErrors(courseController.getLikes));

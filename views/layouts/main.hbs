@@ -53,9 +53,7 @@
                             <a href="/logout" class="{{addActiveByCurrentPath currentPath '/logout'}}">Logout</a>
                         </li>
                         <li class="thumbnail">
-                            <a href="/account" class="{{addActiveByCurrentPath currentPath '/account'}} avatar">
-                                <img src="{{user.thumbnail}}" alt="{{user.name}}">
-                            </a>
+                            <img src="{{user.thumbnail}}" alt="{{user.name}}">
                         </li>
                     {{else}}
                         <li>
