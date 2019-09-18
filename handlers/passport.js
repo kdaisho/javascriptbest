@@ -3,12 +3,13 @@ const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const GithubStrategy = require('passport-github2').Strategy;
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
+const protocol = process.env.NODE_ENV === 'production' ? 'https://javascriptbest.com' : `http://localhost:${process.env.PORT}`;
 
 passport.use(
     new GoogleStrategy({
         clientID: process.env.clientId,
         clientSecret: process.env.clientSecret,
-        callbackURL: 'https://javascriptbest.com/auth/google/redirect'
+        callbackURL: `${protocol}/auth/google/redirect`
     }, (accessToken, refreshToken, profile, done) => {
         User.findOne({userId: profile.id}).then((currentUser) => {
             if (currentUser) {

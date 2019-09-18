@@ -494,21 +494,24 @@ textarea:focus {
   .container.edit form .honey {
     display: none; }
   .container.edit form .receiveCopy {
-    margin-bottom: 2rem; }
-    .container.edit form .receiveCopy input {
-      vertical-align: middle; }
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 2.5rem; }
     .container.edit form .receiveCopy input:hover,
     .container.edit form .receiveCopy label:hover {
       cursor: pointer; }
     .container.edit form .receiveCopy label {
       display: inline;
       font-size: 1rem;
-      margin-left: .5rem;
+      margin: 0 0 0 .5rem;
       -webkit-user-select: none;
          -moz-user-select: none;
           -ms-user-select: none;
-              user-select: none;
-      vertical-align: middle; }
+              user-select: none; }
 
 .container.edit .forgotPassword {
   background: none;
