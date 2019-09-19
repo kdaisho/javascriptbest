@@ -805,23 +805,25 @@ textarea:focus {
         fill: none; }
       .courseCard__action--like button.isLiked svg {
         fill: #2680f9; }
-  .courseCard__reviews .count {
-    background: #2680f9;
-    border-radius: 50%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    display: inline-block;
-    font-size: 11px;
-    color: white;
-    height: 18px;
-    left: -16px;
-    margin-top: -14px;
-    margin-right: -.75rem;
-    padding: 2px 0 0 1px;
-    position: relative;
-    text-align: center;
-    top: -5px;
-    width: 18px; }
+  .courseCard__reviews {
+    margin-right: -6px; }
+    .courseCard__reviews .count {
+      background: #2680f9;
+      border-radius: 50%;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: inline-block;
+      font-size: 11px;
+      color: white;
+      height: 18px;
+      left: -16px;
+      margin-top: -14px;
+      margin-right: -.75rem;
+      padding: 2px 0 0 1px;
+      position: relative;
+      text-align: center;
+      top: -5px;
+      width: 18px; }
 
 .reviewer {
   margin: 3rem 0; }

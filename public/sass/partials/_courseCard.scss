@@ -8,13 +8,9 @@
     }
 
     @media (min-width: $maxTablet) {
-        // flex: 0 0 30%;
         flex: 0 0 320px;
     }
 
-    @media (min-width: 1680px) {
-        // flex: 0 0 23%;
-    }
 
     &__hero {
         align-items: flex-start;
@@ -144,6 +140,7 @@
     }
 
     &__reviews {
+        margin-right: - 6px;
         .count {
             background: $monokaiBlue;
             border-radius: 50%;
