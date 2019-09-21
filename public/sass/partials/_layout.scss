@@ -10,10 +10,17 @@
         padding: 3rem 2rem;
     }
 }
-
+.isCourses {
+    .pageTitle {
+        margin: 0 0 .5rem .5rem;
+        @media (min-width: $maxTablet) {
+            margin: 0 0 .5rem .75rem;
+        }
+    }
+}
 .pageTitle {
     font-size: $pageTitleSize;
-    margin: 0 0 .5rem 1rem;
+    margin: 0 0 .5rem 0;
 
     @media (min-width: $maxTablet) {
         font-size: $pageTitleSizeTablet;

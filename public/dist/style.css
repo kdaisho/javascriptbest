@@ -103,9 +103,15 @@ textarea:focus {
       margin-left: 200px;
       padding: 3rem 2rem; } }
 
+.isCourses .pageTitle {
+  margin: 0 0 .5rem .5rem; }
+  @media (min-width: 1024px) {
+    .isCourses .pageTitle {
+      margin: 0 0 .5rem .75rem; } }
+
 .pageTitle {
   font-size: 1.75rem;
-  margin: 0 0 .5rem 1rem; }
+  margin: 0 0 .5rem 0; }
   @media (min-width: 1024px) {
     .pageTitle {
       font-size: 2.25rem; } }

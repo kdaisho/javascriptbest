@@ -40,7 +40,7 @@ router.post('/reviews/:id', authController.isLoggedIn, catchErrors(courseControl
 router.get('/api/search', catchErrors(courseController.searchCourses));
 router.post('/api/courses/:id/like', catchErrors(courseController.likeCourse));
 
-router.get('/contact', userController.contact);
+router.get('/contact', authController.isLoggedIn, userController.contact);
 router.post('/contact/send', catchErrors(userController.sendMessage));
 
 router.get('/privacy', userController.privacy);
