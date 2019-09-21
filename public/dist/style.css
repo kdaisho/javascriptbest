@@ -1063,26 +1063,26 @@ textarea:focus {
   .pagination--footer p {
     text-align: center; }
 
-.login {
+.pageWithLogo {
   text-align: center; }
   @media (min-width: 767px) {
-    .login {
+    .pageWithLogo {
       padding-top: 3rem; } }
-  .login .jsb-logo {
+  .pageWithLogo .jsb-logo {
     width: 90%;
     max-width: 320px; }
-  .login .text {
+  .pageWithLogo .text {
     padding: 4rem 0 2rem; }
-    .login .text .lead {
+    .pageWithLogo .text .lead {
       font-size: 1.75rem;
       font-weight: bold;
       margin-bottom: 1rem; }
       @media (min-width: 767px) {
-        .login .text .lead {
+        .pageWithLogo .text .lead {
           font-size: 2.75rem; } }
-    .login .text .description {
+    .pageWithLogo .text .description {
       font-size: 1.25rem; }
-  .login .links .login-button {
+  .pageWithLogo .links .login-button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -1100,7 +1100,7 @@ textarea:focus {
     margin: 1.5rem auto 0;
     max-width: 260px;
     text-align: center; }
-    .login .links .login-button:before {
+    .pageWithLogo .links .login-button:before {
       content: "";
       display: block;
       height: 30px;
@@ -1110,25 +1110,27 @@ textarea:focus {
           -ms-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
       width: 30px; }
-    .login .links .login-button.is-google {
+    .pageWithLogo .links .login-button.is-google {
       background: #2680f9;
       color: #fff; }
-      .login .links .login-button.is-google:before {
+      .pageWithLogo .links .login-button.is-google:before {
         background: url(/images/google-logo.svg) no-repeat center;
         background-size: contain;
         left: calc(50% - 115px); }
-    .login .links .login-button.is-github {
+    .pageWithLogo .links .login-button.is-github {
       background: #ffeb3b;
       color: #444; }
-      .login .links .login-button.is-github:before {
+      .pageWithLogo .links .login-button.is-github:before {
         background: url(/images/octcat.svg) no-repeat center;
         background-size: contain;
         left: calc(50% - 110px); }
-  .login .author {
+  .pageWithLogo .links .link {
+    padding: .5rem 1.5rem; }
+  .pageWithLogo .author {
     margin-top: 2rem; }
-    .login .author .privacy-statement {
+    .pageWithLogo .author .privacy-statement {
       margin-top: 2rem; }
-      .login .author .privacy-statement a {
+      .pageWithLogo .author .privacy-statement a {
         text-decoration: underline; }
 
 .privacy .header {
