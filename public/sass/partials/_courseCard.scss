@@ -90,7 +90,7 @@
     &__details {
         background: #efefef;
         border-radius: 0 0 .25rem .25rem;
-        padding: .75rem .75rem .5rem;
+        padding: .75rem .75rem .25rem;
 
         .desc {
             color: $black;
@@ -106,11 +106,9 @@
         justify-content: space-between;
 
         &--edit {
-            padding: 0 8px;
-
             svg {
                 stroke: $monokaiBlue;
-                stroke-width: 2.5;
+                stroke-width: 2px;
             }
         }
 
@@ -119,6 +117,7 @@
                 background: none;
                 border: 0;
                 outline: none;
+                padding: 0;
 
                 &:hover {
                     cursor: pointer;
@@ -126,7 +125,7 @@
 
                 svg {
                     stroke: $monokaiBlue;
-                    stroke-width: 2;
+                    stroke-width: 1.5px;
                     fill: none;
                 }
 
@@ -140,7 +139,7 @@
     }
 
     &__reviews {
-        margin-right: - 6px;
+        margin-right: -12px;
         .count {
             background: $monokaiBlue;
             border-radius: 50%;

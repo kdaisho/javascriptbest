@@ -775,7 +775,7 @@ textarea:focus {
   .courseCard__details {
     background: #efefef;
     border-radius: 0 0 .25rem .25rem;
-    padding: .75rem .75rem .5rem; }
+    padding: .75rem .75rem .25rem; }
     .courseCard__details .desc {
       color: #444;
       font-size: 0.9rem; }
@@ -794,25 +794,24 @@ textarea:focus {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
-    .courseCard__action--edit {
-      padding: 0 8px; }
-      .courseCard__action--edit svg {
-        stroke: #2680f9;
-        stroke-width: 2.5; }
+    .courseCard__action--edit svg {
+      stroke: #2680f9;
+      stroke-width: 2px; }
     .courseCard__action--like button {
       background: none;
       border: 0;
-      outline: none; }
+      outline: none;
+      padding: 0; }
       .courseCard__action--like button:hover {
         cursor: pointer; }
       .courseCard__action--like button svg {
         stroke: #2680f9;
-        stroke-width: 2;
+        stroke-width: 1.5px;
         fill: none; }
       .courseCard__action--like button.isLiked svg {
         fill: #2680f9; }
   .courseCard__reviews {
-    margin-right: -6px; }
+    margin-right: -12px; }
     .courseCard__reviews .count {
       background: #2680f9;
       border-radius: 50%;
