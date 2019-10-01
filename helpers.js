@@ -43,6 +43,6 @@ exports.repeat = (item, times, total) => {
 };
 
 exports.arrayFive = [5, 4, 3, 2, 1];
-exports.technologies = ['Vanilla', 'Node', 'React', 'Angular', 'Vue', 'Library', 'Framework', 'Functional Programming', 'Classical Programming', 'TypeScript', 'PWA', 'Template Engine', 'Visualization', 'Machine Learning', 'Game', 'Database', 'Test-Driven', 'Fun', 'Beginner Friedly', 'intermediate', 'Advanced', 'Paid Course'];
+exports.technologies = ['Vanilla', 'Node', 'React', 'Angular', 'Vue', 'Library', 'Framework', 'Functional Programming', 'Classical Programming', 'TypeScript', 'PWA', 'Template Engine', 'Visualization', 'Machine Learning', 'Game', 'Database', 'Test-Driven', 'Fun', 'Beginner Friendly', 'intermediate', 'Advanced', 'Paid Course'];
 
 exports.siteName = 'JavaScriptBest';
