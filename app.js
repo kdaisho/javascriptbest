@@ -45,7 +45,19 @@ app.set('views', path.join(__dirname, 'views')); // this is the folder where we 
 app.set('view engine', '.hbs'); // we use the engine handlebars
 
 // serves up static files from the public folder. Anything in public/ will just be served up as the file it is
-app.use(express.static(path.join(__dirname, 'public')));
+// setting cache max-age
+app.use(express.static(path.join(__dirname, 'public'), {
+	etag: true,
+	lastModified: true,
+	setHeaders: (res, path) => {
+		if (path.endsWith('.html')) {
+			res.setHeader('Cache-Control', 'no-cache');
+		}
+		else {
+			res.setHeader('Cache-Control', 'max-age=31536000');
+		}
+	}
+}));
 
 // Using built in body parser
 app.use(express.json());
