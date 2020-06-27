@@ -24,19 +24,10 @@ const generateHTML = (filename, options = {}) => {
 exports.send = async (options) => {
     const html = generateHTML(options.filename, options);
     const text = htmlToText.fromString(html);
-    let dest = '';
-
-    if (options.fromContact && options.sender.copy) {
-        dest = options.sender.email;
-    }
-    else if (!options.fromContact) {
-        dest = options.user.email;
-    }
 
     mailOptions = {
         from: `Daisho <noreply@daishokomiyama@gmail.com>`,
-        to: dest,
-        bcc: 'daishokomiyama@gmail.com',
+        to: 'daishokomiyama@gmail.com',
         subject: options.subject,
         html,
         text

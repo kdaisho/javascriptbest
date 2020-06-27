@@ -18,16 +18,14 @@ exports.sendMessage = async (req, res) => {
 
     const sender = {
         name: req.body.name,
-        msg: req.body.message,
-        copy: req.body.receiveCopy
+        msg: req.body.message
     };
 
     await mail.send({
         to: 'daishokomiyama@gmail.com',
         filename: 'emails',
         subject: 'Message from JavaScriptBest',
-        sender,
-        fromContact: true
+        sender
     });
 
     req.flash('success', `Message has been sent successfully!`);
