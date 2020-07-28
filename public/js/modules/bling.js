@@ -1,6 +1,6 @@
 // based on https://gist.github.com/paulirish/12fb951a8b893a454b32
 // this may not needed as it is used by only one module
-// maybe not maybe yes --- ___ ---
+// maybe not maybe yes --- ___ ---___
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
